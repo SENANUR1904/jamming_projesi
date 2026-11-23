@@ -1,0 +1,14 @@
+# Büyük ham/ara veri dosyaları (GitHub 100 MB üstünü kabul etmez — Kaggle'da duruyor)
+*.dat
+gnuradio_veriler/
+simulasyon_verisi.csv
+jamming_veri_seti.csv
+
+# Python geçici dosyaları
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
