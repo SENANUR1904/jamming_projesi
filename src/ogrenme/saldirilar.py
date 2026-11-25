@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+KOK = Path(__file__).resolve().parents[2]   # proje kok klasoru
 
 # --- Temel sinyal ve dogal gurultu ---
 t = np.linspace(0, 1, 1000)
@@ -45,5 +48,7 @@ for i, (baslik, sinyal) in enumerate(durumlar):
 
 plt.xlabel("Zaman (saniye)")
 plt.tight_layout()
-plt.savefig("saldiri_turleri.png", dpi=150)
+CIKTI = KOK / "gorseller" / "ogrenme"
+CIKTI.mkdir(parents=True, exist_ok=True)
+plt.savefig(CIKTI / "saldiri_turleri.png", dpi=150)
 plt.show()

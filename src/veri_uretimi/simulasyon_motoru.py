@@ -2,6 +2,9 @@ import numpy as np
 import pandas as pd
 import random
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+KOK = Path(__file__).resolve().parents[2]   # proje kok klasoru
 
 # ============================================================
 # KABLOSUZ KANAL - MARKOV TABANLI JAMMING SIMULASYONU
@@ -101,9 +104,11 @@ class KablosuzKanalSimulasyonu:
         df = pd.DataFrame(self.veri_seti)
         df.columns = [f"ornek_{i}" for i in range(self.fs)]
         df["Etiket"] = self.etiketler
-        df.to_csv("simulasyon_verisi.csv", index=False)
+        veri_klasoru = KOK / "data"
+        veri_klasoru.mkdir(exist_ok=True)
+        df.to_csv(veri_klasoru / "simulasyon_verisi.csv", index=False)
 
-        print("\nSimulasyon bitti. Veri 'simulasyon_verisi.csv' olarak kaydedildi.")
+        print("\nSimulasyon bitti. Veri 'data/simulasyon_verisi.csv' olarak kaydedildi.")
         print(f"Toplam {len(df)} satir. Sinif dagilimi:\n")
         sayim = df["Etiket"].value_counts().sort_index()
         for e, adet in sayim.items():
@@ -123,7 +128,9 @@ class KablosuzKanalSimulasyonu:
                 plt.grid(True)
         plt.xlabel("Zaman (saniye)")
         plt.tight_layout()
-        plt.savefig("simulasyon_ornekleri.png", dpi=150)
+        gorsel_klasoru = KOK / "gorseller" / "veri_uretimi"
+        gorsel_klasoru.mkdir(parents=True, exist_ok=True)
+        plt.savefig(gorsel_klasoru / "simulasyon_ornekleri.png", dpi=150)
         plt.show()
 
 

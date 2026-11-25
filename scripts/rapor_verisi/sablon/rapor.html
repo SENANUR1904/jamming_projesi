@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jamming Tespiti — Simülasyon ve Veri Üretimi Raporu</title>
+<style>
+/*__STIL__*/
+</style>
+</head>
+<body>
+<div class="kapsayici">
+
+<nav class="yan" id="nav">
+  <div class="marka">Jamming Tespiti<br><span style="font-weight:500;color:#5b6b7c">Simülasyon &amp; Veri Raporu</span></div>
+  <a href="#amac"><span class="num">1</span>Proje neyi amaçlıyor?</a>
+  <a href="#buyuk-resim"><span class="num">2</span>Büyük resim</a>
+  <a href="#topoloji"><span class="num">3</span>GNU Radio topolojisi</a>
+  <a href="#lab"><span class="num">4</span>Simülasyon laboratuvarı</a>
+  <a href="#veri"><span class="num">5</span>Veri: nasıl, neler?</a>
+  <a href="#oznitelik"><span class="num">6</span>Öznitelikler</a>
+  <a href="#model"><span class="num">7</span>Makine öğrenmesi</a>
+  <a href="#acik-kume"><span class="num">8</span>Açık-küme testi</a>
+  <a href="#python"><span class="num">9</span>Python ön çalışmaları</a>
+  <a href="#dogrulama"><span class="num">10</span>Doğrulama</a>
+  <a href="#gozlem"><span class="num">11</span>Gözlemler &amp; notlar</a>
+  <a href="#harita"><span class="num">12</span>Proje haritası</a>
+</nav>
+
+<main>
+
+<!-- ======================================================================= HERO -->
+<header class="hero">
+  <div class="ust-etiket">Proje dökümanı · Fiziksel katman jamming tespiti</div>
+  <h1>Jamming saldırıları nasıl simüle ediliyor, veri nasıl üretiliyor, sistem ne yapıyor?</h1>
+  <p class="alt">GNU Radio ile üretilen ham I/Q sinyalinden, saldırının <b>var olup olmadığını</b>, <b>hangi tür</b> olduğunu ve eğitimde hiç görülmemiş bir saldırının <b>yakalanıp yakalanmadığını</b> bulan iki aşamalı bir makine öğrenmesi sisteminin, baştan sona adım adım ve etkileşimli anlatımı.</p>
+
+  <div class="istat">
+    <div><b>54.984</b><span>1024 örneklik pencere (5 sınıf)</span></div>
+    <div><b>10</b><span>pencere başına öznitelik</span></div>
+    <div><b>%95–99</b><span>saldırı tespiti (resmî rapor)</span></div>
+    <div><b>%98,2</b><span>hiç görülmemiş jammer yakalama</span></div>
+  </div>
+
+  <div class="sahne" id="heroSahne">
+    <svg viewBox="0 0 900 190" role="img" aria-label="Verici, alıcı ve karıştırıcı şeması">
+      <defs><marker id="ok" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2E7D54"/></marker></defs>
+      <!-- verici -->
+      <g transform="translate(90,95)">
+        <circle r="26" fill="#e3f4ea" stroke="#2E7D54" stroke-width="2"/>
+        <path d="M-9,12 L0,-14 L9,12 M-6,4 H6" stroke="#2E7D54" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <circle class="dalga" r="30" fill="none" stroke="#2E7D54" stroke-width="2"/>
+        <circle class="dalga d2" r="30" fill="none" stroke="#2E7D54" stroke-width="2"/>
+        <circle class="dalga d3" r="30" fill="none" stroke="#2E7D54" stroke-width="2"/>
+        <text y="52" text-anchor="middle" font-size="13" fill="#1c2733" font-weight="600">Meşru verici</text>
+      </g>
+      <!-- alıcı -->
+      <g transform="translate(810,95)">
+        <circle r="26" fill="#e8f0fa" stroke="#1f5fa8" stroke-width="2"/>
+        <path d="M-12,-6 Q0,-20 12,-6 M-7,0 Q0,-9 7,0 M0,8 V16" stroke="#1f5fa8" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <text y="52" text-anchor="middle" font-size="13" fill="#1c2733" font-weight="600">Alıcı (kayıt noktası)</text>
+      </g>
+      <!-- meşru yol -->
+      <path d="M126,95 H770" stroke="#2E7D54" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#ok)" fill="none"/>
+      <path id="heroDalga" d="" fill="none" stroke="#1f5fa8" stroke-width="2"/>
+      <!-- jammer -->
+      <g class="jam" id="heroJam" transform="translate(450,150)" style="opacity:.25;transition:opacity .3s">
+        <circle r="22" fill="#fdecea" stroke="#C0392B" stroke-width="2"/>
+        <path d="M-8,-8 L8,8 M8,-8 L-8,8" stroke="#C0392B" stroke-width="3" stroke-linecap="round"/>
+        <circle class="dalga" r="24" fill="none" stroke="#C0392B" stroke-width="2"/>
+        <circle class="dalga d2" r="24" fill="none" stroke="#C0392B" stroke-width="2"/>
+        <text x="34" y="5" font-size="13" fill="#C0392B" font-weight="700">Jammer (karıştırıcı)</text>
+      </g>
+    </svg>
+    <div style="padding:2px 6px 8px"><button class="btn ikincil" id="heroJamBtn" type="button">Jammer'ı aç</button> <span class="soluk kucuk">Alıcının gördüğü sinyal, jammer açılınca nasıl bozuluyor?</span></div>
+  </div>
+</header>
+
+<!-- ======================================================================= 1 -->
+<section id="amac">
+  <div class="ust-etiket">1 · Amaç</div>
+  <h2>Proje neyi amaçlıyor?</h2>
+  <p class="lead">Kablosuz haberleşme ortamı herkesle paylaşıldığı için bir saldırgan, alıcının gerçek sinyali çözememesi amacıyla aynı frekansa güçlü bir girişim sinyali gönderebilir. Buna <b>jamming (karıştırma)</b> denir ve fiilen bir hizmet engelleme (DoS) saldırısıdır. 5G/6G, otonom araçlar ve uzaktan sağlık gibi kritik uygulamalarda bu tehdit daha da önemlidir.</p>
+
+  <div class="izgara g3">
+    <div class="kart"><h4>① Saldırı var mı?</h4><p class="kucuk">Alınan sinyal penceresi <b>normal</b> mi, yoksa bir jammer tarafından bozulmuş mu? Bu soru <b>Aşama 1</b>'de yanıtlanır.</p></div>
+    <div class="kart"><h4>② Hangi tür?</h4><p class="kucuk">Saldırı varsa dört türden hangisi: <b>constant, tone, sweep, pulse</b>? Bu soru <b>Aşama 2</b>'de yanıtlanır.</p></div>
+    <div class="kart"><h4>③ Daha önce hiç görmediğim bir saldırıysa?</h4><p class="kucuk">Eğitimde olmayan yeni bir tür gelirse sistem onu yine de saldırı olarak yakalayabilir mi? Bu <b>açık-küme</b> testidir ve çalışmanın asıl yeniliğidir.</p></div>
+  </div>
+
+  <h3>Neden zor?</h3>
+  <p>Eşik koyan basit yöntemler (ör. "enerji şu değeri aşarsa alarm") kanal koşulları değişince, düşük güçlü saldırılarda ya da türü ayırt etmek gerektiğinde yetersiz kalır. Literatürdeki makine öğrenmesi çalışmalarının çoğu da modelin karşılaşacağı <i>bütün saldırı türlerini önceden bildiğini</i> varsayar (kapalı-küme). Bu proje iki boşluğu hedefler: <b>tespit + tür belirlemeyi tek bir sistemde birleştirmek</b> ve <b>bilinmeyen saldırı</b> dayanıklılığını ölçmek.</p>
+
+  <h3>Beş sınıf</h3>
+  <div class="tablo-kutu"><table>
+    <tr><th>Sınıf</th><th>Gerçek dünyadaki karşılığı</th><th>GNU Radio'daki yapısı</th></tr>
+    <tr><td><b style="color:var(--normal)">normal</b></td><td>Temiz kanal, saldırı yok</td><td>Meşru sinyal + ortam gürültüsü (jammer genliği 0)</td></tr>
+    <tr><td><b style="color:var(--constant)">constant</b></td><td>Sabit güçlü, sürekli karıştırıcı</td><td>Sürekli Gauss gürültüsü</td></tr>
+    <tr><td><b style="color:var(--tone)">tone</b></td><td>Dar bantlı, tek frekanslı karıştırıcı</td><td>5 kHz'lik kosinüs</td></tr>
+    <tr><td><b style="color:var(--sweep)">sweep</b></td><td>Frekansı tarayan karıştırıcı</td><td>Saw Tooth → VCO (çırp / chirp)</td></tr>
+    <tr><td><b style="color:var(--pulse)">pulse</b></td><td>Darbeli (açılıp kapanan) karıştırıcı</td><td>Gauss gürültüsü × Square dalga kapısı</td></tr>
+  </table></div>
+  <div class="not kucuk"><b>Bu rapor nasıl okunmalı?</b> Rozetler verinin kaynağını gösterir:
+    <span class="rozet gr">GNU Radio çıktısı</span> projedeki <code>.grc</code> topolojilerinin bu bilgisayarda gerçek GNU Radio 3.10.12 ile çalıştırılmasından;
+    <span class="rozet model">tarayıcı modeli</span> aynı topolojinin tarayıcıda çalışan, GNU Radio çıktısıyla doğrulanmış (bkz. bölüm 10) kopyasından;
+    <span class="rozet resmi">resmî</span> yazarın notebook ve raporundaki sonuçlardan;
+    <span class="rozet yeniden">yeniden üretim</span> bu raporda yeniden üretilen veride aynı protokolün çalıştırılmasından gelir. Yazarın kaydettiği orijinal <code>.dat</code> dosyaları bu bilgisayarda yoktur.</div>
+</section>
+
+<!-- ======================================================================= 2 -->
+<section id="buyuk-resim">
+  <div class="ust-etiket">2 · Büyük resim</div>
+  <h2>Baştan sona hat: sinyalden karara</h2>
+  <p class="lead">Aşağıdaki adımlardan birine tıklayın: neyin girip neyin çıktığını, hangi dosyada yaşadığını ve boyutlarını görün.</p>
+  <div class="adimlar" id="adimlar"></div>
+  <div class="kart" id="adimDetay"></div>
+</section>
+
+<!-- ======================================================================= 3 -->
+<section id="topoloji">
+  <div class="ust-etiket">3 · GNU Radio</div>
+  <h2>Topoloji: sinyal hangi bloktan geçiyor?</h2>
+  <p class="lead">GNU Radio Companion'da sinyal işleme <b>bloklar</b> ve onları bağlayan <b>oklarla</b> kurulur. Burada projedeki <code>gnuradio/*.grc</code> şemaları çizilmiştir. Sınıfı seçin: değişen kısım (jammer kolu) turuncu olur. Bir bloğa tıklayın: ne yaptığını, parametrelerini ve çıkış sinyalini görün.</p>
+
+  <div class="kontrol">
+    <span class="sekmeler" id="topoSekmeler"></span>
+    <label class="sec"><input type="checkbox" id="topoAkis" checked> veri akışını canlandır</label>
+  </div>
+  <div class="topo-kutu"><svg id="topoSvg" viewBox="0 0 1040 560" role="img" aria-label="GNU Radio akış şeması"></svg></div>
+  <div class="kucuk soluk" style="margin-top:6px">Port renkleri GNU Radio Companion'daki gibidir: <span style="color:#1e88e5;font-weight:700">■ mavi = complex (I/Q)</span>, <span style="color:#d98a0b;font-weight:700">■ turuncu = float</span>. Kesikli yeşil çizgiler <code>jammer_amp</code> kaydırıcısının bağlandığı yerlerdir.</div>
+
+  <div class="topo-bilgi" style="margin-top:14px">
+    <div class="kart" id="topoBilgi" style="margin:0"></div>
+    <div class="kart" id="topoGrafik" style="margin:0"></div>
+  </div>
+
+  <h3>Topolojinin tamamı tek cümlede</h3>
+  <p>Meşru bir <b>1 kHz'lik kosinüs</b> + <b>ortam gürültüsü</b> + (sınıfa göre) bir <b>jammer</b> toplanır (<i>Add</i>); sonuç gerçek ortamdaki yansımaları taklit eden bir <b>çok yollu kanal modelinden</b> geçer ve <b>ham I/Q</b> olarak <code>.dat</code> dosyasına yazılır.</p>
+
+  <details><summary>Orijinal şekiller (raporun Şekil 1 ve 2'si)</summary>
+    <div class="izgara g2" style="margin-top:10px">
+      <figure style="margin:0"><img src="rapor_gorselleri/sekil1_gnuradio_akis_semasi.png" alt="GNU Radio akış şeması" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk">Şekil 1 — GNU Radio Companion'da normal sınıfın akış şeması (yazarın ekran görüntüsü).</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/sekil2_zaman_alani.png" alt="Zaman alanı" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk">Şekil 2 — QT GUI Time Sink'te I (mavi) ve Q (kırmızı) bileşenleri.</figcaption></figure>
+    </div>
+  </details>
+</section>
+
+<!-- ======================================================================= 4 -->
+<section id="lab">
+  <div class="ust-etiket">4 · Etkileşimli</div>
+  <h2>Simülasyon laboratuvarı</h2>
+  <p class="lead">Topolojiyi tarayıcıda çalıştırın. Sınıfı ve <code>jammer_amp</code> kaydırıcısını değiştirin; sinyalin <b>her bloktan sonra</b> nasıl değiştiğini, spektrumunu ve modelin kullandığı <b>10 özniteliği</b> canlı görün. Satırlara tıklayarak spektrumda hangi aşamayı inceleyeceğinizi seçin.</p>
+
+  <div class="kart">
+    <div class="kontrol">
+      <span class="sekmeler" id="labSinif"></span>
+    </div>
+    <div class="kontrol">
+      <label>jammer_amp <input type="range" id="labAmp" min="0" max="2" step="0.1" value="1" style="width:200px"> <span class="deger" id="labAmpDeger">1.0</span></label>
+      <button class="btn ikincil" id="labYeni" type="button">Yeni gürültü</button>
+      <button class="btn ikincil" id="labOynat" type="button">▶ Akışı oynat</button>
+      <label class="sec" title="GNU Radio'da iki Noise Source da seed=0 olduğundan aynı rastgele diziyi üretir"><input type="checkbox" id="labAyniSeed" checked> iki gürültü kaynağı aynı seed (GNU Radio <code>seed=0</code> gibi)</label>
+      <label class="sec">Kaynak
+        <select id="labKaynak"><option value="model">Tarayıcı simülatörü (canlı)</option><option value="gr">Gerçek GNU Radio kaydı (jammer_amp = 1)</option></select>
+      </label>
+    </div>
+    <div class="kucuk soluk" id="labDurum"></div>
+  </div>
+
+  <div class="izgara" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:start" id="labIzgara">
+    <div class="kart" style="margin:0">
+      <h4>Sinyal yolu <span class="soluk kucuk" style="font-weight:400">— ilk 256 örnek (8 ms) · <span style="color:var(--iq-i)">■ I (gerçel)</span> <span style="color:var(--iq-q)">■ Q (sanal)</span></span></h4>
+      <div id="labAsamalar"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="kart" style="margin:0">
+        <h4 id="labSpekBaslik">Spektrum</h4>
+        <canvas id="labSpek" style="height:200px"></canvas>
+        <div class="kucuk soluk">Karmaşık (I+jQ) spektrum, −16…+16 kHz. GNU Radio'da görseydiniz bu görünürdü.</div>
+      </div>
+      <div class="kart" style="margin:0">
+        <h4>Modelin gördüğü: yalnızca gerçel kısmın spektrumu</h4>
+        <canvas id="labSpekReal" style="height:170px"></canvas>
+        <div class="kucuk soluk">Özniteliklerin hepsi <code>np.real(s)</code> üzerinden hesaplanır; Q bileşeni kullanılmaz. <code>baskin_frekans</code> bu grafikteki tepenin bin numarasıdır (1 bin = 31,25 Hz).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="izgara" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:start;margin-top:14px" id="labIzgara2">
+    <div class="kart" style="margin:0">
+      <h4>Bu pencereden çıkan 10 öznitelik <span class="rozet model">tarayıcı modeli</span></h4>
+      <div class="kucuk soluk" style="margin-bottom:6px">Çubuk, değerin <b>normal sınıfın ortalamasından kaç standart sapma</b> uzakta olduğunu gösterir (z-skoru; yeniden üretilen normal pencerelerden). Bu yalnızca anlamayı kolaylaştıran bir gösterimdir; asıl karar Isolation Forest ve Random Forest ile verilir.</div>
+      <div id="labOzellik"></div>
+    </div>
+    <div class="kart" style="margin:0" id="labAciklama"></div>
+  </div>
+</section>
+
+<!-- ======================================================================= 5 -->
+<section id="veri">
+  <div class="ust-etiket">5 · Veri</div>
+  <h2>Veri nasıl kaydediliyor, içinde neler var?</h2>
+  <p class="lead">Topolojinin sonundaki <b>File Sink</b> bloğu, kanal modelinden çıkan her örneği diske olduğu gibi yazar. Her sınıf için ayrı bir dosya oluşur: <code>normal.dat</code>, <code>constant.dat</code>, <code>tone.dat</code>, <code>sweep.dat</code>, <code>pulse.dat</code>.</p>
+
+  <h3>Bir örnek = 8 bayt</h3>
+  <p>Dosyada başlık ya da etiket yoktur. Sadece art arda <code>complex64</code> değerler vardır: her örnek için <b>4 baytlık I (gerçel)</b> ve <b>4 baytlık Q (sanal)</b> <code>float32</code>. Etiket, dosyanın <i>adından</i> gelir. Aşağıda seçilen sınıfın kaydındaki ilk dört örneğin gerçek baytlarını görürsünüz <span class="rozet gr">GNU Radio çıktısı</span>.</p>
+  <div class="kontrol"><span class="sekmeler" id="baytSinif"></span></div>
+  <div class="kart" id="baytKutu"></div>
+
+  <h3>Kayıt pencerelere bölünür</h3>
+  <p>Notebook, kaydı <b>1024 örneklik, üst üste binmeyen</b> pencerelere böler (32 kHz'de bir pencere = 32 ms; 1 pencere = 8192 bayt). Her pencere <b>bir veri noktası</b> olur ve etiketi dosyanın sınıfıdır. Aşağıdaki grafik bir kaydın ilk 250 penceresinin enerjisini gösterir: yazar kaydırıcıyı kayıt sırasında elle oynattığı için jammer gücü zamanla basamak basamak değişir ve pencere enerjisi bunu izler <span class="rozet yeniden">yeniden üretim</span>.</p>
+  <div class="kontrol"><span class="sekmeler" id="serSinif"></span></div>
+  <div class="kart"><canvas id="serCanvas" class="etkin" style="height:230px"></canvas>
+    <div class="kucuk soluk" id="serAciklama"></div></div>
+
+  <h3>Sınıf dağılımı ve gerçekçi 80/20 set <span class="rozet resmi">resmî</span></h3>
+  <p>Toplamda <b>54.984</b> pencere elde edilmiştir ve <b>%40 normal / %60 saldırı</b> dengesi vardır. Gerçek ağlarda saldırı nadirdir; bu yüzden değerlendirme için tüm normal pencereler tutulur, saldırı pencereleri normalin dörtte birine indirilir ve <b>%80 / %20</b> bir set kurulur (27.761 pencere).</p>
+  <div class="kontrol"><span class="sekmeler" id="veriToggle"></span></div>
+  <div class="kart"><div id="veriCubuk"></div></div>
+  <div class="tablo-kutu"><table id="veriTablo"></table></div>
+</section>
+
+<!-- ======================================================================= 6 -->
+<section id="oznitelik">
+  <div class="ust-etiket">6 · Öznitelikler</div>
+  <h2>Her pencereden hangi 10 sayı çıkarılıyor?</h2>
+  <p class="lead">Makine öğrenmesi modeli 1024 ham örneği değil, her pencerenin <b>10 özet sayısını</b> görür. Bunlar sinyalin güç, genlik dağılımı, zaman ve frekans yapısını yansıtır. Bir karta tıklayın: o özniteliğin sınıflara göre dağılımını görün.</p>
+  <div class="izgara g5" id="ozKartlar"></div>
+
+  <div class="kart" style="margin-top:16px">
+    <h4 id="histBaslik">Dağılım</h4>
+    <div class="lejant" id="histLejant"></div>
+    <label class="sec kucuk"><input type="checkbox" id="histKok" checked> Y ekseni kök ölçekli (sıfıra yakın yoğunlukları görünür kılar)</label>
+    <canvas id="histCanvas" style="height:250px"></canvas>
+    <div class="kucuk soluk" id="histAciklama"></div>
+  </div>
+
+  <div class="izgara g2">
+    <div class="kart" style="margin:0">
+      <h4>Hangi öznitelik karara ne kadar katkı veriyor? <span class="rozet yeniden">yeniden üretim</span></h4>
+      <div class="kucuk soluk" style="margin-bottom:6px">Random Forest özellik önemleri.</div>
+      <div class="kontrol"><span class="sekmeler" id="onemSekme"></span></div>
+      <div id="onemCubuk"></div>
+    </div>
+    <div class="kart" style="margin:0">
+      <h4>Öznitelik uzayında sınıflar <span class="rozet yeniden">yeniden üretim</span></h4>
+      <div class="kontrol">
+        <label>X <select id="scX"></select></label>
+        <label>Y <select id="scY"></select></label>
+        <label class="sec"><input type="checkbox" id="scTest"> yalnızca modelin hiç görmediği test pencereleri</label>
+      </div>
+      <canvas id="scCanvas" class="etkin" style="height:300px"></canvas>
+      <div class="lejant" id="scLejant"></div>
+    </div>
+  </div>
+  <div class="kart" id="scKart"><span class="soluk kucuk">Bir noktaya tıklayın: pencerenin öznitelikleri ve iki aşamalı sistemin kararı burada görünür.</span></div>
+</section>
+
+<!-- ======================================================================= 7 -->
+<section id="model">
+  <div class="ust-etiket">7 · Makine öğrenmesi</div>
+  <h2>İki aşamalı karar sistemi</h2>
+  <p class="lead">10 öznitelik iki ardışık modele girer. Önce <b>"saldırı var mı?"</b>, ardından yalnızca saldırı varsa <b>"hangi tür?"</b> sorulur.</p>
+
+  <div class="izgara g3" style="align-items:stretch">
+    <div class="kart" style="border-top:4px solid #e67e22"><h4>Aşama 1a — Anomali tespiti</h4><p class="kucuk"><b>Isolation Forest</b>, yalnızca <b>normal</b> pencerelerle eğitilir. Normalden sapan her pencereyi "anormal = saldırı" sayar. Hiç saldırı örneği görmediği için <b>yeni saldırılara genelleyebilir</b>.</p></div>
+    <div class="kart" style="border-top:4px solid #7f8c9a"><h4>Aşama 1b — Denetimli ikili (karşılaştırma)</h4><p class="kucuk"><b>Random Forest</b>, normal ve saldırı örnekleriyle eğitilir. Bilinen saldırılarda biraz daha iyidir ama yalnızca gördüğü saldırılarla çalışır.</p></div>
+    <div class="kart" style="border-top:4px solid #8e44ad"><h4>Aşama 2 — Tür belirleme</h4><p class="kucuk">Dört saldırı sınıfıyla eğitilmiş ayrı bir <b>Random Forest</b>. Aşama 1 "saldırı" derse çalışır: constant / tone / sweep / pulse.</p></div>
+  </div>
+
+  <h3>Isolation Forest'ı elle deneyin</h3>
+  <p>Fikir şudur: <i>anormal bir nokta, rastgele kesimlerle çok çabuk tek başına kalır</i>. Normal bir nokta ise kalabalığın içinde olduğu için çok daha fazla kesim gerektirir. Bir noktaya tıklayın; rastgele dikey/yatay kesimler yapılarak noktanın izole edilmesi canlandırılır. <span class="rozet yeniden">yeniden üretim</span></p>
+  <div class="kart">
+    <div class="kontrol"><button class="btn" id="isoYeni" type="button">Kesimleri yeniden çiz</button><span class="kucuk soluk" id="isoSecili">Bir nokta seçin…</span></div>
+    <div class="izgara" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start">
+      <canvas id="isoCanvas" class="etkin" style="height:320px"></canvas>
+      <div id="isoSonuc"></div>
+    </div>
+  </div>
+
+  <h3>Sonuçlar</h3>
+  <p>Resmî sonuçlar yazarın gerçek kayıtlarından gelir. Yanına, bu raporda yeniden üretilen veride <b>aynı protokolün</b> sonucu konmuştur. Sayılar aynı olmak zorunda değildir; önemli olan nitelik olarak aynı hikâyenin çıkmasıdır.</p>
+  <div class="tablo-kutu"><table id="sonucTablo"></table></div>
+
+  <div class="izgara g2" style="margin-top:14px">
+    <div class="kart" style="margin:0">
+      <h4>Tür belirleme: karışıklık matrisi <span class="rozet yeniden">yeniden üretim</span></h4>
+      <div class="kucuk soluk">Satır = gerçek sınıf, sütun = tahmin. Üzerine gelin.</div>
+      <div id="cmKutu" style="margin-top:8px"></div>
+      <div class="kucuk" id="cmYorum" style="margin-top:8px"></div>
+    </div>
+    <div class="kart" style="margin:0">
+      <h4>Sınıf bazında sonuç <span class="rozet resmi">resmî</span></h4>
+      <div id="sinifSonuc"></div>
+      <p class="kucuk soluk" style="margin-top:8px">Sweep neredeyse kusursuz, tone çok iyi ayrışır. Karışma ağırlıkla <b>constant ↔ pulse</b> arasındadır. Bölüm 11'de bunun için topolojiden gelen olası bir ek neden gösteriliyor.</p>
+    </div>
+  </div>
+
+  <details><summary>Orijinal sonuç görselleri (raporun Şekil 4, 6, 7, 8'i)</summary>
+    <div class="izgara g2" style="margin-top:10px">
+      <figure style="margin:0"><img src="rapor_gorselleri/sekil4_iki_asamali_sistem.png" alt="İki aşamalı sistem" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk">Şekil 4 — İki aşamalı tespit sisteminin yapısı.</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/sekil6_basarim_ozeti.png" alt="Başarım özeti" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk">Şekil 6 — İki aşamalı sistemin başarım özeti.</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/sekil7_karisiklik_matrisi.png" alt="Karışıklık matrisi" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk">Şekil 7 — Tür belirleme karışıklık matrisi (yazarın gerçek verisi).</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/sekil8_bilinmeyen_pulse.png" alt="Bilinmeyen pulse" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk">Şekil 8 — Bilinmeyen pulse jammer'a iki modelin tepkisi.</figcaption></figure>
+    </div>
+  </details>
+</section>
+
+<!-- ======================================================================= 8 -->
+<section id="acik-kume">
+  <div class="ust-etiket">8 · Yenilik</div>
+  <h2>Açık-küme: hiç görülmemiş bir jammer gelirse?</h2>
+  <p class="lead">Test: bir saldırı türünü eğitimden <b>tamamen saklayın</b>, sonra o türün pencerelerini modellere verin. Denetimli model yalnızca bildiği sınıflardan birini söyleyebilir: bilinmeyeni <i>mutlaka</i> yanlış bir sınıfa atar. Anomali tespiti ise "normale benzemiyor" diyebilir.</p>
+
+  <div class="kontrol"><b class="kucuk">Saklanan tür:</b><span class="sekmeler" id="acikSekme"></span></div>
+  <div class="izgara g2">
+    <div class="kart" style="margin:0"><h4>Denetimli Random Forest ne dedi? <span id="acikRozet1"></span></h4><div id="acikRF"></div></div>
+    <div class="kart" style="margin:0"><h4>Anomali tespiti (Isolation Forest) <span id="acikRozet2"></span></h4><div id="acikISO"></div></div>
+  </div>
+  <div class="not ok" id="acikYorum"></div>
+</section>
+
+<!-- ======================================================================= 9 -->
+<section id="python">
+  <div class="ust-etiket">9 · Ön çalışmalar</div>
+  <h2>Python ile yazılmış yapay simülasyonlar</h2>
+  <p class="lead">GNU Radio'ya geçmeden önce kavramlar saf Python/NumPy ile denenmiş (<code>src/ogrenme/</code> ve <code>src/veri_uretimi/</code>). Bunlar notebook'un girdisi <b>değildir</b>; ama hem mantığı hem de neden GNU Radio'ya geçildiğini gösterirler.</p>
+
+  <h3>9.1 Enerji dedektörü: en basit yöntem <span class="rozet model">tarayıcı modeli</span></h3>
+  <p>Fikir: sinyalin ortalama enerjisi eşikten büyükse alarm ver. <code>src/ogrenme/enerji_dedektoru.py</code> kodunun aynısı burada çalışıyor: 5 Hz'lik sinüs + 0,1 doğal gürültü, saldırılar rastgele gürültü (sürekli, darbe) ve 40 Hz ton. Eşiği oynatın.</p>
+  <div class="kart">
+    <div class="kontrol">
+      <label>Eşik <input type="range" id="enEsik" min="0.5" max="1.2" step="0.01" value="0.6" style="width:240px"> <span class="deger" id="enDeger">0.60</span></label>
+      <button class="btn ikincil" id="enYeni" type="button">Yeni rastgele denemeler</button>
+      <span class="kucuk"><b>Yanlış alarm:</b> <span class="deger" id="enAlarm"></span></span>
+    </div>
+    <canvas id="enCanvas" style="height:280px"></canvas>
+    <div class="kucuk soluk">Eşik düşünce saldırılar daha erken yakalanır ama yanlış alarm artar; yükselince tersi. Ayrıca bu yöntem <b>türü söyleyemez</b>, tone ve pulse eğrileri neredeyse üst üste biner. İşte makine öğrenmesine geçişin nedeni budur.</div>
+  </div>
+
+  <h3>9.2 Markov zinciri tabanlı simülasyon <span class="rozet model">tarayıcı modeli</span></h3>
+  <p><code>src/veri_uretimi/simulasyon_motoru.py</code> saldırganı <b>iki durumlu bir Markov zinciri</b> olarak modeller: <i>sakin</i> ve <i>saldırı</i>. Böylece saldırılar tek tek değil <b>öbekler (burst)</b> halinde gelir. Bir öbek boyunca saldırı türü sabit kalır. Olasılıkları değiştirip simülasyonu çalıştırın; bir kutuya tıklayarak o adımda alıcının gördüğü sinyali inceleyin.</p>
+  <div class="kart">
+    <div class="kontrol">
+      <label>Sakin → Saldırı <input type="range" id="mkP01" min="0.02" max="0.6" step="0.01" value="0.15" style="width:150px"> <span class="deger" id="mkP01D">0.15</span></label>
+      <label>Saldırı → Sakin <input type="range" id="mkP10" min="0.02" max="0.6" step="0.01" value="0.18" style="width:150px"> <span class="deger" id="mkP10D">0.18</span></label>
+      <button class="btn" id="mkRun" type="button">Simülasyonu çalıştır</button>
+    </div>
+    <div class="izgara" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start">
+      <div id="mkMatris"></div>
+      <div id="mkOzet" class="kucuk"></div>
+    </div>
+    <div class="mk-cizgi" id="mkSerit" style="margin-top:10px"></div>
+    <div class="lejant" id="mkLejant"></div>
+    <canvas id="mkSinyal" style="height:170px"></canvas>
+    <div class="kucuk soluk" id="mkAciklama"></div>
+  </div>
+
+  <h3>9.3 Dengeli yapay veri seti</h3>
+  <p><code>src/veri_uretimi/veri_seti_uret.py</code> ise her türden 500 örnek üreten (toplam 3000, 6 sınıf: ek olarak <i>reactive</i>) basit bir veri setidir; her sinyal 1000 noktadır ve gücü rastgele seçilir. Çıktısı <code>data/jamming_veri_seti.csv</code>. Tek tek sinyallerin neye benzediği aşağıdaki orijinal çıktılardadır.</p>
+  <details><summary>Python betiklerinin ürettiği orijinal görseller</summary>
+    <div class="izgara g2" style="margin-top:10px">
+      <figure style="margin:0"><img src="rapor_gorselleri/saldiri_turleri.png" alt="Saldırı türleri" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk"><code>saldirilar.py</code> — normal, sürekli, darbe ve tek ton.</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/enerji_dedektoru.png" alt="Enerji dedektörü" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk"><code>enerji_dedektoru.py</code> — tespit oranı / saldırı gücü.</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/veri_seti_ornekleri.png" alt="Veri seti örnekleri" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk"><code>veri_seti_uret.py</code> — 6 durumdan birer örnek.</figcaption></figure>
+      <figure style="margin:0"><img src="rapor_gorselleri/simulasyon_ornekleri.png" alt="Simülasyon örnekleri" style="width:100%;border:1px solid var(--cizgi);border-radius:8px"><figcaption class="kucuk soluk"><code>simulasyon_motoru.py</code> — Markov simülasyonundan örnekler.</figcaption></figure>
+    </div>
+  </details>
+</section>
+
+<!-- ======================================================================= 10 -->
+<section id="dogrulama">
+  <div class="ust-etiket">10 · Güvenilirlik</div>
+  <h2>Bu raporun tarayıcı simülatörü gerçeğe ne kadar yakın?</h2>
+  <p class="lead">Laboratuvardaki simülatör, her GNU Radio bloğunun davranışı <b>bu bilgisayarda ölçülerek</b> yazıldı. Sonra aynı topolojiler gerçek GNU Radio 3.10.12 ile çalıştırıldı ve iki taraf <b>aynı öznitelik fonksiyonuyla</b> karşılaştırıldı.</p>
+  <div class="izgara g3">
+    <div class="kart" style="margin:0"><b style="font-size:1.8rem;color:var(--normal)" id="dgEn"></b><div class="kucuk soluk">en büyük enerji sapması (öznitelik #4)</div></div>
+    <div class="kart" style="margin:0"><b style="font-size:1.8rem;color:var(--normal)" id="dgGuc"></b><div class="kucuk soluk">en büyük karmaşık güç sapması</div></div>
+    <div class="kart" style="margin:0"><b style="font-size:1.8rem;color:var(--vurgu2)" id="dgN"></b><div class="kucuk soluk">her hücrede ortalaması alınan pencere (tarayıcı tarafı)</div></div>
+  </div>
+  <div class="tablo-kutu" style="margin-top:14px"><table id="dogrTablo"></table></div>
+  <h3>Birebir taklit edilen davranışlar (hepsi ölçüldü)</h3>
+  <ul>
+    <li><b>Noise Source (Gaussian, complex):</b> toplam güç = genlik² (I ve Q varyansı genlik²/2).</li>
+    <li><b>Signal Source (complex, Cosine):</b> <code>genlik·e^{j2πfn/fs}</code>, yani gerçel + sanal bir dönen vektör.</li>
+    <li><b>Signal Source (complex, Square):</b> <code>offset</code> yalnızca <b>gerçel</b> kısma eklenir; sanal kısım çeyrek periyot kaymış ve ofsetsiz. Bölüm 11'deki pulse bulgusunun kaynağı budur.</li>
+    <li><b>Saw → VCO:</b> testere 0…1 aralığında, VCO anlık frekansı <code>60000·x/2π</code> ≈ 0…9,55 kHz.</li>
+    <li><b>Channel Model:</b> iki tap'lı FIR <code>[1, 0.3+0.3j]</code>.</li>
+    <li><b><code>seed: 0</code>:</b> bu GNU Radio sürümünde aynı seed'e sahip iki Noise Source <b>birebir aynı diziyi</b> üretir (korelasyon 1,0).</li>
+  </ul>
+</section>
+
+<!-- ======================================================================= 11 -->
+<section id="gozlem">
+  <div class="ust-etiket">11 · Bulgular</div>
+  <h2>İncelerken fark edilenler</h2>
+  <p class="lead">Aşağıdakiler yazarın raporunda yer almayan, topolojiyi ve veriyi ölçerek ortaya çıkan gözlemlerdir. Her biri nasıl doğrulandığıyla birlikte yazılmıştır.</p>
+
+  <div class="not bulgu"><b>1 · Pulse jammer hiçbir zaman tamamen susmuyor.</b><br>
+  Şemada pulse'un kapısı <i>complex</i> tipli bir Square kaynağıdır (genlik 0,5, offset 0,5). GNU Radio'da bu kaynağın <code>offset</code>'i yalnızca gerçel kısma eklenir. Sonuç: kapının gerçel kısmı <b>0,5 ↔ 1,0</b>, sanal kısmı <b>0 ↔ 0,5</b> arasında gider ve kapı büyüklüğü hiçbir an 0 olmaz (0,5 … 1,118). Yani pulse, "açık/kapalı" değil, <b>derinliği düşük bir genlik kipli gürültüdür</b>. Aynı genlikte constant'tan ortalama %25 daha az güç taşır (ortalama |kapı|² = 0,75).
+  <div id="pulseKapiGrafik" style="margin-top:10px"></div>
+  <div class="kucuk"><b>Neden önemli:</b> Aşama 2'deki en büyük hata constant ↔ pulse karışmasıdır (resmî: precision/recall ≈ 0,8). Zarf değişkenliği küçük olduğundan iki sınıf birbirine yakındır. Bu, "ikisi de gürültü tabanlı" açıklamasına tamamlayıcı, makul bir ek nedendir (yeniden üretilen veride de en büyük hata constant ↔ pulse arasında). Gerçek bir açık/kapalı kapı için, örneğin kaynağın <i>float</i> tipte kullanılması gerekir; bu bir öneridir, denenmedi. <i>Nasıl doğrulandı:</i> GNU Radio ile kapı çıktısı örneklenip geçiş noktaları ölçüldü.</div></div>
+
+  <div class="not bulgu"><b>2 · Gürültü kaynaklarının ikisi de <code>seed: 0</code>: aynı rastgele diziyi üretiyorlar.</b><br>
+  Şemalarda ortam gürültüsü ile jammer gürültüsü aynı seed'e sahiptir. Ölçümle, bu GNU Radio sürümünde iki kaynağın <b>birebir aynı diziyi</b> verdiği doğrulandı. Sonuçlar: (a) constant/pulse'ta toplam gürültü <code>n·(0,3 + jammer_amp·kapı)</code> olur, yani iki gürültü bağımsız toplanmak yerine <i>aynı dalgaya genlik verir</i>; (b) her yeniden çalıştırmada aynı gürültü dizisi gelir; yani kayıt <b>tekrarlanabilir</b> ama bağımsız gürültü örneklerine sahip değildir. Laboratuvardaki "iki gürültü kaynağı aynı seed" kutusu ile farkı kendiniz görebilirsiniz. <i>Nasıl doğrulandı:</i> iki <code>noise_source_c(seed=0)</code> çıktısının korelasyonu 0,999.</div>
+
+  <div class="not uyari"><b>3 · Öznitelikler yalnızca I (gerçel) kısmı kullanıyor.</b><br>
+  <code>feat()</code> fonksiyonu <code>np.real(s)</code> ile başlar; Q bileşeni atılır. Kayıt complex64 olduğu hâlde bilginin yarısı kullanılmaz. Gerçel bir dizinin spektrumu pozitif ve negatif frekansları ayırt etmez; bu yüzden tone/sweep gibi dönen vektörlerin yönü bilgisi kaybolur.</div>
+
+  <div class="not uyari"><b>4 · Pencereler tek kayıttan, rastgele bölünüyor.</b><br>
+  Kaydırıcı elle oynatıldığından uzun süre sabit kalan bölümler olabilir; komşu pencereler benzerdir. Eğitim/test ayrımı rastgele olduğundan bir test penceresinin "komşusu" eğitimde yer alabilir. <i>Bu veride ölçüldü:</i> <span id="grupSonuc"></span> Fark küçüktür, yani ciddi bir sızıntı yok, ama saha kaydında gerçek başarımı daha doğru ölçmek için kayıtları <b>zamana göre</b> bölmek iyi olur. Not: bu ölçüm yeniden üretilen veride, benim kaydırıcı programımla yapıldı; yazarın gerçek kaydında farklı çıkabilir.</div>
+
+  <div class="not"><b>5 · Küçük pratik notlar.</b>
+  <ul style="margin:6px 0 0 18px">
+    <li>Şemalardaki File Sink yolları yazarın makinesine göredir: <code>D:\jamming_projesi\gnuradio_veriler\…</code>. Başka bilgisayarda çalıştırmadan önce değiştirilmelidir.</li>
+    <li>Şemalarda <b>Head</b> bloğu yok: kayıt, pencere elle kapatılana dek sürer (32 kHz ≈ 15 MB/dk).</li>
+    <li><code>gnuradio/jamming_simulasyon.grc</code>, <code>5_pulse.grc</code> ile neredeyse aynıdır; <code>jamming_simulasyon.py</code> ise <code>normal.dat</code> yazan eski bir durumdan üretilmiştir.</li>
+    <li>Yazarın kendi raporu da sınırları belirtir: tek kurulum, gerçek sahada (over-the-air) ölçüm yok.</li>
+  </ul></div>
+</section>
+
+<!-- ======================================================================= 12 -->
+<section id="harita">
+  <div class="ust-etiket">12 · Referans</div>
+  <h2>Proje haritası ve çalıştırma</h2>
+  <div class="agac">
+<span class="y">jamming_projesi/</span><br>
+├── README.md<br>
+├── requirements.txt<br>
+├── <span class="y">gnuradio/</span> <span class="a">— GNU Radio Companion akış şemaları: <code>1_normal.grc … 5_pulse.grc</code> (her sınıf için bir şema)</span><br>
+├── <span class="y">notebooks/</span> <span class="a">— <code>jamming_tespiti.ipynb</code>: öznitelik çıkarma + iki aşamalı modeller + açık-küme (Kaggle'da çalışır)</span><br>
+├── <span class="y">src/ogrenme/</span> <span class="a">— sinyal1, sinyal2_gurultu, saldirilar, enerji_dedektoru: kavram adımları</span><br>
+├── <span class="y">src/veri_uretimi/</span> <span class="a">— veri_seti_uret, simulasyon_motoru: yapay veri (Python)</span><br>
+├── <span class="y">scripts/</span> <span class="a">— ortam_kontrol.py ve <code>rapor_verisi/</code> (bu raporun verisini üreten betikler)</span><br>
+├── <span class="y">data/</span> <span class="a">— üretilen CSV'ler (git'e girmez)</span><br>
+├── <span class="y">gorseller/</span> <span class="a">— Python betiklerinin PNG çıktıları</span><br>
+└── <span class="y">docs/</span> <span class="a">— <code>Jamming_Raporu_v2.docx</code> (yazarın raporu) ve bu etkileşimli rapor</span>
+  </div>
+
+  <h3>Çalıştırma</h3>
+  <div class="izgara g2">
+    <div>
+<b>GNU Radio ile veri üretmek</b>
+<pre><code>1. radioconda → GNU Radio Companion
+2. gnuradio/2_constant.grc dosyasını aç
+3. File Sink yolunu kendi klasörüne çevir
+4. ▶ (F6) ile çalıştır, jammer_amp
+   kaydırıcısını 0–2 arasında oynat
+5. Pencereyi kapat → constant.dat hazır
+6. Diğer 4 sınıf için tekrarla</code></pre>
+    </div>
+    <div>
+<b>Bu raporun verisini yeniden üretmek</b>
+<pre><code># radioconda (GNU Radio) ortamında:
+python scripts/rapor_verisi/gr_kayit_uret.py
+# normal Python (scikit-learn) ile:
+python scripts/rapor_verisi/ozellik_ve_model.py
+python scripts/rapor_verisi/dogrulama.py
+python scripts/rapor_verisi/rapor_olustur.py</code></pre>
+    </div>
+  </div>
+  <footer>Bu rapor <code>scripts/rapor_verisi/</code> betikleriyle üretilmiştir. Resmî sonuçlar <code>notebooks/jamming_tespiti.ipynb</code> ve <code>docs/Jamming_Raporu_v2.docx</code> kaynaklıdır. Rapor yazarı: Senanur Çolayır (Bingöl Üniversitesi).</footer>
+</section>
+
+</main>
+</div>
+<div id="ipucu"></div>
+
+<script>
+/*__SIM_CORE__*/
+</script>
+<script>
+var VERI = /*__VERI__*/;
+var ASAMA = /*__ASAMA__*/;
+var DOGRULAMA = /*__DOGRULAMA__*/;
+/* ASAMA: her dizi int16 (x1000) olarak base64 ile gömülüdür; burada çözülür */
+(function () {
+  function coz(b) { var s = atob(b), n = s.length / 2, o = new Float64Array(n), v = new DataView(new ArrayBuffer(s.length)), i; for (i = 0; i < s.length; i++) v.setUint8(i, s.charCodeAt(i)); for (i = 0; i < n; i++) o[i] = v.getInt16(2 * i, true) / 1000; return o; }
+  Object.keys(ASAMA).forEach(function (c) { Object.keys(ASAMA[c]).forEach(function (st) { var a = ASAMA[c][st]; a.i = coz(a.i); a.q = coz(a.q); }); });
+})();
+</script>
+<script>
+/*__UYGULAMA__*/
+</script>
+</body>
+</html>

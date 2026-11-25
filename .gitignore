@@ -1,14 +1,21 @@
 # Büyük ham/ara veri dosyaları (GitHub 100 MB üstünü kabul etmez — Kaggle'da duruyor)
 *.dat
 gnuradio_veriler/
-simulasyon_verisi.csv
-jamming_veri_seti.csv
+data/*
+!data/.gitkeep
 
 # Python geçici dosyaları
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.venv/
+
+# Office geçici/kilit dosyaları
+~$*
 
 # İşletim sistemi dosyaları
 .DS_Store
 Thumbs.db
+
+# Rapor verisi (üretilen, büyük): scripts/rapor_verisi/cikti/ yeniden üretilebilir
+scripts/rapor_verisi/cikti/

@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+KOK = Path(__file__).resolve().parents[2]   # proje kok klasoru
 
 # --- Temel sinyal ---
 N = 1000
@@ -65,5 +68,7 @@ plt.xlabel("Saldiri gucu")
 plt.ylabel("Tespit orani (%)")
 plt.legend()
 plt.grid(True)
-plt.savefig("enerji_dedektoru.png", dpi=150)
+CIKTI = KOK / "gorseller" / "ogrenme"
+CIKTI.mkdir(parents=True, exist_ok=True)
+plt.savefig(CIKTI / "enerji_dedektoru.png", dpi=150)
 plt.show()

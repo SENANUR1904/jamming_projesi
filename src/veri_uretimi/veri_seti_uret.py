@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+KOK = Path(__file__).resolve().parents[2]   # proje kok klasoru
 
 # ============================================================
 # AYARLAR
@@ -99,8 +102,10 @@ df = pd.DataFrame(veri_seti)
 df.columns = [f"ornek_{i}" for i in range(ORNEKLEM)]
 df["Etiket"] = etiketler
 
-df.to_csv("jamming_veri_seti.csv", index=False)
-print(f"\nBITTI! Toplam {len(df)} satir veri 'jamming_veri_seti.csv' olarak kaydedildi.")
+VERI_KLASORU = KOK / "data"
+VERI_KLASORU.mkdir(exist_ok=True)
+df.to_csv(VERI_KLASORU / "jamming_veri_seti.csv", index=False)
+print(f"\nBITTI! Toplam {len(df)} satir veri 'data/jamming_veri_seti.csv' olarak kaydedildi.")
 print(df["Etiket"].value_counts().sort_index())
 
 # ============================================================
@@ -118,5 +123,7 @@ for etiket in range(6):
 
 plt.xlabel("Zaman (saniye)")
 plt.tight_layout()
-plt.savefig("veri_seti_ornekleri.png", dpi=150)
+GORSEL_KLASORU = KOK / "gorseller" / "veri_uretimi"
+GORSEL_KLASORU.mkdir(parents=True, exist_ok=True)
+plt.savefig(GORSEL_KLASORU / "veri_seti_ornekleri.png", dpi=150)
 plt.show()
