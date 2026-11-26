@@ -1,0 +1,31 @@
+[
+  {
+    "dosya": "2005_xu_feasibility-jamming-attacks",
+    "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+    "kisa": "Xu 2005",
+    "baslik": "The Feasibility of Launching and Detecting Jamming Attacks in Wireless Networks",
+    "yil": 2005,
+    "tur": "temel_kuram",
+    "problem": "Dort jammer modelini (constant, deceptive, random, reactive) tanimlar ve tek bir olcumun (sinyal gucu, tasiyici algilama suresi, PDR) jamming'i guvenilir tespit etmeye yetmedigini gosterip tutarlilik denetimli iki tespit protokolu onerir.",
+    "veri_kaynagi": "hibrit",
+    "sinyal": ["paket_rssi_pdr"],
+    "jammer_turleri": ["sabit_gurultu", "darbeli", "reaktif", "diger"],
+    "yontem": "RSSI ve PDR istatistikleri (Neyman-Pearson esigi, yuksek dereceli kesisimler HOC, tasiyici algilama suresi esigi) + PDR-sinyal gucu ve PDR-konum tutarlilik denetimi; MICA2 Mote deneyleri ve ns-2",
+    "model_ailesi": ["istatistiksel_esik"],
+    "asama": "tespit",
+    "acik_kume": "hayir",
+    "ag_nesli": ["wifi_iot", "genel"],
+    "alti_g_ozellikleri": ["yok"],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "hayir",
+    "ana_sonuc": "Tek olcum yetmez; HOC constant/deceptive'i ayirir, reactive/random'u ayiramaz; PDR tikanikligi ayirir (tikanik PDR ~%78); jammed-region: PDR<%65",
+    "sinirlilik": "Tek platform (MICA2), RSSI kalibre degil, nicel dogruluk/yanlis alarm yok, konum altyapisi guvenli varsayimi, tur siniflandirma yok",
+    "biz_yakinlik": 3,
+    "biz_iliski": "destekleyici",
+    "okuma": "tam",
+    "guven": "yuksek"
+  }
+]

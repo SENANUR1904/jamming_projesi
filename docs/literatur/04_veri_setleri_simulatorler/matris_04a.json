@@ -1,0 +1,438 @@
+[
+ {
+  "dosya": "2018_oshea_over-the-air-dl-radio-signal-classification",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "O'Shea 2018",
+  "baslik": "Over the Air Deep Learning Based Radio Signal Classification",
+  "yil": 2018,
+  "tur": "veri_seti",
+  "problem": "24 modülasyonu ham I/Q'dan ResNet/CNN ile sınıflandırmak ve sentetik ile OTA (USRP B210) performansını karşılaştırmak.",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "ResNet/VGG CNN ham I/Q (1024 örnek) vs HOS+boosted ağaç; sentetik bozulma (CFO, SRO, Rayleigh, LO) ve OTA transfer öğrenme",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "ResNet %99.8 (1M örnek, yüksek SNR) vs baseline %94.6; OTA doğrudan %95.6; sentetik->OTA ~%94->%87",
+  "sinirlilik": "OTA kanalı iyi huylu (yan yana radyolar, neredeyse dürtü kanal); transfer doğrudan eğitime ulaşmıyor; jammer yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek"
+ },
+ {
+  "dosya": "2019_shi_dl-rf-classification-unknown-dynamic-spectrum",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Shi 2019",
+  "baslik": "Deep Learning for RF Signal Classification in Unknown and Dynamic Spectrum Environments",
+  "yil": 2019,
+  "tur": "yontem",
+  "problem": "DSA'da sinyalleri idle/ağ-içi/ağ-dışı/jammer sınıflayıp yeni, bilinmeyen, replay ve üst üste binen sinyalleri ele almak.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "CNN (128 I/Q); EWC sürekli öğrenme; MCD ve k-means ile bilinmeyen jammer aykırı değer tespiti; faz kaymalı replay tespiti; ICA kaynak ayırma; TDMA zamanlama",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Baseline ort. doğruluk 0.934; bilinmeyen jammer aykırı değer 0.88; replay 0.972; ICA ile üst üste binen ~0.837",
+  "sinirlilik": "Jammer = rastgele modülasyon (RadioML 2016, 128 örnek), gerçek jamming dalga biçimi ve OTA yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2020_tekbiyik_amc-cnn-multipath-fading",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Tekbiyik 2020",
+  "baslik": "Robust and Fast Automatic Modulation Classification with CNN under Multipath Fading Channels",
+  "yil": 2020,
+  "tur": "veri_seti",
+  "problem": "Çok yollu sönümlemeli kanallarda AMC için HisarMod2019.1 veri seti ve hafif CNN sunmak.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "4 evrişim + 2 yoğun katmanlı CNN, hiyerarşik aile/tür sınıflaması; HisarMod2019.1 ve RadioML2016.10a'da test",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "HisarMod: CNN maks %94 vs CLDNN %85; RadioML2016.10a: CNN %90.7, CLDNN %88.5, LSTM %92.3",
+  "sinirlilik": "Yalnızca modülasyon ailesi; SNR<2 dB'de rastgele; OTA yok; donanım kusurları yok",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek"
+ },
+ {
+  "dosya": "2021_clark_training-data-augmentation-dl-rf",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Clark 2021",
+  "baslik": "Training Data Augmentation for Deep Learning Radio Frequency Systems",
+  "yil": 2021,
+  "tur": "yontem",
+  "problem": "AMC üzerinde sentetik, yakalanmış (OTA) ve artırılmış eğitim verisinin kalite/miktar etkisini ve sim-to-real farkını ölçmek.",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Sabit CLDNN; 5 veri kümesi (yakalama, 2 artırma, 2 sentetik); KDE ile parametreleştirilmiş artırma; %90/%10 bölme",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Sentetik eğitim gerçek testte rastgelenin ~2 katını geçmiyor; artırma yakalamadan ucuz ama daha düşük kaliteli; sınıf başına 2.39M gözlem",
+  "sinirlilik": "Detektör kusurları (SNR/CFO/SRM) farkı kapatmıyor; DAC-ADC yolu modellenmeli; %100 tahminleri ekstrapolasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2022_boegner_large-scale-rf-signal-classification",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Boegner 2022",
+  "baslik": "Large Scale Radio Frequency Signal Classification",
+  "yil": 2022,
+  "tur": "veri_seti",
+  "problem": "RadioML'in sınırlarını aşan 53 sınıflı büyük Sig53 veri seti ve TorchSig araç setini sunmak; ConvNet ve Transformer kıyası.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "EfficientNet ve XCiT (1D), 4096 I/Q; olasılıklı bozulmalar (Rayleigh 2-20 tap, IQ dengesizliği, frekans/faz/zaman kayması, yeniden örnekleme); çevrimiçi veri üretimi ve artırma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Impaired val: EffNet-B4 %67.46, XCiT-Tiny12 %70.22; online+augment %69.73 / %71.16",
+  "sinirlilik": "Yalnızca sentetik dar bant; OTA doğrulaması yok; bozulma parametreleri uzman seçimi; jamming sınıfı yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek"
+ },
+ {
+  "dosya": "2022_hoydis_sionna-open-source-library",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Hoydis 2022",
+  "baslik": "Sionna: An Open-Source Library for Next-Generation Physical Layer Research",
+  "yil": 2022,
+  "tur": "simulator",
+  "problem": "6G fiziksel katman araştırması için GPU hızlandırmalı, türevlenebilir, açık kaynak bağlantı-seviyesi simülatör sunmak.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "TensorFlow/Keras katmanları; 5G LDPC/Polar, OFDM, MIMO, 3GPP 38.901 TDL/CDL/UMa/UMi/RMa kanalları; ray tracing (Sionna RT) gelecek uzantı",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "isac",
+   "ris",
+   "thz_mmwave",
+   "ntn",
+   "mimo_pilot",
+   "semantik",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Nicel sonuç yok (beyaz kitap); Apache 2.0, github.com/NVlabs/sionna; 3GPP 38.901 kanallar ve türevlenebilir zincir",
+  "sinirlilik": "5G-uyumlu simülatör hedeflemiyor; GPU belleği darboğaz; RT ve özel CUDA 'yakında'; jamming yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek"
+ },
+ {
+  "dosya": "2022_scholl_rf-signal-classification-synthetic-training-real-world",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Scholl 2022",
+  "baslik": "RF Signal Classification with Synthetic Training Data and its Real-World Performance",
+  "yil": 2022,
+  "tur": "yontem",
+  "problem": "Hangi sentetik bozulmaların gerçek HF verisinde sınıflandırma başarımı için gerekli olduğunu ölçmek.",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "9 katmanlı CNN (~550k param), 11 farklı sentetik eğitim seti (ofsetler, AWGN, darbeli gürültü, RX filtresi, Watterson sönümleme), gerçek WebSDR HF kayıtlarıyla doğrulama",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "En iyi sentetik set gerçek HF verisinde yüksek SNR'de %95; frekans kayması, RX filtresi, geniş SNR ve sönümleme kritik",
+  "sinirlilik": "Yalnızca 20 HF sinyal tipi, tek WebSDR alıcısı, 6 kHz dar bant; jamming/girişim yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek"
+ },
+ {
+  "dosya": "2022_viana_jamming-identification-uav-synthetic-dataset",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Viana 2022",
+  "baslik": "Two Methods for Jamming Identification in UAVs Networks using New Synthetic Dataset",
+  "yil": 2022,
+  "tur": "veri_seti",
+  "problem": "İHA hava-yer bağlantısında kaynak bloğu alınan güç dizisinden jamming tespiti için sentetik veri seti, STL istatistiksel yöntem ve CNN-LSTM sunmak.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "dar_bant"
+  ],
+  "yontem": "STL ayrıştırma + RMSE + SVM/LR/RF; küçük CNN-LSTM (~53k param), 4 sınıf (iyi/kötü kanal x normal/jamming), %70/%30 + 5 katlı CV",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uav",
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "CNN-LSTM ~%99.9-99.99 (4 sınıf, 483.540 blok, <%1 yanlış); STL ortalama ~%70, en iyi %84.38",
+  "sinirlilik": "Tek skaler güç dizisi (I/Q yok); jammer çoğunlukla sinyalden güçlü; düşük güçlü jammer zor; veri yayımı belirsiz",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2023_bleszynski_detection-mobile-lora-jammers",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Bleszynski 2023",
+  "baslik": "Detection of Mobile LoRa Jammers",
+  "yil": 2023,
+  "tur": "yontem",
+  "problem": "Hareketli LoRa jammer'ını Doppler kayması, RSSI değişkenliği ve yük entropisiyle tespit etmek.",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "paket_rssi_pdr",
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "ESP32+SX1276 LoRa testbed, RTL-SDR (GNU Radio) yakalama; Doppler FFT (yalnızca simülasyonda doğrulandı); RSSI hareketlilik + bayt entropisi iki adımlı IDS",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Doppler yalnızca simülasyonda; RSSI+entropi rastgele yüklü hareketli jammer'ı nitel olarak ayırdı; nicel metrik yok",
+  "sinirlilik": "Yalnızca aldatıcı rastgele yüklü jammer; replay/reaktif gelecek iş; tek senaryo; düşük kaliteli SDR",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2024_mcmanus_sim-to-real-transfer-gap-powder-twin",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "McManus 2024",
+  "baslik": "On the Effects of Modeling on the Sim-to-Real Transfer Gap in Twinning the POWDER Platform",
+  "yil": 2024,
+  "tur": "simulator",
+  "problem": "POWDER test yatağının dijital ikizinde yol kaybı modeli seçiminin sim-to-real farkına etkisini OTA ölçümlerle karşılaştırmak.",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "UBSim 3D kampüs modeli; Friis/ECC-33/Ericsson yol kaybı; Echo State Network ile SINR regresyonu ve Gold kod uzunluğu sınıflaması; OTA (Shout, CBRS, DSSS) ile kıyas",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "SINR MAE: OTA-eğitimli 2.011; Friis 4.957; Ericsson 5.047; ECC 5.643; kod uzunluğu tahmini ECC'de ~rastgele",
+  "sinirlilik": "Yalnızca çatı düğümleri; ölçüm sayısı belirtilmemiş; CBRS girişimi; ray tracing ve mobil düğümler gelecek iş",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2024_rosen_rfrl-gym-cognitive-radio-testbed",
+  "klasor": "04_veri_setleri_simulatorler",
+  "kisa": "Rosen 2024",
+  "baslik": "RFRL Gym: A Reinforcement Learning Testbed for Cognitive Radio Applications",
+  "yil": 2024,
+  "tur": "simulator",
+  "problem": "DSA ve jamming için pekiştirmeli öğrenme ajanlarını eğitmek üzere OpenAI Gym uyumlu, JSON ile özelleştirilebilir spektrum simülasyonu sunmak.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger",
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "reaktif",
+   "diger"
+  ],
+  "yontem": "10 kanal x 100 adım; Constant/Fixed/Stochastic/Agile Hopper ve Simple Jammer varlıkları; Q-learning (MushroomRL); detect/classify gözlem modları",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Sabit hedefte optimum (ödül 100, 5 bölümde); Markov olmayan hopper ~33/100; Agile varlığa karşı optimum değil",
+  "sinirlilik": "Tek ajan; fiziksel katman/fading 'gelecek'; mükemmel bilgi varsayımı; gerçek jamming dalga biçimi ve JNR yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta"
+ }
+]

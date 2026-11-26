@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Literatür Analizi ve 6G Makale Stratejisi</title>
+<style>
+/*@@STIL@@*/
+.not-kutu{border-left:4px solid var(--vurgu);background:var(--acik);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:.95rem}
+.etiket{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;margin:1px 3px 1px 0;white-space:nowrap}
+.e-ok{background:#e3f4ea;color:#1c6b43}.e-orta{background:#fdf0dd;color:#8a5a12}.e-yok{background:#fdecea;color:#a12b20}.e-gri{background:#edf1f6;color:#44566a}.e-mor{background:#f3e8fa;color:#6c2f93}
+.puan{display:inline-flex;gap:2px;vertical-align:middle}.puan i{width:9px;height:9px;border-radius:50%;background:#d9e1ea;display:inline-block}.puan i.d{background:#1f5fa8}
+.cubuk-satir{display:grid;grid-template-columns:230px 1fr 64px;gap:10px;align-items:center;margin:5px 0;font-size:.9rem}
+.cubuk-satir .c{background:#edf1f6;height:22px;border-radius:6px;overflow:hidden}.cubuk-satir .c i{display:block;height:100%;background:#1f5fa8;border-radius:6px}
+.cubuk-satir .s{font:600 .85rem var(--mono);text-align:right}
+@media(max-width:800px){.cubuk-satir{grid-template-columns:1fr}}
+tr.biz td{background:#fff8e1;font-weight:600}
+tr.biz2 td{background:#e9f6ee;font-weight:600}
+td.k,th.k{white-space:nowrap}
+.filtre{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:8px 0 10px}
+.filtre input[type=search]{padding:7px 10px;border:1px solid var(--cizgi);border-radius:8px;min-width:220px;font:inherit}
+.tablo-yuksek{max-height:620px;overflow:auto}
+tr.tik{cursor:pointer}tr.tik:hover td{background:#f4f8fd}
+tr.detay td{background:#f8fafc;font-size:.88rem}
+.secenek{border:2px solid var(--cizgi);border-radius:12px;padding:14px 16px;background:#fff;margin:10px 0}
+.secenek.oneri{border-color:#2E7D54;background:#f4fbf6}
+.secenek h4{margin:0 0 6px}
+.agirlik{display:grid;grid-template-columns:200px 1fr 30px;gap:8px;align-items:center;font-size:.9rem;margin:3px 0}
+.faz{border-left:4px solid var(--vurgu);padding:8px 14px;margin:10px 0;background:#fff;border-radius:0 10px 10px 0;border:1px solid var(--cizgi);border-left-width:4px}
+.faz h4{margin:0 0 4px}
+ul.sik li{margin:4px 0}
+.uyari-kutu{border-left:4px solid #c0392b;background:#fdecea;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.ok-kutu{border-left:4px solid #2E7D54;background:#e9f6ee;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.sari-kutu{border-left:4px solid #d98a1d;background:#fff6e6;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+</style>
+</head>
+<body>
+<div class="kapsayici">
+<nav class="yan">
+  <div class="marka">Literatür Analizi<br><span style="font-weight:500;color:#5b6b7c">ve 6G Makale Stratejisi</span></div>
+  <a href="#ozet"><span class="num">1</span>Yönetici özeti</a>
+  <a href="#kapsam"><span class="num">2</span>Kapsam ve yöntem</a>
+  <a href="#harita"><span class="num">3</span>Literatür haritası</a>
+  <a href="#tablo"><span class="num">4</span>Karşılaştırma tablosu</a>
+  <a href="#acikkume"><span class="num">5</span>Açık-küme: ne var?</a>
+  <a href="#bulgular"><span class="num">6</span>Temel bulgular</a>
+  <a href="#biz"><span class="num">7</span>Bizim konumumuz</a>
+  <a href="#alti-g"><span class="num">8</span>6G saldırı manzarası</a>
+  <a href="#secenekler"><span class="num">9</span>Makale seçenekleri</a>
+  <a href="#yol"><span class="num">10</span>Uygulama yol haritası</a>
+  <a href="#taslak"><span class="num">11</span>Makale taslağı</a>
+  <a href="#risk"><span class="num">12</span>Riskler ve uyarılar</a>
+  <a href="#kararlar"><span class="num">13</span>Sizden gerekenler</a>
+</nav>
+<main>
+
+<header class="hero">
+  <div class="ust-etiket">Proje dökümanı · literatür incelemesi</div>
+  <h1>Literatürde ne var, biz ne yapabiliriz? 6G odaklı makale stratejisi</h1>
+  <p class="alt">@@N_TOP@@ makalenin tam metinden taranması, 6G tehdit manzarası araştırması ve mevcut projenin literatürle karşılaştırması. Sonunda: farklı bir makale için seçenekler, uygulama yol haritası ve açık riskler.</p>
+  <div class="istat">
+    <div><b>@@N_TOP@@</b><span>incelenen makale (@@N_TAM@@ tam, @@N_KISMI@@ kısmi okuma)</span></div>
+    <div><b>@@N_J@@</b><span>jammer türü içeren çalışma</span></div>
+    <div><b>6+</b><span>jamming için bilinen/bilinmeyen hibrit veya açık-küme çalışması</span></div>
+    <div><b>13</b><span>6G'ye özgü saldırı başlığı incelendi</span></div>
+  </div>
+</header>
+
+<!-- ============================================================ 1 -->
+<section id="ozet">
+  <div class="ust-etiket">1 · Özet</div>
+  <h2>Yönetici özeti</h2>
+
+  <div class="uyari-kutu"><b>Önce en önemli düzeltme (ikinci turla netleşti).</b> Önceki mesajlarımda "açık-küme jamming tespitinde boşluk var" demiştim. İkinci tur taraması (4 ajan) bunu <b>büyük ölçüde geçersiz kılıyor</b>:
+  <ul class="sik" style="margin:6px 0 0 18px">
+    <li><b>Hibrit mimari çakışıyor.</b> "Bilinenleri sınıfla + bilinmeyeni Isolation Forest ile yakala": <b>Hong, Kim, Lee (IEEE Commun. Lett. 2023)</b> (karar ağacı + IF, gerçek C-bant verisi, spot/barrage/pulse/sweep), CITADEL 2026, Aissou 2026 ve <b>Kurma 2026</b> (xApp'te RF + SVM + IF topluluğu). Hong'un tam metni <b>kapalı erişimli</b>, henüz okunamadı.</li>
+    <li><b>Eşik protokolü kısmen çakışıyor.</b> Huso 2026, eşiği yalnızca jamming'siz veriden (P95) kalibre ediyor ve eşiğin ortamlar arası bozulduğunu gösteriyor (FPR 0,04 → 0,38 → 0,61).</li>
+    <li><b>Izgaraya hizalı saldırılar kısmen çalışılmış:</b> Schösser 2026 (pilot/aldatıcı, hold-out), Zhang &amp; Krunz MILCOM 2023 (preamble/pilot jamming, I/Q), "Holding the Line" (Virginia Tech; okunmadı).</li>
+    <li><b>Geriye kalan:</b> bu bileşenlerin <i>birlikte</i> (ham I/Q + aile-bazlı hold-out + kalibre eşik ve eşik-aktarım hatası + URLLC/Markov saldırı kataloğu + dış doğrulama) tek protokolde bulunması: <b>bu aramalarda öncül bulunamadı</b>. Bu bir "yok" iddiası değil; IEEE/Scopus taranamadı.</li>
+  </ul>
+  Sonuç: <b>mimari tek başına yenilik değil</b>. Yenilik <b>protokol, saldırı kataloğu ve doğrulama</b> tarafında aranmalı; bu bir <i>metodoloji/kıyas</i> makalesine daha yakın bir katkıdır.</div>
+
+  <div class="izgara g2">
+    <div class="kart"><h4>1 · Bizim konumumuz</h4><p class="kucuk">"Tespit + tür sınıflandırma + açık-küme + GNU Radio ile veri" kombinasyonu tek tek yeni değil. En yakın öncül: <b>Hong 2023</b> (karar ağacı + Isolation Forest, aynı fikir; tam metin kapalı). Diğer yakınlar: <b>Huso 2026</b> (eşik protokolü), <b>Kurma 2026</b> (xApp'te IF topluluğu), <b>Schösser 2026</b> (leave-one-jammer-type-out kıyas protokolü, 5G/6G'ye yönelik OFDMA), <b>Zhong 2025</b>, <b>CITADEL 2026</b>, <b>Ebrahimi-Mehr dual-stage 2024</b> (aynı iki aşamalı mimari, gerçek USRP + GNU Radio), <b>Li 2022</b>, <b>Sciancalepore 2023</b>.</p></div>
+    <div class="kart"><h4>2 · Sonuçlarımız iyimser olabilir</h4><p class="kucuk">%95,7 ve %89,1 sonuçlarımız aynı kaydın içinde bölünmüş pencerelere dayanıyor. Literatürde kayıt/alan dışına çıkınca başarı çöküyor: Jammertest'te alan-içi %97–99,6 iken alanlar-arası <b>%21,9 ve %4,6</b>; Sionna ile eğitilen model gerçek veride <b>%37,8</b> (Heublein 2026, ✔ doğruladım).</p></div>
+    <div class="kart"><h4>3 · Gerçek boşluklar (bu aramalarda bulunamayanlar)</h4><p class="kucuk">(a) 6G'ye özgü saldırı ailelerinin ham I/Q düzeyinde birlikte ele alındığı ve <i>aile</i> bazında saklandığı çalışma. (b) Eşiğin yalnız normalden kurulduğu ve AUROC + sabit-FPR'da TPR + alanlar-arası sonuçların birlikte verildiği protokol. (c) Zamanla değişen (Markov/reaktif) saldırganın sinyal düzeyinde tespiti. (d) Simülasyondan gerçeğe geçişle açık-küme birlikte.</p></div>
+    <div class="kart"><h4>4 · Önerim</h4><p class="kucuk">Tek ana hat: <b>6G'ye yönelik standart dalga biçimi (OFDM/NR-benzeri) üzerinde, ham I/Q'da, kalibre edilmiş eşikle, <i>saldırı ailesi</i> bazında açık-küme tespit</b>; ızgaraya hizalı (pilot/kontrol-kanalı) düşük-görev-çevrimli saldırılar merkezde. Üstüne dış doğrulama (açık veri/USRP) ve zamansal analiz. Ayrıntı bölüm 9–11'de.</p></div>
+  </div>
+
+  <div class="ok-kutu"><b>"6G'ye özel saldırılar ekleyip eğitimi güçlendirmek" fikriniz doğru yönde, ama tek başına yetmez.</b> Yeni saldırı türü eklemek, (i) gerçekten 6G'ye özgü ve fiziksel olarak inandırıcı biçimde simüle edilmişse, (ii) standart bir dalga biçimi üzerinde yapılıyorsa ve (iii) değerlendirme protokolü ve dış doğrulamayla desteklenirse fark yaratır. Şu anki 32 kHz'lik 1 kHz-ton verisiyle "6G'ye özgü" iddiası hakem karşısında zayıf kalır.</div>
+</section>
+
+<!-- ============================================================ 2 -->
+<section id="kapsam">
+  <div class="ust-etiket">2 · Yöntem</div>
+  <h2>Ne yaptık, ne kadar güvenebilirsiniz?</h2>
+  <ul class="sik">
+    <li><b>Kaynak:</b> <code>docs/literatur/</code> altındaki @@N_TOP@@ PDF; 10 ajan paralel çalıştı, her biri aynı şablonla 11–15 makaleyi inceledi; ardından <b>ikinci tur</b> (4 ajan: Hong 2023 ve atıf izleme, 8 komşu çalışma, 41 kaynağın doğrulaması + Xu 2005, yenilik tekrar taraması) ek 10 kayıt ekledi. Ayrı bir ajan, 6G tehdit manzarasını ve aday katkı fikirlerinin yenilik durumunu web'den taradı.</li>
+    <li><b>Derinlik:</b> <b>@@N_TAM@@</b> makale "tam", <b>@@N_KISMI@@</b> makale "kısmi" okundu (özet, giriş, yöntem, sonuç ve anahtar kelime taramaları). PDF'lerden çıkarılan düz metin kullanıldı; tablo ve şekil sayılarının bir kısmı okunaksızdı ve işaretlendi.</li>
+    <li><b>Birleşik tablo:</b> her makale için 27 alanlı bir kayıt, şemaya uygunluğu programla doğrulandı (@@N_TOP@@/@@N_TOP@@ kayıt geçerli, @@N_TOP@@ PDF ile birebir eşleşti).</li>
+    <li><b>Benim doğrulamalarım:</b> raporun omurgasını oluşturan kritik iddiaları (Schösser protokolü, Zhong, Heublein sayıları, Alhazbi, Sciancalepore, Li 2022) orijinal metinden kontrol ettim. Bu raporda <span class="etiket e-ok">✔ doğrulandı</span> işareti bunu, <span class="etiket e-gri">○ ajan çıkarımı</span> ise ajanın okumasına dayandığını gösterir.</li>
+  </ul>
+  <div class="sari-kutu"><b>Sınırlar.</b> Bu sistematik bir literatür taraması değildir. Ajanlar çoğu makaleyi kısmen okudu; bir sayıyı makalenize yazmadan önce mutlaka PDF'ten teyit edin. Web taramasında OpenAlex günlük kotası doldu, arXiv arama sayfası tutarsızdı, IEEE Xplore'a erişilmedi; "bu aramalarda bulunamadı" ifadeleri güçlü bir "yoktur" kanıtı <b>değildir</b>. İndirilemeyen yaklaşık 27 makale hâlâ eksik.</div>
+</section>
+
+<!-- ============================================================ 3 -->
+<section id="harita">
+  <div class="ust-etiket">3 · Harita</div>
+  <h2>Literatür sayılarla</h2>
+  <p>Aşağıdaki sayılar birleşik tablodan programla hesaplandı. Alanlar ajanlarca doldurulduğu için küçük yorum farkları olabilir (özellikle <i>açık-küme</i> alanı).</p>
+
+  <h3>Çalışma türleri</h3>
+  @@BAR_TUR@@
+
+  <h3>Jammer içeren @@N_J@@ çalışmada neler var?</h3>
+  @@BAR_J@@
+
+  <h3>Hangi sinyal temsili kullanılıyor?</h3>
+  @@BAR_SINYAL@@
+
+  <h3>Kesişim analizi: hangi kombinasyonlar ne kadar sık?</h3>
+  <p class="kucuk soluk">Kesişimler "boşluk" argümanı için kullanılıyor. Satıra tıklayınca çalışma adları açılır. <i>Açık-küme etiketi</i> "evet" = açık bir tutulan-bilinmeyen deneyi, "kısmi" = yalnızca normalle eğitilen anomali tespiti veya dolaylı kanıt (ajanlar yaklaşık aynı ölçütle işaretledi; kesin değildir).</p>
+  <div class="tablo-kutu"><table id="kesisim"></table></div>
+</section>
+
+<!-- ============================================================ 4 -->
+<section id="tablo">
+  <div class="ust-etiket">4 · Karşılaştırma</div>
+  <h2>Bunda bu var, bunda yok, bizde bunlar olacak</h2>
+  <p>Tüm çalışmalar tek tabloda. Sarı satır: projenin <b>bugünkü</b> hâli; yeşil satır: <b>hedef</b> (önerilen) hâli. Filtrelerle kendi sorularınızı sorabilirsiniz, bir satıra tıklayınca ana sonuç ve sınırlılık görünür. Aynı veri <code>docs/literatur/karsilastirma_matrisi.csv</code> dosyasında (Excel'de açılır).</p>
+  <div class="filtre">
+    <input type="search" id="fAra" placeholder="Ara: yazar, konu, yöntem…">
+    <select id="fTur"><option value="">Tüm türler</option></select>
+    <label class="sec"><input type="checkbox" id="fIQ"> ham I/Q</label>
+    <label class="sec"><input type="checkbox" id="fAK"> açık-küme (evet/kısmi)</label>
+    <label class="sec"><input type="checkbox" id="f6G"> 6G unsuru</label>
+    <label class="sec"><input type="checkbox" id="fGR"> GNU Radio/SDR</label>
+    <label class="sec"><input type="checkbox" id="fVeri"> açık veri/kod</label>
+    <label class="sec"><input type="checkbox" id="fJam"> jammer türü içeren</label>
+    <label class="sec">Bize yakınlık ≥ <select id="fYak"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+    <span class="kucuk soluk" id="fSay"></span>
+  </div>
+  <div class="tablo-kutu tablo-yuksek"><table id="anaTablo"></table></div>
+  <p class="kucuk soluk">Yakınlık (1–5): ajanların "bizim yaklaşıma ne kadar yakın" yargısı. Kısaltmalar: sab = sabit gürültü, ton, swp = sweep/chirp, drb = darbeli, rea = reaktif, akl = akıllı/adaptif, dar/gen = dar/geniş bant.</p>
+</section>
+
+<!-- ============================================================ 5 -->
+<section id="acikkume">
+  <div class="ust-etiket">5 · Kritik nokta</div>
+  <h2>Jamming için açık-küme: gerçekte ne var?</h2>
+  <p>Makalenin yenilik iddiasını belirleyen bölüm bu. Aşağıda jamming ile doğrudan ilgili, bilinmeyen tür/saldırı tespitini ele alan çalışmalar var.</p>
+  <div class="tablo-kutu"><table>
+    <tr><th>Çalışma</th><th>Girdi</th><th>Protokol</th><th>Sonuç (ajan çıkarımı)</th><th>Bizden farkı / zayıf yanı</th><th>Doğrulama</th></tr>
+    <tr style="background:#fdecea"><td><b>Hong, Kim, Lee 2023</b><br><span class="soluk kucuk">IEEE Commun. Lett. 27(7), 1769–1773 (KAIST)</span></td><td>Gerçek C-bant kablosuz modem ölçümü; statik ve hareketli ortam; 4 jamming türü</td><td><b>Hibrit:</b> karar ağacı bilinen saldırıları (ve normali) sınıflar, <b>Isolation Forest</b> bilinmeyen saldırıyı tespit eder; topluluk (ensemble) kullanımı; bilinen saldırı sayısı değiştirilerek test</td><td>Bir baz algoritmaya göre jammer mesafesi, bilinen saldırı sayısı ve hareketlilikte üstün (yalnız özet düzeyinde; sayılar görülmedi)</td><td><b>Bizim mimariye en yakın öncül.</b> Farkımız (varsa): ham I/Q, tür-bazlı ve aile-bazlı protokol, kalibre eşik, çoklu baz çizgi, alanlar-arası ve sim-to-real. Okunmadan emin olunamaz.</td><td><span class="etiket e-orta">◐ yalnızca KAIST özeti ve Lohan derlemesi; makale okunmadı</span></td></tr>
+    <tr><td><b>Schösser vd. 2026</b><br><span class="soluk kucuk">arXiv 2606.02102 (OJ-COMS'a gönderilmiş)</span></td><td>Spektrogram (21 algılayıcı), 5G-benzeri OFDMA, Sionna RT, 5 jammer: barrage, sweep, atlamalı ton, aldatıcı, pilot</td><td><b>Leave-one-jammer-type-out</b>: tür denetimli eğitimden çıkarılıp o tür üzerinde değerlendirilir; AUC önerilen metrik; ayrıca yalnız normalle eğitilen VAE</td><td>Dışlanan tür: barrage F1/AUC 0,944/0,989; <b>deceptive 0,440/0,751; pilot 0,530/0,747</b>; VAE deceptive 0,740/0,886</td><td>Çok algılayıcılı görüntü, veri seti odaklı baz çizgiler. Tek anten ham I/Q yok. Eşik protokolü, alanlar-arası ve sim-to-real yok.</td><td><span class="etiket e-ok">✔ protokol metinden</span></td></tr>
+    <tr><td><b>Zhong vd. 2025</b><br><span class="soluk kucuk">PLOS ONE 20(6)</span></td><td>STFT; 9 sentetik tür + gerçek Kaggle (deceptive, constant, reactive)</td><td>6 bilinen / 3 bilinmeyen, dönüşümlü; 5 tekrar; hibrit karma deneme</td><td>TNR %95,36, TPR %99,48, F1 %99,35; AUROC raporlanmamış</td><td>Ağır model (spiking wavelet transformer), yardımcı OOD verisi; bir bilinmeyen tür hiperparametre doğrulamasında kullanılmış (kısmi sızıntı)</td><td><span class="etiket e-ok">✔ OSR kurulumu</span><span class="etiket e-gri">○ sayılar</span></td></tr>
+    <tr><td><b>Bouferroum vd. 2026 (CITADEL)</b><br><span class="soluk kucuk">arXiv 2606.22939</span></td><td>Wi-Fi CSI (5 ESP32, HackRF jammer), >815 bin pencere</td><td>15 sıfır-gün senaryo tamamen saklı; eşik <b>yalnızca</b> dağılım-içi veriyle (P90/P95/P99,5)</td><td>Bilinen %100; sıfır-gün %97,1; uçtan uca yanlış pozitif %0,4; adversarial dayanıklılık testi var</td><td>Girdi CSI (I/Q değil), IIoT Wi-Fi. Fikir olarak bizim eşik protokolüne en yakın</td><td><span class="etiket e-gri">○ ajan çıkarımı</span></td></tr>
+    <tr><td><b>Shi vd. 2019</b></td><td>Ham I/Q (RadioML-tipi)</td><td>Bilinmeyen jammer = taklit modülasyon; yalnızca bilinen sınıflarla eğitim, aykırı değer mantığı</td><td>Ortalama doğruluk 0,88</td><td>"Jammer" gerçek jamming dalga biçimi değil, modülasyon etiketi</td><td><span class="etiket e-gri">○</span></td></tr>
+    <tr><td><b>Sciancalepore vd. 2023</b></td><td>Ham I/Q → görüntü; sparse otoenkoder (SDR + GNU Radio, UAV)</td><td>Yalnız normalle eğitim, eşik = µ+3,5σ (yalnız eğitim hatasından); ton/Gauss/aldatıcı BPSK</td><td>Düşük jammer gücünde denetimli CNN'ler güvenilmez, otoenkoder korunuyor</td><td>Tek sürekli jammer, BPSK taşıyıcı; tür sınıflandırma yok</td><td><span class="etiket e-ok">✔ yöntem metinden</span></td></tr>
+    <tr><td><b>Ebrahimi-Mehr vd. 2024 (dual-stage)</b></td><td>GNSS ön-korelasyon özellikleri, gerçek USRP + GNU Radio</td><td><b>İki aşamalı</b>: yalnız temiz veriyle eğitilen LSTM-otoenkoder (tespit) + CNN (sınıflandırma)</td><td>Tespit %100; sınıflandırma %98,26 (ajan çıkarımı)</td><td>Açık-küme deneyi yok; GNSS bandı; pulsed jammer en zayıf sınıf (−130 dBW'de ~%47,6)</td><td><span class="etiket e-ok">✔ mimari metinden</span><span class="etiket e-gri">○ sayılar</span></td></tr>
+  </table></div>
+  <div class="not-kutu"><b>Schösser'den çıkan stratejik ders (✔ metinden):</b> Sweep ve atlamalı ton eğitimden çıkarıldığında denetimli model hâlâ iyi çalışıyor, çünkü ikisi birbirine benziyor. Buna karşılık <b>pilot ve aldatıcı jammer'lar zaman-frekans ızgarasını izlediği için</b>, eğitimden çıkarıldıklarında denetimli model ciddi biçimde düşüyor. Yani "bilinmeyen saldırı" probleminin <b>gerçekten zor</b> kısmı ızgaraya hizalı, protokol-farkında saldırılar. Bu, 6G için de en anlamlı saldırı sınıfı.</div>
+
+  <h3>İkinci tur: bileşen bazında yenilik durumu</h3>
+  <p class="kucuk soluk">4 ajan, ~73 arXiv ve ~27 web sorgusu ile önerdiğim her katkı bileşeni için en yakın çalışmaları aradı. OpenAlex ve Semantic Scholar kotaları doldu, IEEE Xplore'a erişim yoktu: <b>"bulunamadı" ifadeleri IEEE ağırlıklı literatürde zayıf kanıttır</b>.</p>
+  <div class="tablo-kutu"><table>
+    <tr><th>Bileşen</th><th>Durum</th><th>En yakın çalışmalar ve gerekçe</th></tr>
+    <tr><td><b>Hibrit mimari</b> (IF + RF/DT)</td><td><span class="etiket e-yok">ÇAKIŞIYOR</span></td><td>Hong-Kim-Lee 2023, CITADEL 2026, Aissou 2026, Wang 2023, Kurma 2026 (xApp'te RF+SVM+IF)</td></tr>
+    <tr><td><b>K-A</b> Ham I/Q, OFDM/NR-benzeri taşıyıcı</td><td><span class="etiket e-yok">ÇAKIŞIYOR</span></td><td>Kouchaki 2024, Varotto ×2, Kuili, Halenka, Zhang-Krunz, Sciancalepore/Hanegraaf</td></tr>
+    <tr><td><b>K-B</b> Izgara-hizalı katalog + aile bazlı hold-out</td><td><span class="etiket e-orta">KISMEN</span></td><td>Hizalı saldırılar ve hold-out ayrı ayrı var (Schösser, Zhang-Krunz, Topal 2019, CITADEL, Aissou). <b>Ham I/Q + NR-benzeri + aile-düzeyi hold-out + URLLC/Markov birlikte bulunamadı.</b></td></tr>
+    <tr><td><b>K-C</b> Yalnız-normal eşik + AUROC + sabit-FPR'da TPR</td><td><span class="etiket e-orta">KISMEN</span></td><td>Yalnız-normal eşik yaygın (Huso P95, CITADEL %0,4 FPR, Sciancalepore). <b>Eşik-aktarım hatasıyla birleşik protokol bulunamadı</b>; metodoloji katkısı.</td></tr>
+    <tr><td><b>K-D</b> Kayıt-dışı ve simülasyondan gerçeğe</td><td><span class="etiket e-orta">KISMEN</span></td><td>Kayıt/ortam-dışı değerlendirme var (Gopal KPI, GNSS çalışmaları). <b>Sim→gerçek jamming tespiti bulunamadı</b> (~6 sorgu, kanıt ince).</td></tr>
+    <tr><td><b>K-E</b> Sıralı tespit (CUSUM/HMM) + Markov saldırgan</td><td><span class="etiket e-orta">KISMEN</span></td><td>HMM var (Zhang 2023 TCCN), CUSUM eski RSSI/SNR işleri. Öğrenilmiş skor üzerinde CUSUM/HMM + gecikme-FPR (ARL) + Markov saldırgan, I/Q'da bulunamadı.</td></tr>
+    <tr><td><b>K-F</b> Hafif model (CPU, ms)</td><td><span class="etiket e-orta">KISMEN</span></td><td>Hafiflik tek başına yenilik değil (Kurma ~14 ms; GRU 298 bin parametre). CITADEL "ham I/Q ölçeklenmez" tezini savunuyor; ölçülmüş ms/MS/s kanıtı gerekir.</td></tr>
+    <tr><td><b>Tam kombinasyon</b></td><td><span class="etiket e-ok">BU ARAMALARDA ÖNCÜL BULUNAMADI</span></td><td>"Yoktur" demek değil; IEEE Xplore ve Scopus taranamadı. Savunulabilir parçalar: aile-hold-out + yalnız-normal eşik + sabit-FPR'da TPR + eşik-aktarım hatası, URLLC/Markov katalog ve üreteç yayını, ARL analizi.</td></tr>
+  </table></div>
+
+  <h3>İkinci tur komşu çalışmalar</h3>
+  <div class="tablo-kutu"><table>
+    <tr><th>Çalışma</th><th>Ne yapıyor</th><th>Bizimle örtüşme</th><th>Doğrulama</th></tr>
+    <tr><td><b>Huso vd. 2026</b><br><span class="soluk kucuk">Iridium LEO uydu-IoT</span></td><td>Gerçek LimeSDR + GNU Radio verisi, 47 koşul, açık (GitHub). Jamming'siz veriyle eğitilen tek-sınıf otoenkoder, <b>eşik jamming'siz veriden P95</b>. AUC ≥ 0,84 (gürültü tabanı ≥ 9 dB artınca). <b>Eşik ortamlar arası bozuluyor:</b> FPR 0,04 → 0,38 (tek mesaj) → 0,61 (1000 örnek); model aktarımı kolay (medyan |ΔAUC| 0,007). Yalnızca AWGN ve replay jammer.</td><td><b>Yüksek:</b> eşik protokolü. Yok: çok türlü jammer, tür sınıflandırma, sınıf-saklama. Bulgusu bizim protokolü destekliyor.</td><td><span class="etiket e-gri">○ ajan, tam okundu</span></td></tr>
+    <tr><td><b>Kurma vd. 2026</b><br><span class="soluk kucuk">xApp, çok sınıflı jamming</span></td><td>RF + SVM + <b>Isolation Forest topluluğu</b> xApp'i; MAC/KPM'den 15 öznitelik; ~14 ms, CNN'in ~1/3 CPU'su; tek-model baz çizgilere göre %19,2–27,9 doğruluk artışı.</td><td><b>Yüksek:</b> hafif xApp + IF. Girdi I/Q değil. Tam metin <b>6 Eylül 2027'ye kadar embargolu</b>.</td><td><span class="etiket e-gri">○ yalnız özet</span></td></tr>
+    <tr><td><b>Aissou vd. 2026</b><br><span class="soluk kucuk">arXiv 2609.21334</span></td><td>RL jammer + GAT + DP-means ile zero-day keşfi; simülasyon; girdi enerji çerçevesi (64 kanal × 100 yuva); tespit 0,86–0,92 (açık-küme baz 0,68–0,76); DP-means yarıçapı etiketli bilinen sınıflardan kalibre.</td><td>Orta-düşük: açık-küme jamming ama ham I/Q değil.</td><td><span class="etiket e-gri">○ ajan, tam okundu</span></td></tr>
+    <tr><td><b>Ratti vd. 2026</b>, <b>Hoffmann vd. 2026</b></td><td>xApp ile jammer tespiti. Ratti: KPM (SINR/RSRP), simülasyon, tek jammer. Hoffmann: BLER hareketli ortalama eşiği (ML yok), OTA (POWDER, n78).</td><td>xApp çerçevesi için yüksek; PHY I/Q xApp yok.</td><td><span class="etiket e-gri">○</span> Hoffmann'ın "%67,3 azalma" özeti Tablo II ile tutarsız</td></tr>
+    <tr><td><b>Chou vd. 2026</b>, <b>Yildirim vd.</b></td><td>28 GHz ISAC + RIS spoofing tespiti (%99,335, 0,11 MFLOP, M=32); OFDM JCAS'a ucuz SDR saldırısı.</td><td>6G/ISAC/RIS komşusu (b için orta); ikisi de jamming tespiti değil.</td><td><span class="etiket e-gri">○</span></td></tr>
+    <tr><td><b>Chong vd. 2026</b><br><span class="soluk kucuk">ICC Workshops; DOI 10.1109/ICCWorkshops63917.2026.11586537</span></td><td>"A Synthetic Dataset for Anomaly Detection of RIS-Enabled Jamming Attacks". <b>İçerik okunamadı</b> (IEEE erişimi yok).</td><td>RIS veri seti için kritik komşu; çakışma derecesi bilinmiyor.</td><td><span class="etiket e-orta">◐ yalnız künye</span></td></tr>
+    <tr><td><b>Zhang &amp; Krunz</b> (MILCOM 2023)</td><td>OFDM çerçeve yapısını bilen (preamble/pilot/interleaving) jamming; I/Q → CWT → 4 katmanlı CNN; kapalı-küme.</td><td>Izgara-hizalı saldırı + I/Q için doğrudan öncül.</td><td><span class="etiket e-orta">◐ web özeti</span></td></tr>
+    <tr><td><b>"Holding the Line"</b><br><span class="soluk kucuk">Virginia Tech, 5G O-RAN</span></td><td>7 jamming türü, gerçek testbed, PSS/PDCCH/DMRS-hedefli + reaktif saldırılar, 3 aşamalı hat.</td><td>K-B ve K-A'ya çok yakın olabilir; <b>okunamadı</b> (PDF ikili döndü).</td><td><span class="etiket e-orta">◐ yalnız arama özeti</span></td></tr>
+  </table></div>
+
+  <h3>Hakemin soracağı en zor beş soru (yenilik tarayıcısından)</h3>
+  <ol class="sik kucuk">
+    <li>Hong-Kim-Lee, CITADEL ve Aissou varken, girdi modalitesi dışında ne yeni?</li>
+    <li>Schösser'in pilot-aware benchmark'ı ve jammer-tipi hold-out'una göre fark ne? Onların benchmark'ında çalıştırdınız mı?</li>
+    <li>"Aile" nasıl tanımlandı, aileler arası sızıntı var mı? Normalden kalibre edilen eşikte gerçek FPR başka bir kayıtta ne?</li>
+    <li>GNU Radio verisi NR değil. Tek donanımla "6G/sim-to-real" nasıl çıkıyor? CITADEL'in "ham I/Q ölçeklenmez" itirazına hangi cihazda, kaç MS/s'de, kaç ms ile yanıt veriyorsunuz?</li>
+    <li>CUSUM/HMM, pencere skorundan sabit ARL'de ne kazandırıyor? Dedektörü bilen adaptif saldırgana karşı sonuçlar?</li>
+  </ol>
+</section>
+
+<!-- ============================================================ 6 -->
+<section id="bulgular">
+  <div class="ust-etiket">6 · Bulgular</div>
+  <h2>Literatürden çıkan on temel bulgu</h2>
+  <ol class="sik">
+    <li><b>Kayıt içi başarı, kayıt dışına taşınmıyor.</b> Jammertest 2025'te alan-içi %97–99,6, alanlar-arası %21,86 (Innosense) ve %4,59 (CRPA). Sionna RT ile eğitilen model gerçek Jammertest'te %37,8, gerçek açık-alan verisiyle eğitilen %79,1 (Heublein 2026, Tablo 4). <span class="etiket e-ok">✔ metinden</span></li>
+    <li><b>Eşik aktarımı, ayrımdan zor.</b> WiFiSpectralJam'de görülmemiş koşulda F1 düşerken ROC-AUC çok yüksek kalabiliyor: model ayırıyor, ama eşik yeni koşula taşınmıyor (Herzalla 2026). Bu, Isolation Forest eşiğimiz için doğrudan uyarı. <span class="etiket e-gri">○</span></li>
+    <li><b>Basit baseline güçlü.</b> Max-logit (en yüksek skor) açık-küme baseline'ı ortalama AUROC'u %15,6 artırıyor ve en yeni yöntemlerle farkı küçük (Vaze 2022). Bizim RF için oy-skoru eşiği baseline'ı raporlanmazsa hakem "denetimli model de eşikle yakalar" diyebilir. <span class="etiket e-gri">○</span></li>
+    <li><b>Isolation Forest tek başına en iyi değil.</b> LOF/MCD (Chhetry), Deep SVDD (Ruff), Extended Isolation Forest (Hariri) çeşitli veri setlerinde ondan iyi. Karşılaştırmaya bu yöntemler girmeli. <span class="etiket e-gri">○</span></li>
+    <li><b>Zayıf jammer'da tespit çöküyor.</b> Jammer gücü düşünce normalle örtüşme artıyor; denetimsiz otoenkoder bile başarısız olabiliyor (Wang 2022, LTE bandı). Sonuçlar güce göre ayrı raporlanmalı. <span class="etiket e-gri">○</span></li>
+    <li><b>Pulsed jammer çelişkili.</b> Bir çalışmada en kolay sınıf (>%99), diğerinde en zayıf (−130 dBW'de ~%47,6). Pencere uzunluğu, görev çevrimi ve güce bağlı. Bizim pulse sınıfımız için kritik (ayrıca bizim pulse kapısı hiç sönmüyor: bölüm 7).</li>
+    <li><b>Çoğu çalışma I/Q yerine spektrogram kullanıyor.</b> @@N_IQ@@ çalışma ham I/Q, @@N_SP@@ çalışma spektrogram kullanıyor; I/Q + STFT + istatistik birleşimi iyi sonuç veriyor (JSR-GFNet). Bizim yalnızca I (gerçel) kullanmamız bir kayıp. <span class="etiket e-gri">○</span></li>
+    <li><b>Gerçek ölçüm az.</b> Gerçek I/Q veren açık veri setlerinden Alhazbi 2023 yalnızca ton ve Gauss jammer içeriyor (USRP X310, GNU Radio 3.8, Zenodo, CC BY). Sweep, darbeli ve reaktif ölçüm yok. <span class="etiket e-ok">✔ metinden</span></li>
+    <li><b>Markov/reaktif jammer sinyal düzeyinde çalışılmamış.</b> "Markov" etiketli @@N_MARKOV@@ çalışmanın çoğunda Markov yapı savunmacı tarafında (MDP/oyun). Jammer'ın iki durumlu zinciri ile I/Q dalga biçimi üretecini bağlayan çalışma bu aramalarda bulunamadı. <span class="etiket e-gri">○</span></li>
+    <li><b>6G içeriği büyük ölçüde vizyon düzeyinde.</b> @@N_6G_ALL@@ çalışmada bir 6G unsuru geçiyor ama @@N_6G_YONTEM@@ tanesi derleme/simülatör dışı bir yöntem çalışması ve çoğunda yalnızca motivasyon olarak anılıyor. ISAC, OTFS, semantik iletişim ve NTN'de jamming <i>tespit/sınıflandırma</i> çalışması çok az. <span class="etiket e-gri">○</span></li>
+  </ol>
+</section>
+
+<!-- ============================================================ 7 -->
+<section id="biz">
+  <div class="ust-etiket">7 · Biz</div>
+  <h2>Projenin bugünkü konumu ve hedef</h2>
+  <div class="tablo-kutu"><table>
+    <tr><th>Boyut</th><th>Bugün (projemiz)</th><th>Literatürde</th><th>Hedef</th></tr>
+    <tr><td><b>Sinyal</b></td><td>32 kHz, 1 kHz karmaşık kosinüs (oyuncak)</td><td>Çoğu OFDM/5G-benzeri, GNSS, Wi-Fi; Schösser 5G-benzeri OFDMA, Zhong 10–20 MHz</td><td>OFDM/NR-benzeri taşıyıcı (pilot yapılı)</td></tr>
+    <tr><td><b>Kanal</b></td><td>2-tap FIR [1, 0,3+0,3j]</td><td>@@N_KANAL@@/@@N_TOP@@ çalışma kanal modeli; 3GPP TDL/CDL, Doppler, CFO, IQ dengesizliği (Sig53, Scholl)</td><td>TDL-A/B/C + Doppler + CFO + IQ dengesizliği, kanal gerçekleşmesi bazlı bölme</td></tr>
+    <tr><td><b>Jammer gücü</b></td><td><code>jammer_amp</code> 0–2 (SNR/JNR'a kalibre değil)</td><td>@@N_SNR@@/@@N_TOP@@ çalışma SNR/JNR taraması yapıyor</td><td>Kalibre JNR ızgarası (örn. −10…+30 dB) + güce göre ayrı rapor</td></tr>
+    <tr><td><b>Saldırı kataloğu</b></td><td>4 tür + normal</td><td>Schösser 5 tür (pilot, aldatıcı dahil); Zhong 9; CITADEL 3 zamanlama × 6 dalga</td><td>8–10 tür, 4 aile; ızgaraya hizalı ve reaktif saldırılar</td></tr>
+    <tr><td><b>Öznitelik</b></td><td>10 el yapımı, yalnızca I</td><td>I/Q + STFT + istatistik (JSR-GFNet); spektrogram CNN; el yapımı öznitelik düşük güçte güçlü (Ebrahimi-Mehr 2024)</td><td>I ve Q, spektral/döngüsel öznitelikler + hafif derin baz</td></tr>
+    <tr><td><b>Aşama 1</b></td><td>Isolation Forest (+ denetimli RF karşılaştırma)</td><td>VAE/AE, EIF, LOF, Deep SVDD, OpenMax, enerji/max-logit</td><td>Çok baz + normalden kurulan eşik protokolü</td></tr>
+    <tr><td><b>Açık-küme</b></td><td>Yalnızca pulse saklı (resmî)</td><td>Schösser: tür bazlı; Zhong: 6/3 dönüşümlü ×5; CITADEL: 15 sıfır-gün</td><td>Tüm türler + <b>aile</b> bazlı; AUROC + sabit-FPR'da TPR</td></tr>
+    <tr><td><b>Eşik</b></td><td>contamination = 0,05 (sabit)</td><td>Sciancalepore µ+3,5σ; CITADEL P90/P95/P99,5; Herzalla eşik aktarımı sorunu</td><td>Yalnız-normal protokol, FPR hedefi, duyarlılık analizi</td></tr>
+    <tr><td><b>Bölme</b></td><td>Rastgele pencere (aynı kayıt)</td><td>Heublein alanlar-arası çöküş; Li 2022 ve Ebrahimi-Mehr'de sızıntı olasılığı</td><td>Kayıt/kanal/oturum bazlı bölme</td></tr>
+    <tr><td><b>Doğrulama</b></td><td>Yalnızca simülasyon, tek kurulum</td><td>Gerçek ölçüm az; sim-to-real nadir (Heublein, Scholl, O'Shea)</td><td>Açık veri (Alhazbi vb.) ve/veya USRP ile dış doğrulama</td></tr>
+    <tr><td><b>Zaman</b></td><td>Pencereler bağımsız (Markov yalnızca yan çalışma)</td><td>Sinyal düzeyinde Markov/reaktif bulunamadı</td><td>Sıralı tespit (CUSUM/HMM), zamansal saldırgan</td></tr>
+    <tr><td><b>Hesap</b></td><td>RF/IF: hafif ama ölçülmedi</td><td>GRU 298 bin param. 64,9 ms CPU; InterfO-RAN &lt;650 µs [A]</td><td>Gecikme ve parametre sayısı ölçümü</td></tr>
+    <tr><td><b>6G</b></td><td>Yok</td><td>Vizyon düzeyi; uygulamalı 6G jamming az</td><td>2–3 seçilmiş 6G saldırı ailesi</td></tr>
+  </table></div>
+
+  <h3>Bu projede ölçtüğümüz, makaleye girebilecek ön kanıtlar</h3>
+  <p class="kucuk soluk">Hepsi yeniden üretilen veride (bu bilgisayardaki GNU Radio çıktısı) ve yazarın orijinal kayıtları olmadan ölçüldü. Makaleye girmeden önce gerçek veri ve çok tekrarla yeniden ölçülmeli.</p>
+  <div class="tablo-kutu"><table>
+    <tr><th>Ölçüm</th><th>Sonuç</th></tr>
+    <tr><td>Her saldırı türü sırayla eğitimden saklandı (Isolation Forest, yalnızca normalle eğitim)</td><td>Yakalama: constant %100, tone %95,9, sweep %96,0, pulse %99,7</td></tr>
+    <tr><td>Aynı koşulda denetimli RF, bilinmeyeni neye sandı?</td><td>constant→%94,5 pulse; tone→%93,1 sweep; sweep→%74,9 constant (ve %17,7 pulse); pulse→%92,6 constant</td></tr>
+    <tr><td>Rastgele bölme ile segment-bazlı bölme (tür doğruluğu)</td><td>%86,0 → %83,5 (≈2,5 puan; ciddi sızıntı yok ama kayıt-dışı testin yerini tutmaz)</td></tr>
+    <tr><td>Pulse kapısı</td><td>Complex Square kaynağında offset yalnızca gerçel kısma ekleniyor; kapı büyüklüğü 0,5…1,118, hiç sönmüyor (GNU Radio ile ölçüldü)</td></tr>
+    <tr><td>Gürültü kaynakları</td><td><code>seed: 0</code> iki Noise Source'u aynı diziye bağlıyor (korelasyon 0,999)</td></tr>
+  </table></div>
+  <div class="not-kutu">Bu ölçümler, "hangi saldırı hangisine benziyor" sorusunu verinin kendisinden gösteriyor: constant↔pulse, tone→sweep. Literatürdeki "benzer sınıflar birbirinin yerini tutar" bulgusuyla (Schösser, Zhong) tutarlı. Ama bu bir <b>ön</b> sonuç.</div>
+</section>
+
+<!-- ============================================================ 8 -->
+<section id="alti-g">
+  <div class="ust-etiket">8 · 6G</div>
+  <h2>6G'ye özgü saldırı manzarası ve bizim için öncelik</h2>
+  <p>6G tarama ajanı 13 başlığı web kaynaklarıyla inceledi. Kaynak doğrulama düzeyi: <span class="etiket e-ok">[A]</span> arXiv özet sayfası okundu, <span class="etiket e-orta">[O]</span> yalnızca OpenAlex kaydı, <span class="etiket e-yok">[S]</span> yalnızca arama özeti (künye eksik olabilir). Satıra tıklayınca tanım, fiziksel imza, simülasyon yolu ve kaynaklar açılır. <b>Öncelik</b> benim yargım: <span class="etiket e-ok">A</span> ilk fazda yap, <span class="etiket e-orta">B</span> sonra / isteğe bağlı, <span class="etiket e-gri">C</span> bu makale için kapsam dışı.</p>
+  <div class="filtre"><input type="search" id="gAra" placeholder="6G saldırılarında ara…"></div>
+  <div class="tablo-kutu tablo-yuksek"><table id="g6Tablo"></table></div>
+  <div class="ok-kutu"><b>Benim önerdiğim 6G saldırı alt kümesi:</b> (1) <b>ızgaraya hizalı kontrol-kanalı/pilot-farkında düşük görev çevrimli jamming</b> (SSB/PRACH/pilot sembollerini hedef alan): literatürde "orta" dolulukta, ızgaraya hizalı saldırıların en zor bilinmeyen sınıf olduğu Schösser'de görüldü, OFDM taşıyıcıyla simüle edilebilir. (2) <b>URLLC-tarzı kısa darbeli jamming</b> (gerçek açık/kapalı kapı; bizim mevcut pulse'un düzeltilmiş hâli). (3) <b>Reaktif/Markov saldırgan</b> (enerji-tetikli, zamansal). İsteğe bağlı: (4) <b>RIS kaynaklı kanal-tabanlı girişim</b> (ek güç yok, enerji dedektörü görmez; ama komşu çalışma var: Chong ICC-W 2026), (5) <b>OTFS taşıyıcı</b> (jammer sınıflandırma çalışması bulunamadı ama araç ve süre riski yüksek).</div>
+  <div class="sari-kutu"><b>Simülasyon araçları hakkında:</b> Sionna v2.2.0'da NR modülü PUSCH ile sınırlı (SSB/PRACH/PDCCH dokümanda yok), OTFS yok, RIS yalnızca eski sürümde. GNU Radio'da hazır modüller Wi-Fi OFDM (gr-ieee802-11), GFDM, LTE; NR ve OTFS modülü bulunamadı. SSB/PRACH üretimi için MATLAB 5G Toolbox (lisans gerekir). Pratik yol: <b>kendi OFDM taşıyıcımızı (pilot ve periyodik sinyal yapılı) Python/GNU Radio'da yazmak</b>; "NR-benzeri" demek, "NR uyumlu" demekten dürüst olur.</div>
+
+  <div class="uyari-kutu"><b>Doğrulama düzeltmeleri (ikinci tur, 41 kaynak: 27 doğrulandı, 11 düzeltildi, 1 yanlış, 2 doğrulanamadı; uydurma kaynak çıkmadı).</b> Tablodaki ifadelerden şunları <i>yorum</i> veya <i>düzeltilmiş</i> olarak okuyun:
+    <ul class="sik kucuk" style="margin:6px 0 0 18px">
+      <li><b>RIS (de Sena 2024):</b> "pilot fazında sessiz", "ek güç gerektirmez", "enerji dedektörüne görünmez" ifadeleri makalenin özetinde <b>yok</b>; özet saldırıyı veri fazında anlatıyor. Bunlar yorumdur, makale iddiası değil.</li>
+      <li><b>URLLC (Hoffmann):</b> özetteki "%67,3 yeniden iletim azalması" Tablo II ile tutarsız: 1.084/1.610 = %67,3 <i>oranında kalma</i> (≈ %32,7 azalma); "fazladan" yeniden iletimde azalma %86,3.</li>
+      <li><b>arXiv:2605.30622</b> yanlış konuya bağlanmıştı (O-RAN dilimleme, Delavari-Farooq). PUSCH reaktif jamming + HARQ makalesi <b>arXiv:2606.14465</b> (Alaimo vd.). arXiv:2401.10387 NOMA ile reaktif jammer analizi, tespit yok.</li>
+      <li><b>Arcangeloni "%93 @ 27 dB":</b> birimi SJR (SNR değil); yayın yeri ISSE 2024. SecBeam: IEEE CNS 2024 (28 GHz ve PDP ayrıntıları özette yok). Shrestha: Nature Commun. 13:3045 ("beat jamming" doğrulandı; "yan lob" ayrıntısı doğrulanamadı).</li>
+      <li>Okunmamış kritik kaynaklar: <b>Chong 2026</b> (RIS veri seti), <b>Ratti 2026</b> (sayılar elle doğrulanmalı), <b>Kurma 2026</b> (embargolu). Ayrıntı: <code>docs/literatur/07_ikinci_tur_komsu_calismalar/6G_KAYNAK_DOGRULAMA.md</code>.</li>
+    </ul></div>
+</section>
+
+<!-- ============================================================ 9 -->
+<section id="secenekler">
+  <div class="ust-etiket">9 · Seçenekler</div>
+  <h2>Farklı bir makale için dört seçenek ve bir öneri</h2>
+  <p>Puanlar (1–5, yüksek = iyi) benim yargımdır ve ajan bulgularına dayanır. Ağırlıkları kendi önceliğinize göre değiştirin, sıralama güncellenir.</p>
+
+  <div class="secenek"><h4>S1 · Standart dalga biçimi + protokol + açık-küme (çekirdek)</h4>
+    <p class="kucuk">Ham I/Q, OFDM/NR-benzeri taşıyıcı, 8–10 saldırı türü ve 4 aile; <b>aile bazlı</b> bilinmeyen tespiti; eşik yalnız normalden; AUROC + sabit-FPR'da TPR; alanlar-arası değerlendirme; geniş baz çizgisi. <b>Risk:</b> mimari kısmı çakışıyor (Hong 2023, CITADEL, Kurma); Schösser ile protokol çakışması; Huso ile eşik protokolü çakışması. Yenilik <b>protokolün birleşimi ve katalog</b>dadır, mimaride değil.</p></div>
+  <div class="secenek"><h4>S2 · 6G'ye özgü saldırı aileleri veri seti + leave-one-family-out</h4>
+    <p class="kucuk">RIS, ISAC, OTFS-hedefli, kontrol kanalı gibi 6G saldırı sınıflarını içeren I/Q veri seti. <b>Risk:</b> yüksek iş yükü, birçok simülasyon aracı eksik; komşu çalışmalar: Chong ICC-W 2026 (RIS jamming veri seti, içeriği okunamadı), Schösser.</p></div>
+  <div class="secenek"><h4>S3 · Simülasyondan gerçeğe + açık-küme</h4>
+    <p class="kucuk">GNU Radio/Python ile eğit, açık veri (Alhazbi, Jammertest, WiFiSpectralJam) veya USRP ölçümüyle test et; açık-küme dahil. <b>Güçlü yan:</b> hakemler için güçlü kanıt (literatürde sim→gerçek düşüşü çok büyük). <b>Risk:</b> donanım veya uygun açık I/Q veri gerekir.</p></div>
+  <div class="secenek"><h4>S4 · Zamansal (Markov/reaktif) saldırgan + sıralı tespit</h4>
+    <p class="kucuk">Mevcut Markov simülasyonundan genişletilip I/Q dalga biçimi üretecine bağlanır; pencereler arası bağımlılık için CUSUM/HMM. <b>Risk:</b> tek başına zayıf (yakın çalışma: Zhang 2022, HMM ile reaktif tespit); en iyi ek bileşen olarak.</p></div>
+
+  <h3>Puanlama</h3>
+  <p class="kucuk soluk">İkinci tur bulgularıyla puanlar güncellendi (S1 yenilik 3 → 2, S1 hakem riski 3 → 2; birleşik yol yenilik 4 → 3). Varsayılan ağırlıklar hedefinize göre ayarlandı: <b>yenilik (5)</b> ve <b>6G uygunluğu (4)</b> öncelikli, süre ve donanım ikincil. Eşit ağırlık verirseniz hızlı ve kolay olan S4 öne geçer; ama tek başına yayınlanabilir bir katkı değildir. Birleşik yolun puanı, diğerlerinin bileşimi olduğu için doğal olarak yüksek çıkar; bedeli en uzun süre ve en büyük iş yükü olmasıdır (puana yansıdı). Puanlar benim yargımdır, ölçüm değildir.</p>
+  <div id="agirliklar"></div>
+  <div class="tablo-kutu"><table id="skorTablo"></table></div>
+
+  <div class="secenek oneri"><h4>★ Önerim: birleşik yol (S1 çekirdek + S2'den 2–3 aile + S3 dış doğrulama + S4 analiz)</h4>
+    <p class="kucuk"><b>Neden:</b> Tek başına hiçbir seçenek yeterince farklı değil; ama birlikte, literatürde ayrı ayrı bulunan parçaları <i>tek protokol altında</i> birleştiriyor: 6G yönelimli ızgara-farkında saldırılar × ham I/Q × kalibre eşik × alanlar-arası ve dış doğrulama × zamansal saldırgan. Her parça kısmen mevcut (Hong, Schösser, Huso, Zhang-Krunz, Kurma…); kombinasyonun bu aramalarda bulunamaması <b>orta düzeyde</b> bir yenilik demektir, güçlü bir iddia değil. <b>Çerçeve:</b> "yeni mimari" değil, <b>"bilinmeyen saldırı tespitinin kalibre, aile-bazlı, kayıt-dışı ve zamansal saldırgan altında değerlendirilmesi + açık üreteç"</b>. Bu bir hipotez; hedef dergiye gitmeden IEEE Xplore/Scopus'ta ek bir tur şart.</p>
+    <p class="kucuk"><b>Asgari uygulanabilir makale (MVP, ~10–12 hafta):</b> S1 çekirdek + ızgara-farkında 2 saldırı + dış doğrulama için açık veri. <b>Tam makale (~16–20 hafta):</b> + USRP ölçümü + zamansal analiz + OTFS/RIS isteğe bağlı.</p></div>
+</section>
+
+<!-- ============================================================ 10 -->
+<section id="yol">
+  <div class="ust-etiket">10 · Uygulama</div>
+  <h2>Projeyi nasıl geliştireceğiz: yol haritası</h2>
+  <p class="soluk">Süreler tahmindir (tek kişi, yarı zamanlı varsayımıyla) ve donanım durumunuza göre değişir. Her faz sonunda bir <b>karar kapısı</b> var.</p>
+
+  <div class="faz"><h4>Faz 0 · Altyapı ve hızlı kazanımlar (≈1 hafta)</h4>
+    <ul class="sik"><li>Deney altyapısı: yapılandırma dosyası, sabit tohumlar, tek komutla yeniden üretim (<code>scripts/</code> altında).</li>
+    <li>Mevcut veriyle: <b>tüm 4 türü sırayla sakla</b> (şimdi yalnız pulse), AUROC ve %5 FPR'da TPR ekle, max-prob/LOF/EIF/OCSVM baz çizgilerini ekle, I ve Q'yu birlikte kullan, gruplu bölme.</li>
+    <li>Çıktı: "mevcut projenin güçlendirilmiş sonuçları" tablosu. <b>Karar kapısı:</b> Isolation Forest, baz çizgilere karşı hâlâ iyi mi?</li></ul></div>
+  <div class="faz"><h4>Faz 1 · Gerçekçi sinyal ve kanal (≈2–3 hafta)</h4>
+    <ul class="sik"><li>1 kHz ton yerine <b>OFDM taşıyıcı</b> (pilot ve periyodik "SSB-benzeri" yapı; örn. 15 kHz alt taşıyıcı aralığı, 5–20 MHz bant). Python/GNU Radio; mümkünse gr-ieee802-11 ile çapraz kontrol.</li>
+    <li>Kanal: 3GPP 38.901 TDL-A/B/C (NumPy veya Sionna), Doppler, CFO, IQ dengesizliği, kanal gerçekleşmesi çeşitliliği.</li>
+    <li><b>Kalibre JNR</b> ızgarası: jammer gücü artık meşru sinyale göre dB olarak tanımlı; <code>jammer_amp</code> yerine.</li>
+    <li><b>Karar kapısı:</b> yeni veri üzerinde mevcut hat hâlâ çalışıyor mu, başarı nasıl değişti? (Beklenti: düşecek; bu normal.)</li></ul></div>
+  <div class="faz"><h4>Faz 2 · Saldırı kataloğu (≈2–3 hafta)</h4>
+    <ul class="sik"><li><b>Gürültü ailesi:</b> sürekli/barrage gürültü. <b>Tonal:</b> tek ton, çoklu ton. <b>Süpüren:</b> sweep/chirp, atlamalı ton. <b>Darbeli/protokol-farkında:</b> gerçek açık/kapalı darbe (URLLC-tarzı), SSB/PRACH-hizalı düşük görev çevrimli, pilot-farkında, reaktif (enerji tetikli, Markov).</li>
+    <li>Her saldırının <b>fiziksel imzası</b> belgelenir (bölüm 8 şablonuyla); hangi ailede olduğu etiketlenir.</li>
+    <li>İsteğe bağlı: RIS kaynaklı kanal-tabanlı girişim (kaskad kanal), OTFS taşıyıcı.</li></ul></div>
+  <div class="faz"><h4>Faz 3 · Açık-küme protokolü ve modeller (≈2–3 hafta)</h4>
+    <ul class="sik"><li><b>Protokol:</b> (i) leave-one-type-out, (ii) <b>leave-one-family-out</b>, (iii) eşik yalnızca normalden, FPR hedefi %1/%5, (iv) metrikler: AUROC, sabit-FPR'da TPR, bilinmeyen yakalama + yanlış alarm, tür sınıflandırma doğruluğu (bilinenler için).</li>
+    <li><b>Modeller:</b> Isolation Forest, EIF, LOF, OCSVM, otoenkoder/VAE, Deep SVDD; denetimli RF/CNN + max-logit, enerji, Mahalanobis; OpenMax. Bizim yöntem: el yapımı öznitelik + hafif anomali/denetimli birleşim.</li>
+    <li><b>Karar kapısı:</b> bizim yöntemin net bir avantaj/sunumu var mı (başarı, hesap yükü, eşik sağlamlığı)? Yoksa makale "kıyas ve protokol" makalesi olur, bu da kabul edilebilir bir tür.</li></ul></div>
+  <div class="faz"><h4>Faz 4 · Dış doğrulama (≈2–4 hafta)</h4>
+    <ul class="sik"><li><b>Açık veri:</b> Alhazbi (ham I/Q, 900 MHz, 1 Msps, ton ve Gauss; Zenodo 10.5281/zenodo.7119039), WiFiSpectralJam, Jammertest/GNSS setleri. Hangisi hangi analize uyuyor, ön çalışma gerekir.</li>
+    <li><b>USRP:</b> varsa kısa bir ölçüm kampanyası (en az 1 verici + 1 jammer + 1 alıcı; 2–3 ortam/mesafe; ton, Gauss, sweep, darbeli). Bu <b>en güçlü kanıt</b> olur.</li>
+    <li>Sim-to-real boşluğu açıkça raporlanır; domain randomization ve kalibrasyon denenir.</li></ul></div>
+  <div class="faz"><h4>Faz 5 · Dağıtım ve dayanıklılık (≈1–2 hafta)</h4>
+    <ul class="sik"><li>Gecikme (ms/pencere), parametre/bellek, CPU üzerinde ölçüm; "xApp uyumlu" çerçeveleme için kıyas (InterfO-RAN &lt;650 µs gibi).</li>
+    <li>Hızlı adversarial test (düşmanca saldırı derinlemesine değil; Wang'daki FGSM sonuçları referans).</li>
+    <li>Zamansal saldırgan: Markov/reaktif ile sıralı tespit (CUSUM/HMM) analizi.</li></ul></div>
+  <div class="faz"><h4>Faz 6 · Yazım ve yayın (≈2–3 hafta)</h4>
+    <ul class="sik"><li>Taslak, şekiller, ek materyal, <b>kod ve veri seti yayını</b> (tekrarlanabilirlik artı değerdir).</li>
+    <li>IEEE Xplore/Scopus'ta <b>yenilik tazelemesi</b> (özellikle Chong ICC-W 2026, Ratti/Kurma xApp çalışmaları, Aissou 2026).</li></ul></div>
+</section>
+
+<!-- ============================================================ 11 -->
+<section id="taslak">
+  <div class="ust-etiket">11 · Makale</div>
+  <h2>Makale taslağı</h2>
+
+  <h3>Çalışma başlığı önerileri</h3>
+  <ul class="sik">
+    <li><i>Calibrated Open-Set Jamming Detection on Raw I/Q for 6G-Oriented OFDM Links: Family-Level Hold-Out, Cross-Domain Robustness and Lightweight Deployment</i></li>
+    <li><i>Grid-Aware Jammers and Unknown-Attack Detection: A Raw-I/Q Benchmark with Threshold Calibration and Sim-to-Real Validation</i></li>
+    <li><i>Beyond Closed-Set Jamming Classification: Leave-One-Family-Out Evaluation for 5G-Advanced/6G Physical-Layer Security</i></li>
+  </ul>
+
+  <h3>Katkı cümleleri (taslak; ikinci tur sonrası "mimari" katkıdan protokol katkısına kaydırıldı)</h3>
+  <ol class="sik">
+    <li>Pilot/kontrol-kanalı hizalı, URLLC-tarzı düşük görev çevrimli ve reaktif (Markov) saldırıları içeren, OFDM/NR-benzeri taşıyıcı üzerinde <b>ham I/Q</b> jamming <b>üreteci ve veri seti</b> (açık kaynak).</li>
+    <li><b>Aile bazlı</b> (leave-one-family-out) bilinmeyen-saldırı protokolü; eşiğin <b>yalnızca normal veriden</b> kalibre edilmesi; AUROC, sabit-FPR'da TPR ve JNR/kanal bazlı raporlama; <b>eşiğin kayıt/kanal dışında bozulmasının niceliksel analizi</b> (Huso'nun ortam-arası FPR kayması ile Herzalla'nın "AUC yüksek, F1 düşük" bulgusunun jamming I/Q'sunda doğrulanması).</li>
+    <li>Güçlü baz çizgilerle karşılaştırma: <b>Hong-tipi DT→IF hibriti</b>, Huso-tipi P95 otoenkoder, Schösser VAE, EIF, LOF, Deep SVDD, max-logit, OpenMax.</li>
+    <li>Kayıt-dışı ve simülasyondan gerçeğe/dış-veri doğrulaması (donanım veya açık I/Q veriyle).</li>
+    <li>Öğrenilmiş skor üzerinde sıralı tespit (CUSUM/HMM): gecikme–FPR (ARL) analizi, Markov/reaktif saldırgan altında.</li>
+    <li>Ölçülmüş gecikme/bellek (CPU, ms) ile "xApp uyumlu" çerçeveleme (Kurma ~14 ms ile kıyas).</li>
+  </ol>
+  <div class="uyari-kutu"><b>Yazmayın:</b> "ilk açık-küme jamming çalışması" ya da "bilinen için sınıflayıcı + bilinmeyen için Isolation Forest mimarisi yeni" (Hong 2023, Schösser, Zhong, CITADEL, Kurma var); "eşik protokolü yeni" (Huso 2026), "6G'ye özgü" (standart dalga biçimi ve 6G saldırıları olmadan), "gerçek dünya" (yalnızca simülasyonla). Gerekçesiz "NR uyumlu" yerine "NR-benzeri" yazın.</div>
+
+  <h3>Deney planı</h3>
+  <div class="tablo-kutu"><table>
+    <tr><th>#</th><th>Deney</th><th>Ne gösterir</th><th>Çıktı</th></tr>
+    <tr><td>E1</td><td>Kapalı-küme tür sınıflandırma (temel)</td><td>Yeni veride ne kadar zor</td><td>Doğruluk, karışıklık matrisi</td></tr>
+    <tr><td>E2</td><td>Leave-one-type-out (tüm türler)</td><td>Bilinmeyen tür yakalama</td><td>AUROC, TPR@%5FPR, tür-bazlı tablo</td></tr>
+    <tr><td>E3</td><td>Leave-one-family-out</td><td>Yeni <i>aile</i> (ızgaraya hizalı vb.) zorluğu</td><td>Aile-bazlı tablo</td></tr>
+    <tr><td>E4</td><td>Eşik protokolü (yalnız normal)</td><td>Eşik sağlamlığı, FPR kontrolü</td><td>Gerçekleşen FPR, duyarlılık eğrisi</td></tr>
+    <tr><td>E5</td><td>JNR taraması</td><td>Zayıf jammer'da çöküş</td><td>TPR–JNR eğrisi</td></tr>
+    <tr><td>E6</td><td>Kanal/oturum bazlı bölme</td><td>Kayıt-dışı genelleme</td><td>E2'nin çapraz-alan sürümü</td></tr>
+    <tr><td>E7</td><td>Dış doğrulama (açık veri / USRP)</td><td>Sim-to-real boşluğu</td><td>Aktarım tablosu</td></tr>
+    <tr><td>E8</td><td>Baz çizgi karşılaştırması</td><td>Yöntem değeri</td><td>EIF/LOF/VAE/Deep SVDD/max-logit/OpenMax</td></tr>
+    <tr><td>E9</td><td>Ablasyon: yalnız I / I+Q, pencere uzunluğu, öznitelik grupları</td><td>Hangi bileşen önemli</td><td>Ablasyon tablosu</td></tr>
+    <tr><td>E10</td><td>Gecikme, parametre, bellek</td><td>RAN-içi uygulanabilirlik</td><td>ms/pencere, KB</td></tr>
+    <tr><td>E11</td><td>Zamansal saldırgan + sıralı tespit</td><td>Markov/reaktif davranış</td><td>Tespit gecikmesi, ARL</td></tr>
+  </table></div>
+
+  <h3>Yayın yerleri (6G ajanının gözlemlediği; kapsam/son tarihler doğrulanmadı)</h3>
+  <p class="kucuk soluk">Önerim: önce bir <b>konferans/atölye bildirisi</b> (ICC/GLOBECOM/WCNC workshop düzeyi; aynı konuda 2026 bildirileri gözlendi), sonra genişletilmiş <b>dergi sürümü</b>. Dergi adayları: IEEE Open J. of the Communications Society (OJ-COMS; Schösser buraya gönderilmiş), IEEE Trans. Vehicular Technology, IEEE Access / Sensors (daha geniş kabul), IEEE WCL (kısa mektup; tek güçlü bulgu için). Çok yönlü "kıyas ve protokol" için IEEE Communications Magazine tarzı bir yayın da düşünülebilir. <b>Kapsam, ücret ve son tarihleri her biri için ayrıca kontrol edin.</b></p>
+</section>
+
+<!-- ============================================================ 12 -->
+<section id="risk">
+  <div class="ust-etiket">12 · Risk</div>
+  <h2>Riskler, hakem soruları ve dikkat edilecekler</h2>
+  <div class="izgara g2">
+    <div class="kart"><h4>Hakemin soracağı sorular</h4><ul class="sik kucuk">
+      <li>"Hong 2023 (karar ağacı + Isolation Forest) ile Schösser 2026 ve Zhong 2025'ten farkınız ne?"</li>
+      <li>"Max-logit/enerji baseline'ı neden yok?"</li>
+      <li>"Eşiği nasıl seçtiniz, bilinmeyen veriyle mi?"</li>
+      <li>"Test penceresi eğitim penceresinin komşusu mu?"</li>
+      <li>"Gerçek ölçüm var mı, simülasyon gerçekçi mi?"</li>
+      <li>"6G'ye özgü olan ne? Standart dalga biçimi hangisi?"</li>
+      <li>"SNR/JNR hangi tanımla; jammer gücü kalibre mi?"</li></ul></div>
+    <div class="kart"><h4>Tekniksel riskler</h4><ul class="sik kucuk">
+      <li>OFDM geçişi sonrası başarının düşmesi (normaldir; planlayın).</li>
+      <li>Izgaraya hizalı saldırılar el yapımı özniteliklerle zor ayrışabilir (Schösser'de denetimli modeller bile düşüyor); derin baz gerekebilir.</li>
+      <li>Q bileşenini kullanmak, mevcut 10 özniteliğin yeniden tasarımını gerektirir.</li>
+      <li>USRP olmadan sim-to-real iddiası zayıf kalır; açık I/Q veri sınırlı (Alhazbi yalnız ton ve Gauss).</li></ul></div>
+    <div class="kart"><h4>Yenilik riski</h4><ul class="sik kucuk">
+      <li><b>Hong 2023 okunmadı</b> (kapalı erişim; DOI 10.1109/LCOMM.2023.3275694) ve mimariye çok yakın. Özniteliklerin paket/bağlantı düzeyi olduğuna dair ikincil ipuçları var ama <b>düşük güvenli</b>; tam metin gelmeden Hong'un sayılarını veya öznitelik türünü yazmayın.</li>
+      <li><b>Huso 2026</b> eşik protokolüne, <b>Kurma 2026</b> hafif xApp + IF çerçevesine yaklaşıyor; Kurma tam metni 2027'ye kadar embargolu.</li>
+      <li><b>Schösser 2026</b> ve <b>"Holding the Line"</b> K-B kararı için tam okunmalı.</li>
+      <li>Chong ICC-W 2026 (RIS jamming veri seti) ve Aissou 2026 (RL jammer + zero-day) <b>okunamadı</b>; K1/K2'ye yakın olabilirler.</li>
+      <li>Ratti 2026, Kurma 2026 (xApp tabanlı jamming) okunamadı; "hafif xApp" çerçevelemesini etkileyebilir.</li>
+      <li>2026'nın ikinci yarısındaki arXiv kayıtları hakem sürecinde; yayın durumu değişebilir.</li></ul></div>
+    <div class="kart"><h4>Atıf yaparken dikkat</h4><ul class="sik kucuk">
+      <li><b>Paramata 2025:</b> özet %97 yakalama diyor, tablo 672/750 = %89,6.</li>
+      <li><b>Viana 2022:</b> %99,99, tek güç dizisine dayanıyor; genel ortalama ~%70.</li>
+      <li><b>Ott:</b> doğruluk %97,66 ama kesinlik 0,151.</li>
+      <li><b>Wang 2022 (IoT):</b> arXiv sayfasında başka makaleyle metin örtüşmesi notu var.</li>
+      <li><b>Pirayesh:</b> Arjoune'nin doğruluğunu %95,7 yazıyor (orijinal %96,6).</li>
+      <li>Rapordaki WSN-DS arXiv numarası yanlış; WSN-DS ayrıca jamming veri seti değil (ağ katmanı DoS).</li></ul></div>
+  </div>
+</section>
+
+<!-- ============================================================ 13 -->
+<section id="kararlar">
+  <div class="ust-etiket">13 · Kararlar</div>
+  <h2>Yol haritasını netleştirmek için sizden gerekenler</h2>
+  <ol class="sik">
+    <li><b>Önce okunması gerekenler (yenilik kararı bunlara bağlı):</b> (a) <b>Hong, Kim, Lee (2023)</b>, DOI 10.1109/LCOMM.2023.3275694, kapalı erişim: üniversite kütüphanesi IEEE erişimiyle veya yazara (Si-Hyeon Lee, KAIST) e-posta ile alınabilir; (b) <b>Chong vd. 2026</b> (RIS jamming veri seti), DOI 10.1109/ICCWorkshops63917.2026.11586537; (c) <b>"Holding the Line"</b> (Virginia Tech, 5G O-RAN jamming sınıflandırma); (d) Schösser 2026'yı (elimizde) <b>baştan sona</b> okuyup hold-out protokolünü satır satır çıkarmak; bunu ben yapabilirim.</li>
+    <li><b>Donanım:</b> USRP (veya benzeri SDR) erişiminiz var mı? Varsa model ve alıcı/verici sayısı. (Dış doğrulama stratejisini belirler.)</li>
+    <li><b>Hedef ve süre:</b> bir konferans/atölyeye mi (kısa, ~10–12 hafta) yoksa doğrudan dergiye mi (~16–20 hafta) yönelelim?</li>
+    <li><b>Dalga biçimi:</b> kendi OFDM taşıyıcımız (Python/GNU Radio, "NR-benzeri") yeterli mi, yoksa MATLAB 5G Toolbox lisansınız var mı (gerçek NR SSB/PRACH)?</li>
+    <li><b>Ekip ve yazarlık:</b> çalışma Senanur ile birlikte mi sürecek? Rapor ve veri üzerinde kim hangi rolü alacak?</li>
+    <li><b>6G odağı:</b> önerilen 6G alt kümesi (ızgara-farkında kontrol kanalı/pilot, URLLC darbe, reaktif) uygun mu, yoksa RIS veya OTFS gibi daha "iddialı" bir başlık mı eklemek istersiniz?</li>
+  </ol>
+
+  <h3>Ek dosyalar</h3>
+  <ul class="sik">
+    <li><code>docs/literatur/karsilastirma_matrisi.csv</code> ve <code>matris_birlesik.json</code>: @@N_TOP@@ makalenin tüm alanları</li>
+    <li><code>docs/literatur/&lt;klasör&gt;/INCELEME_*.md</code>: her makale için ayrıntılı inceleme (10 dosya)</li>
+    <li><code>docs/literatur/06_6g_tehdit_ve_bosluk/6G_TEHDIT_TARAMASI.md</code>: 6G tehdit manzarası, yenilik taraması (K1–K7), derlemeler ve yayın yerleri; <code>6g_saldirilar.json</code></li>
+    <li><code>docs/literatur/README.md</code>: klasör haritası ve hâlâ indirilecek makaleler</li>
+    <li><code>scripts/literatur/</code>: birleştirme ve rapor üretim betikleri</li>
+  </ul>
+  <footer>Bu rapor <code>scripts/literatur/rapor_olustur.py</code> ile üretildi. Sayılar birleşik tablodan programla hesaplanır; yorumlar yazarın (Claude) değerlendirmesidir ve hakemli bir sentez değildir.</footer>
+</section>
+
+</main>
+</div>
+<div id="ipucu"></div>
+<script>
+var DATA = @@DATA@@;
+var BIZ = @@BIZ@@;
+var G6 = @@G6@@;
+var KESISIM = @@KESISIM@@;
+var ONCELIK = @@ONCELIK@@;
+/*@@JS@@*/
+</script>
+</body>
+</html>

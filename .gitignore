@@ -19,3 +19,6 @@ Thumbs.db
 
 # Rapor verisi (üretilen, büyük): scripts/rapor_verisi/cikti/ yeniden üretilebilir
 scripts/rapor_verisi/cikti/
+
+# Literatür PDF'leri telifli olabilir: depoya gönderilmez (KAYNAKLAR.md listeleri gönderilir)
+docs/literatur/**/*.pdf

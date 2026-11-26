@@ -1,0 +1,405 @@
+[
+ {
+  "baslik": "ISAC (algilama+haberlesme) - sensing'i hedef alan jamming/spoofing/replay",
+  "tanim": "Ortak (OFDM tabanli) dalga bicimi ile hem haberlesme hem radar/sensing yapan sistemde, sensing yolunu bozan aldatici jamming (DRFM benzeri), sahte hedef enjeksiyonu (spoofing) ve replay saldirilari. Standart/biliniyor olan OFDM sembolleri ucuz SDR ile bile sahte hedef uretmeyi mumkun kilar (Yildirim 2025).",
+  "alti_g_ozgulugu": "ISAC, 6G IMT-2030 icin temel kullanim senaryolarindan biri; haberlesme dalga bicimi ayni zamanda sensing sinyali oldugu icin saldirgan bilinen yapidan yararlanir ve saldiri yuzeyi sensing verisini (aralik-Doppler haritasi) de kapsar.",
+  "fiziksel_imza": "Aralik-Doppler haritasinda sahte hedef/gurultu tabani yukselmesi; yankilarin uyumlu (korele) ve gercek hedef yankisindan farkli dagilimi; OFDM sembolleriyle ayni bant ve CP/numerology yapisi; MIMO'da sahte hedefin aci-uzay tutarsizligi; kanal tahmininde (CSI) ani degisim.",
+  "simulasyon_araclari": "Sionna PHY v2.2.0 (sionna.phy.isac: angular_delay_doppler_spectrum, steering_vectors, ofdm_to_delay_doppler_channel) + Sionna RT v2.2.0 (RCS modulu); MATLAB (5G Toolbox + Phased Array/Radar araclari, dogrulanmadi); GNU Radio gr-ofdmradar (FOSDEM 2022 sunumu, depo ayrintisi dogrulanmadi); gercek deney icin USRP (yildirim 2025 SDR ile deneysel).",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Arcangeloni, Testi, Giorgetti, 'Jamming Detection in MIMO-OFDM ISAC Systems Using Variational Autoencoders', arXiv:2410.01632 (2 Ekim 2024); IEEE ISSE 2024, DOI 10.1109/ISSE63315.2024.10741110",
+    "url": "https://arxiv.org/abs/2410.01632"
+   },
+   {
+    "kunye": "Yildirim, Keskin, Wymeersch, Horlin, 'OFDM-based JCAS under Attack: The Dual Threat of Spoofing and Jamming in WLAN Sensing', arXiv:2501.06798 (12 Ocak 2025)",
+    "url": "https://arxiv.org/abs/2501.06798"
+   },
+   {
+    "kunye": "Chrysanidis, Liu, Argyriou, 'A Replay Attack Against ISAC Based on OFDM', IEEE Access, 2024, DOI 10.1109/ACCESS.2024.3359680 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/access.2024.3359680"
+   },
+   {
+    "kunye": "Krayani, Barabino, Marcenaro ve ark., 'Integrated Sensing and Communication for Joint GPS Spoofing and Jamming Detection in Vehicular V2X Networks', IEEE WCNC 2023, DOI 10.1109/WCNC55385.2023.10118852 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/wcnc55385.2023.10118852"
+   },
+   {
+    "kunye": "Aman, Illi, Al-Kuwari ve ark., 'Integrating Communication, Sensing and Security: Progress and Prospects of PLS in ISAC Systems', IEEE Commun. Surveys & Tutorials, 2026, DOI 10.1109/COMST.2026.3691091 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/comst.2026.3691091"
+   }
+  ]
+ },
+ {
+  "baslik": "RIS (akilli yansitici yuzey) - kotu niyetli/ele gecirilmis RIS ile jamming, RIS spoofing ve RIS varliginda tespit",
+  "tanim": "Saldirganin kontrol ettigi pasif/aktif RIS'in yansima fazlarini degistirerek (a) kullanicilar arasi yapay giris/girisim olusturmasi (uzamsal-alan jamming), (b) sensing yankisini bozan sahte hedef uretmesi. Saldirgan pilot/kanal tahmin asamasinda sessiz kalip veri asamasinda fazlari degistirebilir; bu nedenle ek guc gerektirmez ve klasik jammer gibi gorunmez (de Sena 2024). [Duzeltme, 2. tur: de Sena ozeti saldiriyi veri fazinda anlatir; 'pilot fazinda sessiz', 'ek guc gerektirmez' ve 'klasik jammer gibi gorunmez' ifadeleri ozet tarafindan desteklenmiyor, yorumdur. Bkz. 07_ikinci_tur_komsu_calismalar/6G_KAYNAK_DOGRULAMA.md]",
+  "alti_g_ozgulugu": "RIS, 6G aday teknolojisidir; saldirgan kendi enerji harcamadan kanali bozabilir ve 'jammer' sinyali olmayan, yalnizca kanal degisimi olarak gorunen bir saldiri sinifi dogurur; klasik enerji/spektrum tabanli jamming dedektorleri gormeyebilir.",
+  "fiziksel_imza": "Ek sinyal gucu yok veya cok az; kanal matrisinde (CSI) zamanla/pilot-veri arasinda kararsizlik; kullanicilar arasi korelasyon artisi (SDMA dikgenliginin bozulmasi); belirli aci/gecikmelerde sahte yansima yollari; ISAC'ta sahte yankilar.",
+  "simulasyon_araclari": "Sionna RT'de RIS yalnizca eski 0.19.x surumunde var (sionna-rt v1.0.0 surum notu: 'RIS future releases', 0.19 kullanin); Sionna v2.2.0 dokumanlarinda RIS bahsi bulunamadi. Alternatif: kanal-seviyesi RIS modeli (kaskad kanal h_d + h_r^T diag(phi) h_t) ile kendi Python/NumPy kodu; MATLAB Communications/5G Toolbox'ta ozel kodlama. Donanim: gercek RIS gerektirir (donanimsiz yalniz kanal modeli).",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Mackensen, Staat, Roth ve ark., 'Spatial-Domain Wireless Jamming with Reconfigurable Intelligent Surfaces', NDSS 2025, DOI 10.14722/ndss.2025.240440 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.14722/ndss.2025.240440"
+   },
+   {
+    "kunye": "de Sena, Kibilda, Mahmood, Gomes, Latva-aho, 'Malicious RIS versus Massive MIMO: Securing Multiple Access against RIS-based Jamming Attacks', IEEE Wireless Commun. Lett. 13(4), 2024, arXiv:2401.07149",
+    "url": "https://arxiv.org/abs/2401.07149"
+   },
+   {
+    "kunye": "Chong, Gautam, Bouazizi ve ark., 'A Synthetic Dataset for Anomaly Detection of RIS-Enabled Jamming Attacks', IEEE ICC Workshops 2026, DOI 10.1109/ICCWorkshops63917.2026.11586537 (yalnizca OpenAlex kaydi, ozet/ icerik gorulmedi)",
+    "url": "https://doi.org/10.1109/iccworkshops63917.2026.11586537"
+   },
+   {
+    "kunye": "Chou, Shui, Fu, Chang, Saad, Wang, 'Green Learning-Based Signal-Level Detection of RIS Spoofing Attacks in Vehicular ISAC Systems', arXiv:2611.01881 (1 Kasim 2026; IEEE ICC 2027'ye gonderildi)",
+    "url": "https://arxiv.org/abs/2611.01881"
+   },
+   {
+    "kunye": "Dassanayake, Gunasinghe, Amarasuriya, 'Secrecy Rate Analysis and Active Pilot Attack Detection for IRS-Aided Massive MIMO Systems', IEEE TIFS 2023, DOI 10.1109/TIFS.2023.3318941 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/tifs.2023.3318941"
+   }
+  ]
+ },
+ {
+  "baslik": "THz / mmWave - isin egitimi/yonetimi saldirilari (beam-stealing), dar isin jamming, blokaj",
+  "tanim": "Isin hizalama (beam alignment/sweep) cercevelerini yükselterek yeniden ileten (amplify-and-relay) 'beam-stealing', isin egitimi sirasinda sahte SNR, THz'de dar isinin yan loblarina tonlu 'beat jamming' veya genis bantli modulasyonlu jamming. Dar isin jammerin hedefi hassas nisan almasini gerektirir, ancak isin ogrenme fazini hedefleyen saldirilar dusuk guc/yuksek etki saglar.",
+  "alti_g_ozgulugu": "mmWave/sub-THz ve yuksek yonluluk 6G'nin merkezindedir; 'yonlu baglanti daha guvenlidir' varsayimi saldirilarin yeni bicimlerini (isin calma, yan lob jamming, kanal-istatistigi bozma) dogurur. Blokaj/atenuasyon da fiziksel imza olarak jammerla karisabilir.",
+  "fiziksel_imza": "Isin tarama (sweep) cercevelerinde yapay SNR yukselmesi, guc-gecikme profilinde (PDP) ek yol, geliş acisi tutarsizligi; THz'de yan lob yonunden dar bantli ton; zaman-sınırli darbeli (egitim penceresine hizali) girisim; RF parmak izi/senkronizasyon bloklarinda (SSB) farkli donanim imzasi.",
+  "simulasyon_araclari": "Sionna RT (mmWave/sub-THz'de ray tracing, 3GPP 38.901 kanal modeli; THz-ozel malzeme modeli dogrulanmadi); MATLAB 5G Toolbox / Phased Array; ozel Python isin tarama simulatoru; gercek deney 28/60 GHz donanim gerektirir (SecBeam 28 GHz testbed). GNU Radio ile yalnizca bant-alti (sub-6) esdeger darbe/isin hizali simulasyon yapilabilir.",
+  "simulasyon_zorlugu": "yuksek",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Priyadarshani, Park, Ata, Alouini, 'Jamming Intrusions in Extreme Bandwidth Communication: A Comprehensive Overview', arXiv:2403.19868; IEEE OJ-COMS 2025, DOI 10.1109/OJCOMS.2025.3594284 (OpenAlex kaydi)",
+    "url": "https://arxiv.org/abs/2403.19868"
+   },
+   {
+    "kunye": "Li, Lazos, Li, 'SecBeam: Securing mmWave Beam Alignment against Beam-Stealing Attacks', arXiv:2307.00178",
+    "url": "https://arxiv.org/abs/2307.00178"
+   },
+   {
+    "kunye": "Hashemi Natanzi ve ark., 'Secure mmWave Beamforming with Proactive-ISAC Defense Against Beam-Stealing Attacks', arXiv:2508.02856; IEEE CCNC 2026, DOI 10.1109/CCNC65079.2026.11366415 (OpenAlex)",
+    "url": "https://arxiv.org/abs/2508.02856"
+   },
+   {
+    "kunye": "Geranmayeh, Gunlu, 'Digital-Twin-Referenced Belief-Guided Q-Learning for Jammer Identification and Beam-Power Control in a mmWave Model', arXiv:2610.16770 (12 Ekim 2026)",
+    "url": "https://arxiv.org/abs/2610.16770"
+   },
+   {
+    "kunye": "Dinh-Van, Hoang, Bulut ve ark., 'A Defensive Strategy Against Beam Training Attack in 5G mmWave Networks for Manufacturing', IEEE TIFS 2023, DOI 10.1109/TIFS.2023.3265341 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/tifs.2023.3265341"
+   },
+   {
+    "kunye": "Shrestha ve ark., 'Jamming a terahertz wireless link', Nature Communications 2022 (PMC9160013; yazi listesi dogrulanmadi)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9160013/"
+   }
+  ]
+ },
+ {
+  "baslik": "Massive MIMO / cell-free - pilot kirliligi, pilot spoofing ve pilot jamming",
+  "tanim": "Saldirganin uplink pilot dizisini tekrarlamasi/bozmasi (pilot contamination/spoofing) veya pilot fazinda jamming yaparak kanal tahminini bozmasi; sonuc olarak formlama (beamforming) ve alici yanlis kanala kilitlenir. Cell-free'de dagitik erisim noktalari saldiriyi hem zorlastirir hem yeni tespit imkani (uzamsal seyreklik) saglar.",
+  "alti_g_ozgulugu": "Massive MIMO 5G'de var; 6G'de cell-free/ultra-massive MIMO ile olceklenir. CSI bagimliligi arttikca pilot saldirilarinin etkisi buyur. Saldiri, kanal tahmini asamasina odaklanan 'akilli' (protokol bilen) bir sinif.",
+  "fiziksel_imza": "Pilot sembollerinde (DMRS/SRS) ek guc veya ayni pilot dizisinin ikinci kopyasi; uzamsal kovaryans matrisinde ek yonlu bilesen (jammer yonu); kanal tahmini hata artisi; veri fazindan farkli istatistik.",
+  "simulasyon_araclari": "Sionna PHY v2.2.0 (MIMO, OFDM kanal tahmini, 3GPP 38.901 kanal modeli, 'Realistic Multiuser MIMO OFDM' ve 'OFDM MIMO Channel Estimation' ogreticileri); MATLAB 5G Toolbox (nrChannelEstimate, CDL/TDL). Donanim: cok kanalli koheren SDR (USRP X310/N310 + senkronizasyon) gerekir; tek USRP ile yapilamaz.",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "cok",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Choudhury, Ikhlef, Saad, 'Deep Learning for Detection and Identification of Asynchronous Pilot Spoofing Attacks in Massive MIMO Networks', IEEE TWC 2024, DOI 10.1109/TWC.2024.3450834 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/twc.2024.3450834"
+   },
+   {
+    "kunye": "Du, Zhang, Jing, 'Jamming Detection and Channel Estimation for Spatially Correlated Beamspace Massive MIMO', IEEE TWC 2025, DOI 10.1109/TWC.2025.3607091 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/twc.2025.3607091"
+   },
+   {
+    "kunye": "Marti, Arquint, Studer, 'Jammer-Resilient Time Synchronization in the MIMO Uplink', IEEE Trans. Signal Process. 2025, DOI 10.1109/TSP.2025.3536012 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/tsp.2025.3536012"
+   },
+   {
+    "kunye": "Xu, Wang, Zhang ve ark., 'Pilot Spoofing Attack on the Downlink of Cell-Free Massive MIMO: From the Perspective of Adversaries', IEEE TIFS 2024, DOI 10.1109/TIFS.2024.3402973 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/tifs.2024.3402973"
+   },
+   {
+    "kunye": "Li, Gao, Xu, 'Spatial Sparsity-Based Pilot Attack Detection and Transmission Countermeasure for Cell-Free Massive MIMO System', IEEE Systems Journal 2022, DOI 10.1109/JSYST.2022.3188279 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/jsyst.2022.3188279"
+   }
+  ]
+ },
+ {
+  "baslik": "NTN / LEO uydu - yukari/asagi link jamming, yer terminali hedefleme",
+  "tanim": "LEO/uydu-IoT linklerine (ornegin Iridium) gurultu/ton jammer; uplinkte uydu alicisini hedefleme, downlinkte yer terminallerini hedefleme; ayrica spoofing. LEO'nun yuksek Doppler/gecikme degisimi nedeniyle jamming imzasi karisir.",
+  "alti_g_ozgulugu": "6G NTN'yi 3GPP/ITU cercevesine dahil eder; uydu linkleri genis kapsama alani nedeniyle tek bir jammerin cok sayida terminali etkilemesine izin verir ve linklerin zayif koruma ozelligi (ornegin Iridium) arastirmada vurgulanir.",
+  "fiziksel_imza": "Alici gurultu tabaninda artis (kodlu mesajlar dogru cozulse bile SNR/CN0 yuksek kalabilir - Huso 2026); Doppler kaymali ton/sweep; darbeli (kesintili) girisim; zaman-frekans yapisi dar bant IoT sinyaliyle cakisir.",
+  "simulasyon_araclari": "Sionna PHY (kanal) + ozel Doppler/gecikme modeli; MATLAB Satellite Communications Toolbox (dogrulanmadi); GNU Radio (gr-iridiumtx, Jedermann arXiv:2603.12062'de bahsedilen Iridium kodlayici - SDR deneyi); ns-3/OMNeT++ (protokol seviyesi). Donanim: gercek uydu sinyali icin SDR (bu tur calismalar gercek mesaj kaydediyor).",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "seyrek",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Huso, Fliescher, Sciancalepore, Oligeri, 'Cloudy Skies: Early Detection of Jamming Against Iridium LEO Satellite-IoT Links', arXiv:2611.08118 (5 Kasim 2026)",
+    "url": "https://arxiv.org/abs/2611.08118"
+   },
+   {
+    "kunye": "Gecgel, Kurt, 'Intermittent Jamming against Telemetry and Telecommand of Satellite Systems and A Learning-driven Detection Strategy', arXiv:2107.06181 (2021)",
+    "url": "https://arxiv.org/abs/2107.06181"
+   },
+   {
+    "kunye": "Sitouah, Merazka, Hedjazi, 'Deep learning approach for interruption attacks detection in LEO satellite networks', arXiv:2301.03998 (2022)",
+    "url": "https://arxiv.org/abs/2301.03998"
+   },
+   {
+    "kunye": "Wigchert, Sciancalepore, Oligeri, 'Detection of Aerial Spoofing Attacks to LEO Satellite Systems via Deep Learning', Computer Networks 2025, DOI 10.1016/j.comnet.2025.111408 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1016/j.comnet.2025.111408"
+   },
+   {
+    "kunye": "Kang, Park, Lee, 'A Survey on Satellite Communication System Security', Sensors 2024, DOI 10.3390/s24092897 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.3390/s24092897"
+   }
+  ]
+ },
+ {
+  "baslik": "O-RAN / AI-yerel RAN - xApp/rApp ile jamming tespiti ve xApp/rApp hedefli saldirilar",
+  "tanim": "Iki yon: (1) RAN icinde KPI (BLER, SINR, MCS) veya I/Q tabanli jamming tespit xApp'leri; (2) AI/ML xApp'lerine ve hava arayuzu girdilerine adversarial saldiri (spektrogram/KPM bozma, kara-kutu kacinma, UAP), yetkisiz xApp.",
+  "alti_g_ozgulugu": "6G'de AI-yerel RAN ve acik arayuzler (E2) standart olacak; ML modeli kendisi saldiri yuzeyidir. Tespit modelinin kendisinin adversarial saldiriya acik olmasi tespit calismalari icin yeni bir tehdit boyutu.",
+  "fiziksel_imza": "Tespit tarafinda: BLER/MCS/SINR zaman serileri (KPI), uplink I/Q spektrogramlari; saldiri tarafinda: dedektorun girdisine eklenen kucuk adversarial gurultu (evrensel pertürbasyon) ve darbeli jamming'in KPI'daki kalici gecikme etkisi.",
+  "simulasyon_araclari": "OAI/srsRAN + USRP (xApp icin FlexRIC/Near-RT RIC emulatoru); Colosseum emulator; Sionna Research Kit (OAI tabanli, AI/ML bilesenlerini gercek 5G NR RAN'a dagitmak icin, sionna sayfasi); GNU Radio jammer. Donanim tercihen gerekli (USRP B210/X310 kullanimi kaynaklarda).",
+  "simulasyon_zorlugu": "yuksek",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Hoffmann, Kulacz, Baldo, Pakula, Raghothaman, 'Jamming Detection in 5G/6G Networks: From O-RAN Concept to OCUDU Deployment', arXiv:2609.18499 (16 Eylul 2026)",
+    "url": "https://arxiv.org/abs/2609.18499"
+   },
+   {
+    "kunye": "Rahman, Hossen, Stephenson, Shah, Da Silva, 'SAJD: Self-Adaptive Jamming Attack Detection in AI/ML Integrated 5G O-RAN Networks', arXiv:2511.17519; IEEE MILCOM",
+    "url": "https://arxiv.org/abs/2511.17519"
+   },
+   {
+    "kunye": "Gopal, Cintron, Rouil, 'O-RAN-Native Jamming Detection Under Network Heterogeneity', arXiv:2610.20816 (14 Ekim 2026)",
+    "url": "https://arxiv.org/abs/2610.20816"
+   },
+   {
+    "kunye": "Chiejina, Kim, Chowdhury, Shah, 'System-level Analysis of Adversarial Attacks and Defenses on Intelligence in O-RAN based Cellular Networks', ACM WiSec 2024, arXiv:2402.06846",
+    "url": "https://arxiv.org/abs/2402.06846"
+   },
+   {
+    "kunye": "Gajjar, Khoja, Ganiyu, Juarez, Marina, Lehane, Shah, 'Black-Box Evasion Attacks on Data-Driven Open RAN Apps: Tailored Design and Experimental Evaluation', arXiv:2510.18160 (20 Ekim 2025)",
+    "url": "https://arxiv.org/abs/2510.18160"
+   },
+   {
+    "kunye": "Santhi, Villa, Polese, Melodia, 'InterfO-RAN: Real-Time In-band Cellular Uplink Interference Detection with GPU-Accelerated dApps', arXiv:2507.23177 (resmi ozet: <650 us, >%91 dogruluk)",
+    "url": "https://arxiv.org/abs/2507.23177"
+   }
+  ]
+ },
+ {
+  "baslik": "Yeni dalga bicimleri - OTFS / ODDM / AFDM hedefli jamming ve tespit",
+  "tanim": "Gecikme-Doppler (OTFS/ODDM) veya chirp-tabanli (AFDM) dalga bicimlerinde yayilmis enerji yapisindan dolayi jammerin etkisi OFDM'den farkli dagilir; jamming gecikme-Doppler duzleminde de tespit/bastirma yapilabilir. Bulunan calismalarin cogu anti-jamming tasarimidir, siniflandirma/acik-kume degildir.",
+  "alti_g_ozgulugu": "OTFS/ODDM/AFDM yuksek mobilite icin 6G aday dalga bicimleri; OFDM tabanli standart jammerler bu dalga bicimlerinde farkli imza birakir; ODDM icin jamming arastirmasi bu aramalarda bulunamadi.",
+  "fiziksel_imza": "Gecikme-Doppler gridinde jammer enerjisinin yayilmasi (dar bant ton -> Doppler ekseninde/gecikme ekseninde dagilim; darbe -> gecikme ekseni); AFDM'de chirp-uyumlu jammer; zaman-frekans domeninde OFDM benzeri spektrogram.",
+  "simulasyon_araclari": "whatshow_phy_mod_otfs (PyPI, GPL-3.0; Python+MATLAB OTFS); JRW-Lab Common Wireless Simulator (MATLAB; OFDM/OTFS/ODDM); Sionna'da OTFS modulu yok (yalnizca gecikme-Doppler kanal donusturuculeri; Yap ve ark. arXiv:2309.12861 ozel TF modulleri ekledi); GNU Radio'da OTFS modulu bulunamadi (ozel OOT blok gerekir). Gercek-zamanli OTFS-USRP: Yap ve ark. 2309.12861 (GPU), arXiv:2606.30565.",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "seyrek",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Li, Wang, Zhan ve ark., 'Jamming Detection and Suppression Technique for OTFS Systems in an AWGN Channel', Electronics 2025, DOI 10.3390/electronics14071286 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.3390/electronics14071286"
+   },
+   {
+    "kunye": "Kumar, Majhi, 'Spectrum Efficient Anti-Jamming for OTFS Systems', IEEE WCNC 2024, DOI 10.1109/WCNC57260.2024.10571264 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/wcnc57260.2024.10571264"
+   },
+   {
+    "kunye": "Deng, Ge, Ding, 'Jamming Suppression via Resource Hopping in High-Mobility OTFS-SCMA Systems', IEEE Wireless Commun. Lett. 2023, DOI 10.1109/LWC.2023.3309787 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/lwc.2023.3309787"
+   },
+   {
+    "kunye": "Kulhandjian, Kulhandjian, Tsiftsis, 'Jamming-Resilient OTFS-NOMA', arXiv:2606.09753 (2026; OpenAlex kaydi)",
+    "url": "https://arxiv.org/abs/2606.09753"
+   },
+   {
+    "kunye": "Chen, Liu, Chen, 'Joint AFDM Waveform and Beamforming Design for Resilient Cognitive ICAJ Systems', IEEE OJ-COMS 2026, DOI 10.1109/OJCOMS.2026.3719069 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/ojcoms.2026.3719069"
+   },
+   {
+    "kunye": "Deng, Ge, Ding, 'A Unifying View of OTFS and Its Many Variants', IEEE Commun. Surveys & Tutorials 2025, DOI 10.1109/COMST.2025.3542467 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/comst.2025.3542467"
+   }
+  ]
+ },
+ {
+  "baslik": "5G NR / 6G kontrol kanallari - SSB/PBCH/PSS/SSS/PRACH/PDCCH hedefli akilli jamming",
+  "tanim": "Tum bandi degil, yalnizca senkronizasyon (SSB: PSS/SSS/PBCH), rastgele erisim (PRACH/Msg1) veya kontrol (PDCCH/PUCCH) kaynak elemanlarini hedefleyen dusuk-guclu, protokol-farkinda jamming. Dusuk duty cycle ile yuksek etki.",
+  "alti_g_ozgulugu": "NR (ve 6G'de ayni mantik) kontrol kanallari az sayida bilinen kaynak elemaninda sabit yapida; 6G'de temel yapi korunursa ayni saldirilar gecerli. 'Akilli' jammerin etkisi/enerji verimi oldugundan tespit zorlasir.",
+  "fiziksel_imza": "SSB periyodunda (ornegin 20 ms) hizali darbe/dar bant; PRACH firsat zamanlarinda preamble enjeksiyonu; tum bantta enerji artisi olmadan belirli PRB'lerde artis; BLER/RACH basarisizlik oraninda artis.",
+  "simulasyon_araclari": "MATLAB 5G Toolbox (nrWaveformGenerator + nrDLCarrierConfig/SSBurst; PRACH ornegi hNRPRACHWaveformGenerator; jammer enjeksiyonu hazir degil, ozel eklenir); Sionna PHY NR modulu yalnizca PUSCH (Carrier, Layer Mapping, PUSCH, Transport Block) - SSB/PRACH/PDCCH yok; OAI/srsRAN + USRP gercek NR (Azariah 2602.06634 OAI UE uzerinde Msg1 jammer, Varotto srsRAN+USRP N300). GNU Radio'da NR modulu bu aramalarda bulunamadi.",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Flores, Poisson, Stevens ve ark., 'Implementation and Evaluation of a Smart Uplink Jamming Attack in a Public 5G Network', IEEE Access 2023, DOI 10.1109/ACCESS.2023.3296701 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/access.2023.3296701"
+   },
+   {
+    "kunye": "Azariah, Chen, You, Cheng, Sheu, Chen, 'Jamming Attacks on the Random Access Channel in 5G and B5G Networks', arXiv:2602.06634 (6 Subat 2026; IEEE WCNC 2026)",
+    "url": "https://arxiv.org/abs/2602.06634"
+   },
+   {
+    "kunye": "Stegmann, Gundall, Schotten, 'Smart PRACH Jamming: A Serious Threat for 5G Campus Networks', IEEE Globecom Workshops 2024, DOI 10.1109/GCWkshp64532.2024.11101100 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/gcwkshp64532.2024.11101100"
+   },
+   {
+    "kunye": "Kazemian, 'Investigating the Jamming Attack on 5G NR Physical Channels', arXiv:2408.03028 (6 Agustos 2024)",
+    "url": "https://arxiv.org/abs/2408.03028"
+   },
+   {
+    "kunye": "Varotto, Heinrichs, Schuerg, Tomasin, Valentin, 'Detecting 5G Narrowband Jammers with CNN, k-nearest Neighbors, and Support Vector Machines', arXiv:2405.09564 (7 Mayis 2024)",
+    "url": "https://arxiv.org/abs/2405.09564"
+   },
+   {
+    "kunye": "Varotto, Valentin, Ardizzon, Marzotto, Tomasin, 'One-Class Classification as GLRT for Jamming Detection in Private 5G Networks', arXiv:2405.09565 (7 Mayis 2024)",
+    "url": "https://arxiv.org/abs/2405.09565"
+   },
+   {
+    "kunye": "Kuili, Amini, Kantarci, 'CWGAN-GP Augmented CAE for Jamming Detection in 5G-NR in Non-IID Datasets', arXiv:2506.15075; IEEE PIMRC 2025",
+    "url": "https://arxiv.org/abs/2506.15075"
+   }
+  ]
+ },
+ {
+  "baslik": "URLLC'yi hedef alan darbeli/periyodik jamming",
+  "tanim": "Kisa sureli (mini-slot/ simge-duzeyinde) darbeli veya periyodik jamming; URLLC'de HARQ yeniden iletimleri ve gecikme asimi uzerinden kalici bozulma yaratir. Kisa jamming bile etkili efektif PRB kapasitesini dusurerek jammer kapaliyken bile gecikmeyi artirabilir (arama ozetinden; birincil kaynak dogrulanamadi).",
+  "alti_g_ozgulugu": "6G URLLC/HRLLC gereksinimleri 5G'den siki; hata payi dusuk oldugundan kisa darbeler yuksek etki yaratir; dedektorlerin gecikme (latency) sinirina uymasi gerekir.",
+  "fiziksel_imza": "Kisa darbe genligi, dusuk duty cycle, periyodik zaman yapisi; BLER'de ani artis, MCS dususu; ortalama guc gorunumu dusuk (enerji-esik dedektoru gozden kacirir).",
+  "simulasyon_araclari": "GNU Radio (darbe jammer bloklari: Signal Source + Multiply by gate/Vector source ile kesintili cikis - mevcut projede var); Sionna PHY (NR PUSCH + BLER); ns-3 5G-LENA NR (acik kaynak NR jammer ile - arama ozeti, dogrulanmadi); srsRAN/OAI + USRP gercek deney. Hoffmann 2609.18499 Keysight ve POWDER'da dogruladi.",
+  "simulasyon_zorlugu": "dusuk",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Hoffmann, Kulacz, Baldo, Pakula, Raghothaman, 'Jamming Detection in 5G/6G Networks: From O-RAN Concept to OCUDU Deployment', arXiv:2609.18499 (BLER hareketli ortalamasi ile JD-xApp; ozetteki '%67,3 azalma' Tablo II ile tutarsiz: 1.084/1.610 = %67,3 ORANINDA KALMA, yani ~%32,7 azalma; 'fazladan' yeniden iletimde azalma %86,3 (2. tur dogrulamasi))",
+    "url": "https://arxiv.org/abs/2609.18499"
+   },
+   {
+    "kunye": "Silva, Gularte, Santos ve ark., 'Evaluation of Jamming Attacks on NR-V2X Systems: Simulation and Experimental Perspectives', Signals 2025, DOI 10.3390/signals7010001 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.3390/signals7010001"
+   },
+   {
+    "kunye": "Bogucka, Hoffmann, Kryszkiewicz, Kulacz, 'An Open-RAN Testbed for Detecting and Mitigating Radio-Access Anomalies', arXiv:2503.10255 (13 Mart 2025; IEEE Commun. Magazine kabul)",
+    "url": "https://arxiv.org/abs/2503.10255"
+   },
+   {
+    "kunye": "Kryszkiewicz, Hoffmann, 'Open RAN for detection of a jamming attack in a 5G network', IEEE VTC2023-Spring, DOI 10.1109/VTC2023-Spring57618.2023.10201067 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/vtc2023-spring57618.2023.10201067"
+   }
+  ]
+ },
+ {
+  "baslik": "Semantik iletisim saldirilari (semantik jamming, fiziksel katman adversarial)",
+  "tanim": "Derin ortak kaynak-kanal kodlama (DeepJSCC) tabanli semantik iletisimde alicinin anlamsal yorumlamasini bozmaya donuk saldirilar: semantik jamming, alt tasiyici jamming, pilot spoofing, adversarial pertürbasyon (SemAdv). Savunma tarafinda model topluluklari ve difuzyon tabanli savunmalar var.",
+  "alti_g_ozgulugu": "Semantik iletisim 6G icin onerilen paradigmadir; hata bit duzeyinde degil gorev-duzeyinde olur, klasik jamming metrikleri (BER) gorev bozulmasini yakalamaz.",
+  "fiziksel_imza": "Gurultuye benzer ama gorev kaybina yonelik optimize edilmis kucuk pertürbasyon; bazi alt tasiyicilarda (OFDM) yogunlasma; pilot bozulmasi nedeniyle kanal tahmin hatasi. Klasik enerji dedektoru ile ayirt edilmesi zor olabilir.",
+  "simulasyon_araclari": "PyTorch/TensorFlow ile DeepJSCC + Sionna PHY OFDM kanal blogu; GNU Radio ile USRP uzerinde canli DeepJSCC prototipleri bu aramada bulunamadi.",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Zhou, Zhang, Cai, Hu, Yu, 'ROME: Robust Model Ensembling for Semantic Communication Against Semantic Jamming Attacks', arXiv:2501.01172 (2 Ocak 2025)",
+    "url": "https://arxiv.org/abs/2501.01172"
+   },
+   {
+    "kunye": "Zhao, Wang, Zhang, Niyato, Du, Xiong, Kim, Zhang, 'SecDiff: Diffusion-Aided Secure Deep Joint Source-Channel Coding Against Adversarial Attacks', arXiv:2511.01466 (3 Kasim 2025)",
+    "url": "https://arxiv.org/abs/2511.01466"
+   },
+   {
+    "kunye": "Nan, Li, Zhai, Cui, Chen, Du, Zhang, Tao, Han, Quek, 'Physical-layer Adversarial Robustness for Deep Learning-based Semantic Communications', arXiv:2305.07220 (12 Mayis 2023; arXiv notu: IEEE JSAC kabul)",
+    "url": "https://arxiv.org/abs/2305.07220"
+   },
+   {
+    "kunye": "Zhang, Shao, An, Qin, Huang, 'Unanticipated Adversarial Robustness of Semantic Communication', arXiv:2603.24082 (25 Mart 2026)",
+    "url": "https://arxiv.org/abs/2603.24082"
+   }
+  ]
+ },
+ {
+  "baslik": "AI ile uretilen/uyarlanabilir jammer'lar (GAN/RL tabanli akilli jammer) ve bunlara karsi tespit",
+  "tanim": "Jammerin kurbanin davranisini ogrenip (derin ogrenme/RL) etkiyi artirmasi veya tespitten kacinmasi; GAN ile veri artirma veya dedektor-kacisi. Kars tarafta RL ile anti-jamming ve 'zero-day' jammer kesfi.",
+  "alti_g_ozgulugu": "6G'de AI-yerel telsiz katmani hem saldirgana hem savunmaya olanak verir; sabit jammer taksonomisi yetersiz kalir, tespit modellerinin kendisi de hedef olur.",
+  "fiziksel_imza": "Zaman icinde degisen (uyarlanabilir) guc/duty cycle/band; dedektor durumuna gore modifiye olan davranis; stateful, dusuk gorunurluk (stealth) profili.",
+  "simulasyon_araclari": "Python (PyTorch) RL/GAN ortami + GNU Radio/Sionna ile sinyal uretimi; Colosseum benzeri emulator; donanim gerekmeyen sentetik ortam yeterli.",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Aissou, Chou, Kim, 'Co-Evolving Zero-Day Jamming: Adaptive Attack Synthesis and Graph Attention-Based Online Detection', arXiv:2609.21334 (18 Eylul 2026; IEEE GLOBECOM 2026)",
+    "url": "https://arxiv.org/abs/2609.21334"
+   },
+   {
+    "kunye": "Erpek, Sagduyu, Shi, 'Deep Learning for Launching and Mitigating Wireless Jamming Attacks', arXiv:1807.02567 (2018)",
+    "url": "https://arxiv.org/abs/1807.02567"
+   },
+   {
+    "kunye": "Adesina, Hsieh, Sagduyu ve ark., 'Adversarial Machine Learning in Wireless Communications Using RF Data: A Review', IEEE Commun. Surveys & Tutorials 2022, DOI 10.1109/COMST.2022.3205184 (OpenAlex kaydi; ilk uc yazar)",
+    "url": "https://doi.org/10.1109/comst.2022.3205184"
+   },
+   {
+    "kunye": "Hu, Yuan, Ni ve ark., 'RIS-Assisted Jamming Rejection and Path Planning for UAV-Borne IoT Platform: A New Deep Reinforcement Learning Framework', IEEE IoT-J 2023, DOI 10.1109/JIOT.2023.3283502 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/jiot.2023.3283502"
+   }
+  ]
+ },
+ {
+  "baslik": "UAV / suru - jamming ve hafif tespit",
+  "tanim": "UAV linklerine (kontrol/telemetri/yuk) karsi jamming; UAV'nin kendisinin jammer veya isbirlikci karsi-onlem olarak kullanimi; gizli (stealthy) jamming tespiti icin HMM/ML tabanli yontemler.",
+  "alti_g_ozgulugu": "6G dusuk irtifa ekonomisi ve UAV tabanli baz istasyonlariyla UAV linkleri kritiklesir; mobilite nedeniyle Doppler/kanal kaymasi tespiti zorlastirir.",
+  "fiziksel_imza": "Dalgalanan alinan enerji, mobilite kaynakli Doppler, kisa darbe/gizli jamming; HMM'de saklı durum olarak spektrum durumu.",
+  "simulasyon_araclari": "Sionna PHY + 3GPP 38.901 UAV kanal modeli (dogrulanmadi); MATLAB UAV Toolbox; GNU Radio + USRP (UAV deneyleri).",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "orta",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Zhang, Zhang, Mao, Xiao, Han, Xia, 'Detection of Stealthy Jamming for UAV-Assisted Wireless Communications: An HMM-based Method', IEEE Trans. Cogn. Commun. Netw. 2023, DOI 10.1109/TCCN.2023.3244539",
+    "url": "https://doi.org/10.1109/TCCN.2023.3244539"
+   },
+   {
+    "kunye": "Viana, Farkhari, Sebastiao, Gil Jimenez, 'PCA-Featured Transformer for Jamming Detection in 5G UAV Networks', arXiv:2412.15312 (19 Aralik 2024; RSSI/SINR zaman serisi; NLoS'ta %85,06 tespit)",
+    "url": "https://arxiv.org/abs/2412.15312"
+   },
+   {
+    "kunye": "Ba, Guo, Wang, Wu, Su, Li, 'Stealthy Malicious Interference Detection in UAV Formations: A Power-Domain Signaling Game Approach', arXiv:2611.07977 (5 Kasim 2026; IEEE GLOBECOM 2026)",
+    "url": "https://arxiv.org/abs/2611.07977"
+   },
+   {
+    "kunye": "Hu, Yuan, Ni ve ark., 'RIS-Assisted Jamming Rejection and Path Planning for UAV-Borne IoT Platform: A New Deep Reinforcement Learning Framework', IEEE IoT-J 2023, DOI 10.1109/JIOT.2023.3283502 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/jiot.2023.3283502"
+   },
+   {
+    "kunye": "Li, Gao, Wang ve ark., 'Unauthorized UAV Countermeasure for Low-Altitude Economy: Joint Communications and Jamming Based on MIMO Cellular Systems', IEEE IoT-J 2024, DOI 10.1109/JIOT.2024.3491796 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.1109/jiot.2024.3491796"
+   }
+  ]
+ },
+ {
+  "baslik": "Backscatter / ambient IoT - jamming ve RIS destekli anti-jamming",
+  "tanim": "Ortam (ambient) sinyalini yansitan dusuk guclu etiketlerin (AmBC/ambient IoT) zayif tasiyici nedeniyle jamming'e cok duyarli olusu; RIS destekli DRL tabanli anti-jamming calismalari.",
+  "alti_g_ozgulugu": "Ambient IoT 6G'nin hedef senaryolarindan; cihazlar enerji kisitli, tespit hafif olmak zorunda.",
+  "fiziksel_imza": "Zayif yansitilan sinyal uzerinde kucuk guc artisinin bile SNR'yi cokertmesi; dar bant ton/gurultu.",
+  "simulasyon_araclari": "Ozel MATLAB/Python kanal modeli; GNU Radio + USRP backscatter prototipleri (bu aramada dogrulanmadi).",
+  "simulasyon_zorlugu": "orta",
+  "literatur_doluluk": "seyrek",
+  "temel_kaynaklar": [
+   {
+    "kunye": "Le Hoang Hiep, Huu-Huy Ngo, 'AI-Driven Jamming Detection and DRL-Based Anti-Jamming for Ambient Backscatter Communications in 6G Networks', VNU Journal of Science: Computer Science and Communication Engineering, Vol. 42, No. 2, 2026 (dergi sayfasi okundu; DQN tabanli, tespit dogrulugu artisi iddiasi)",
+    "url": "https://jcsce.vnu.edu.vn/index.php/jcsce/article/view/7148"
+   },
+   {
+    "kunye": "Le Hoang Hiep, Ngo Huu Huy, 'RIS Assisted Anti Jamming Backscatter Communication Using Deep Reinforcement Learning', Journal of Science and Technology on Information Security, 2026, DOI 10.54654/isj.v1i27.6384 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.54654/isj.v1i27.6384"
+   },
+   {
+    "kunye": "Feng, Zhang, Gao ve ark., 'RIS-Assisted Multi-Antenna AmBC Signal Detection Using Deep Reinforcement Learning', Sensors 2022, DOI 10.3390/s22166137 (OpenAlex kaydi)",
+    "url": "https://doi.org/10.3390/s22166137"
+   }
+  ]
+ }
+]

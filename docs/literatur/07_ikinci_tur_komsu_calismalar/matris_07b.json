@@ -1,0 +1,323 @@
+[
+  {
+    "dosya": "2026_aissou_co-evolving-zero-day-jamming",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Aissou 2026",
+    "baslik": "Co-Evolving Zero-Day Jamming: Adaptive Attack Synthesis and Graph Attention-Based Online Detection",
+    "yil": 2026,
+    "tur": "yontem",
+    "problem": "Alici bilgisi varsaymayan, gizlilik gozeten bir RL jammer ile bilinen jamming stratejilerini siniflayip zero-day stratejileri cevrimici kesfeden GAT + DP-means dedektoru.",
+    "veri_kaynagi": "simulasyon",
+    "sinyal": [
+      "diger"
+    ],
+    "jammer_turleri": [
+      "reaktif",
+      "akilli_adaptif",
+      "genis_bant",
+      "dar_bant",
+      "ton"
+    ],
+    "yontem": "GAT kodlayici + DP-means kumeleme (zaman-frekans enerji cercevesi uzerinde); RL (Q-ogrenme) jammer, GLRT ile dedektor durumu cikarimi",
+    "model_ailesi": [
+      "derin_ogrenme",
+      "pekistirmeli",
+      "diger"
+    ],
+    "asama": "tespit_ve_siniflandirma",
+    "acik_kume": "evet",
+    "ag_nesli": [
+      "genel"
+    ],
+    "alti_g_ozellikleri": [
+      "yok"
+    ],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "evet",
+    "ana_sonuc": "RL jammer baz cizgiye gore %33 etkinlik, %67 gizlilik; tespit olasiligi 0,86-0,92 (acik-kume baz cizgisi 0,68-0,76).",
+    "sinirlilik": "Yalniz simulasyon; girdi ham I/Q degil enerji cercevesi; zero-day kume saflik/yanlis alarm raporlanmiyor; sweep/pulse yok.",
+    "biz_yakinlik": 3,
+    "biz_iliski": "benzer",
+    "okuma": "tam",
+    "guven": "yuksek"
+  },
+  {
+    "dosya": "web_chong",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Chong 2026",
+    "baslik": "A Synthetic Dataset for Anomaly Detection of RIS-Enabled Jamming Attacks",
+    "yil": 2026,
+    "tur": "veri_seti",
+    "problem": "Baslik: RIS destekli jamming saldirilarinda anomali tespiti icin sentetik veri seti (icerik dogrulanamadi, yalniz kunye).",
+    "veri_kaynagi": "belirtilmemis",
+    "sinyal": [],
+    "jammer_turleri": [],
+    "yontem": "Bulunamadi (yalniz kunye: ICC Workshops 2026, DOI 10.1109/ICCWorkshops63917.2026.11586537; Imperial College London)",
+    "model_ailesi": [],
+    "asama": "veri_uretimi",
+    "acik_kume": "hayir",
+    "ag_nesli": [
+      "6g"
+    ],
+    "alti_g_ozellikleri": [
+      "ris"
+    ],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "belirtilmemis",
+    "kanal_modeli": "belirtilmemis",
+    "ana_sonuc": "Bulunamadi: ozet, veri seti baglantisi ve sonuclar erisilemedi (IEEE Xplore bos dondu).",
+    "sinirlilik": "Tam metin okunamadi; tum alanlar basliktan/kunyeden cikarim; acik_kume, model ve jammer alanlari bilinmiyor (bos/varsayilan).",
+    "biz_yakinlik": 3,
+    "biz_iliski": "benzer",
+    "okuma": "kismi",
+    "guven": "dusuk"
+  },
+  {
+    "dosya": "web_ratti",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Ratti 2026",
+    "baslik": "An O-RAN-Native xApp Framework for Jammer Detection and Geolocation",
+    "yil": 2026,
+    "tur": "savunma",
+    "problem": "Near-RT RIC xApp'leriyle KPM'den jammer tespiti, etkilenen sektorun belirlenmesi ve jammer konum tahmini.",
+    "veri_kaynagi": "simulasyon",
+    "sinyal": [
+      "ozellik_vektoru"
+    ],
+    "jammer_turleri": [
+      "sabit_gurultu",
+      "genis_bant"
+    ],
+    "yontem": "SINR/RSRP KPM uzerinde S-DBSCAN ve HT-HDBSCAN kumeleme; girisim gucu trilaterasyonu; SI-MAP + EKF ile UE konumlama (ns-O-RAN)",
+    "model_ailesi": [
+      "anomali_denetimsiz",
+      "istatistiksel_esik"
+    ],
+    "asama": "tespit",
+    "acik_kume": "hayir",
+    "ag_nesli": [
+      "5g"
+    ],
+    "alti_g_ozellikleri": [
+      "oran"
+    ],
+    "acik_veri_veya_kod": "evet",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "evet",
+    "ana_sonuc": "Jammer'siz 25 kosuda yanlis alarm yok; konum medyan hatasi 9-24 m (40-60 dBm); 2000 UE icin 0,89 s isleme.",
+    "sinirlilik": "Yalniz simulasyon; L3 SINR duzeyi jamming, tek jammer turu, E2 gecikmesi olculmedi; UE konumu P80 24 m.",
+    "biz_yakinlik": 2,
+    "biz_iliski": "destekleyici",
+    "okuma": "kismi",
+    "guven": "dusuk"
+  },
+  {
+    "dosya": "web_kurma",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Kurma 2026",
+    "baslik": "An Ensemble Machine Learning-Enabled xApp for Multi-Class Jamming Detection in O-RAN",
+    "yil": 2026,
+    "tur": "savunma",
+    "problem": "O-RAN'da gercek zamanli, cok siniflı jamming tespiti icin RF + SVM + Isolation Forest toplulugu xApp (yalniz ozetten).",
+    "veri_kaynagi": "belirtilmemis",
+    "sinyal": [
+      "ozellik_vektoru"
+    ],
+    "jammer_turleri": [],
+    "yontem": "MAC katmani E2 metriklerinden 15 oznitelik; RF + SVM + Isolation Forest, F1'e gore ayarlanan agirliklarla topluluk; srsRAN gNB + FlexRIC",
+    "model_ailesi": [
+      "klasik_ml",
+      "anomali_denetimsiz"
+    ],
+    "asama": "tespit_ve_siniflandirma",
+    "acik_kume": "hayir",
+    "ag_nesli": [
+      "5g"
+    ],
+    "alti_g_ozellikleri": [
+      "oran"
+    ],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "belirtilmemis",
+    "kanal_modeli": "belirtilmemis",
+    "ana_sonuc": "Ozet: tek-model baz cizgilerine gore %19,2-27,9 dogruluk artisi; ~14 ms gecikme; CNN'e gore ~1/3 CPU, ~1/10 bellek (dogrulanmadi).",
+    "sinirlilik": "Tam metin 6 Eylul 2027'ye kadar embargolu; jammer turleri, veri kaynagi ve acik-kume durumu bulunamadi.",
+    "biz_yakinlik": 4,
+    "biz_iliski": "rakip",
+    "okuma": "kismi",
+    "guven": "dusuk"
+  },
+  {
+    "dosya": "2026_hoffmann_jamming-detection-oran-ocudu",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Hoffmann 2026",
+    "baslik": "Jamming Detection in 5G/6G Networks: From O-RAN Concept to OCUDU Deployment",
+    "yil": 2026,
+    "tur": "savunma",
+    "problem": "URLLC'yi tehdit eden keyed jamming'i hareketli ortalama BLER ile tespit edip MCS tavani ile gecikmeyi kararli tutan JD-xApp ve OCUDU'ya tasima.",
+    "veri_kaynagi": "hibrit",
+    "sinyal": [
+      "paket_rssi_pdr"
+    ],
+    "jammer_turleri": [
+      "darbeli",
+      "sabit_gurultu"
+    ],
+    "yontem": "E2SM-LLC uzerinden ACK/NACK kayan pencere BLER esigi (beta); tespitte MCS <= MCS_safe; Keysight UXM/PROPSIM gunlukleri + POWDER OTA",
+    "model_ailesi": [
+      "istatistiksel_esik"
+    ],
+    "asama": "tespit",
+    "acik_kume": "hayir",
+    "ag_nesli": [
+      "5g"
+    ],
+    "alti_g_ozellikleri": [
+      "oran"
+    ],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "evet",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "belirtilmemis",
+    "kanal_modeli": "evet",
+    "ana_sonuc": "Ilk denemede basari %62,16 -> %94,01; beklenen deneme 1,610 -> 1,084 (ozetteki %67,3 ifadesi Tablo II ile tutarsiz).",
+    "sinirlilik": "OTA'da yalniz tespit, hafifletme yok; TPR/FPR raporlanmiyor; beta kalibrasyonu belirtilmemis; 6G-ozgu unsur yok.",
+    "biz_yakinlik": 2,
+    "biz_iliski": "destekleyici",
+    "okuma": "tam",
+    "guven": "yuksek"
+  },
+  {
+    "dosya": "2026_chou_green-learning-ris-spoofing-isac",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Chou 2026",
+    "baslik": "Green Learning-Based Signal-Level Detection of RIS Spoofing Attacks in Vehicular ISAC Systems",
+    "yil": 2026,
+    "tur": "yontem",
+    "problem": "Kotu niyetli RIS'in RSU ISAC algilamasina sahte yankilar uretmesini eslesik filtre cikisindan sinyal duzeyinde tespit etmek.",
+    "veri_kaynagi": "simulasyon",
+    "sinyal": [
+      "iq"
+    ],
+    "jammer_turleri": [
+      "diger"
+    ],
+    "yontem": "SAAB + DFT + XGBoost (Green Learning); LSTM/BiLSTM ve STL yorunge-duzeyi taban cizgileri; 28 GHz, 20.000 yorunge",
+    "model_ailesi": [
+      "klasik_ml"
+    ],
+    "asama": "tespit",
+    "acik_kume": "kismi",
+    "ag_nesli": [
+      "6g"
+    ],
+    "alti_g_ozellikleri": [
+      "isac",
+      "ris",
+      "thz_mmwave"
+    ],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "evet",
+    "ana_sonuc": "M=32, -80 dBm: dogruluk %99,335, PD %99,09, PFA %0,42; 0,1119 MFLOP; M=16'da egitip M=32'de test %97,07.",
+    "sinirlilik": "Tek VU, tek kotu niyetli RIS; kanal/saldiri [11]'den miras; M=8'de dogruluk %71,69; yalniz simulasyon, denetimli ikili.",
+    "biz_yakinlik": 3,
+    "biz_iliski": "benzer",
+    "okuma": "tam",
+    "guven": "yuksek"
+  },
+  {
+    "dosya": "2026_huso_cloudy-skies-iridium-jamming",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Huso 2026",
+    "baslik": "Cloudy Skies: Early Detection of Jamming Against Iridium LEO Satellite-IoT Links",
+    "yil": 2026,
+    "tur": "veri_seti",
+    "problem": "Iridium LEO uydu-IoT'de dogru cozulen mesajlarin PHY bilgisinden jamming'in baglanti kopmadan tespiti; tek-sinif otoenkoderler ile GNSS tabanli SNR/C/N0 kiyaslamasi.",
+    "veri_kaynagi": "sdr_donanim",
+    "sinyal": [
+      "iq"
+    ],
+    "jammer_turleri": [
+      "sabit_gurultu",
+      "genis_bant",
+      "diger"
+    ],
+    "yontem": "Yalniz jamming-siz veriyle egitilen Raw AE (1.072 parametre), LSTM-AE ve goruntu-tabanli AE; P95 esik; AUC; GNU Radio + gr-Iridium + LimeSDR",
+    "model_ailesi": [
+      "derin_ogrenme",
+      "anomali_denetimsiz"
+    ],
+    "asama": "tespit",
+    "acik_kume": "kismi",
+    "ag_nesli": [
+      "uydu"
+    ],
+    "alti_g_ozellikleri": [
+      "yok"
+    ],
+    "acik_veri_veya_kod": "evet",
+    "gnu_radio_sdr": "evet",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "hayir",
+    "ana_sonuc": "47 gercek kosul; ΔN>=9 dB'de AUC>=0,84 (1000 ornek, 40 ms); ortamlar arasi aktarimda FPR 0,04 -> 0,38/0,61.",
+    "sinirlilik": "Yalniz AWGN ve replay jammer; 10-180 cm mesafe; tur siniflandirmasi yok; Iridium'a ozgu; 6G/NTN terimi gecmiyor.",
+    "biz_yakinlik": 5,
+    "biz_iliski": "rakip",
+    "okuma": "tam",
+    "guven": "yuksek"
+  },
+  {
+    "dosya": "2025_yildirim_ofdm-jcas-spoofing-jamming",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Yildirim 2025",
+    "baslik": "OFDM-based JCAS under Attack: The Dual Threat of Spoofing and Jamming in WLAN Sensing",
+    "yil": 2025,
+    "tur": "temel_kuram",
+    "problem": "Standartlasmis OFDM sembolleri sayesinde ucuz SDR ile WLAN sensing'e hedef sahteleme ve aldatici jamming yapilabildigini modelleyip deneyle gostermek.",
+    "veri_kaynagi": "hibrit",
+    "sinyal": [
+      "iq",
+      "diger"
+    ],
+    "jammer_turleri": [
+      "akilli_adaptif",
+      "diger"
+    ],
+    "yontem": "OFDM RDM sinyal modelleri, OS-CFAR ile saldiri etkisi analizi; 3 USRP X310 deneyi; savunma onerilmiyor",
+    "model_ailesi": [
+      "istatistiksel_esik"
+    ],
+    "asama": "veri_uretimi",
+    "acik_kume": "hayir",
+    "ag_nesli": [
+      "wifi_iot"
+    ],
+    "alti_g_ozellikleri": [
+      "isac"
+    ],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "evet",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "evet",
+    "ana_sonuc": "Saldiri JSR>8-12 dB ve CFO farki>=3 ppm iken cok etkili; dusuk JSR'de yapay hedef tespiti ~%20 (metinden).",
+    "sinirlilik": "Tespit/savunma yok; tek tip basitlestirilmis kare yapisi; WLAN sensing, 5G/6G degil.",
+    "biz_yakinlik": 2,
+    "biz_iliski": "arka_plan",
+    "okuma": "kismi",
+    "guven": "orta"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "dosya": "web_hong_2023",
+    "klasor": "07_ikinci_tur_komsu_calismalar",
+    "kisa": "Hong 2023",
+    "baslik": "A Hybrid Jamming Detection Algorithm for Wireless Communications: Simultaneous Classification of Known Attacks and Detection of Unknown Attacks",
+    "yil": 2023,
+    "tur": "yontem",
+    "problem": "Eğitimde görülen bilinen jamming saldırılarını sınıflandırırken eğitimde görülmeyen bilinmeyen saldırıları da tespit etmek.",
+    "veri_kaynagi": "gercek_olcum",
+    "sinyal": ["paket_rssi_pdr"],
+    "jammer_turleri": ["diger"],
+    "yontem": "Karar ağacı (normal/bilinen saldırı) + Isolation Forest (DT kararını doğrular) + topluluk; ayrıntı yalnızca özet ve ikincil kaynaklardan.",
+    "model_ailesi": ["klasik_ml", "anomali_denetimsiz"],
+    "asama": "tespit_ve_siniflandirma",
+    "acik_kume": "evet",
+    "ag_nesli": ["genel"],
+    "alti_g_ozellikleri": ["yok"],
+    "acik_veri_veya_kod": "belirtilmemis",
+    "gnu_radio_sdr": "hayir",
+    "markov_jammer": "hayir",
+    "snr_jnr_degisimi": "evet",
+    "kanal_modeli": "belirtilmemis",
+    "ana_sonuc": "Özete göre baz algoritmadan üstün (mesafe, bilinen saldırı sayısı, hareketlilik); sayısal sonuç tam metin olmadığından bulunamadı.",
+    "sinirlilik": "Tam metin yok; sinyal/öznitelik türü yalnızca ikincil kaynaktan (düşük güven); C bandı modem, 4 tür.",
+    "biz_yakinlik": 5,
+    "biz_iliski": "rakip",
+    "okuma": "kismi",
+    "guven": "dusuk"
+  }
+]

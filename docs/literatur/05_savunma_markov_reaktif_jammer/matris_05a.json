@@ -1,0 +1,518 @@
+[
+ {
+  "dosya": "2019_flowers_adversarial-evasion-wireless",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Flowers 2019",
+  "baslik": "Evaluating Adversarial Evasion Attacks in the Context of Wireless Communications",
+  "yil": 2019,
+  "tur": "yontem",
+  "problem": "Ham I/Q tabanlı derin öğrenmeli modülasyon sınıflandırıcıya FGSM kaçınma saldırılarını RFML tehdit modeli ve BER ile değerlendirmek.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "FGSM beyaz-kutu bozucu; AWGN, zaman ve frekans kayması altında AMC doğruluğu ve BER ödünleşimi",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "FGSM bozucu Gauss gürültüsünden çok etkili; BPSK Es/Ej=4 dB'de doğruluk ~%0, BER etkisiz (yalnız SNR>15 dB); 4 örnek kayma doğruluğu ~%20 artırır",
+  "sinirlilik": "Yalnız FGSM ve beyaz-kutu; basit kanal (AWGN+frekans kayması); savunma önerilmiş ama uygulanmamış",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2019_hoang_borrowing-arrows-defeating-reactive-jammers",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Hoang 2019",
+  "baslik": "\"Borrowing Arrows with Thatched Boats\": The Art of Defeating Reactive Jammers in IoT Networks",
+  "yil": 2019,
+  "tur": "savunma",
+  "problem": "Düşük güçlü IoT cihazını reaktif jammer'a karşı sahte iletim, enerji hasadı ve ambient backscatter ile savunmak; DRL ile politika öğrenmek.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "reaktif"
+  ],
+  "yontem": "MDP + düşük maliyetli iki modüllü DRL; sahte iletim, enerji hasadı, backscatter; DH/DB/WD ile karşılaştırma",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Doygunlukta verim DH'den %6, DB'den %94, WD'den %170 yüksek; saldırı olasılığı 0,9'da verim 0,67",
+  "sinirlilik": "Jammer sabit olasılıklı Bernoulli saldırgan (hafızasız); kanal modeli ve donanım denemesi yok; magazine yazısı",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2019_sagduyu_adversarial-dl-spectrum-poisoning",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Sagduyu 2019",
+  "baslik": "Adversarial Deep Learning for Over-the-Air Spectrum Poisoning Attacks",
+  "yil": 2019,
+  "tur": "yontem",
+  "problem": "Vericinin DL tabanlı boşluk tahmin ettiği sensing dönemini bozan evasion/causative saldırı ve güven skoruna dayalı savunma.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "Saldırgan ACK'ten vekil DNN öğrenir; sensing dönemini jamlar; savunma: karar sınırından uzak dilimlerde kasıtlı yanlış eylem",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Verim %98,96 -> %3,13 (evasion); aynı enerjiyle veri-dönemi jamming %41,67; causative+evasion %2,72",
+  "sinirlilik": "Tek verici/alıcı topolojisi; saldırgan ACK gözlemler varsayımı; yalnız simülasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2019_yao_collaborative-marl-anti-jamming",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Yao 2019",
+  "baslik": "A Collaborative Multi-agent Reinforcement Learning Anti-jamming Algorithm in Wireless Networks",
+  "yil": 2019,
+  "tur": "savunma",
+  "problem": "Çok kullanıcılı ağda sweep jammer ve karşılıklı girişime karşı koordineli çok-etmenli Q-öğrenme ile kanal seçimi.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp"
+  ],
+  "yontem": "Markov oyunu + koordineli Q-öğrenme (CMAA); 2 kullanıcı, 5 kanal, 200 koşu ortalaması",
+  "model_ailesi": [
+   "pekistirmeli",
+   "oyun_kurami"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "CMAA, algılama tabanlı ve bağımsız Q-öğrenmeden yüksek normalize hız sağlar; sayısal değer metinde yok (yalnız şekil)",
+  "sinirlilik": "Kısa mektup; yalnız sweep jammer; sayısal sonuç yok; kullanıcılar arası bilgi paylaşımı varsayımı",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek"
+ },
+ {
+  "dosya": "2021_kim_channel-aware-adversarial-attacks-signal-classifiers",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Kim 2021",
+  "baslik": "Channel-Aware Adversarial Attacks Against Deep Learning-Based Wireless Signal Classifiers",
+  "yil": 2021,
+  "tur": "yontem",
+  "problem": "Kanal etkisini hesaba katan over-the-air düşmanca bozucu ile modülasyon sınıflandırıcıları yanıltmak (broadcast dahil) ve randomize smoothing savunması.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "MMSE/MRPP kanal telafili FGSM benzeri bozucu, UAP, broadcast; savunma: gürültü ile veri artırma; RML2016.10a, VT-CNN2",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Kanalı yok sayan saldırı düşük PNR'de başarısız; kanal-bilgili MRPP etkili; küçük sigma (0,001/0,005) smoothing doğruluğu artırır; sayılar yalnız şeki",
+  "sinirlilik": "Yalnız modülasyon sınıflandırma; yüzdeler düz metinde okunaksız; sınırlılık bölümü belirgin değil",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2021_pourranjbar_rl-deceiving-reactive-jammers",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Pourranjbar 2021",
+  "baslik": "Reinforcement Learning for Deceiving Reactive Jammers in Wireless Networks",
+  "yil": 2021,
+  "tur": "savunma",
+  "problem": "Reaktif jammer'ı kurban kanala çekerek diğer kanallarda güvenli iletişim; kanal seçimi ve güç dağıtımını RL ile öğrenmek.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "reaktif"
+  ],
+  "yontem": "Konveks optimizasyon (kanal kazancı biliniyorsa) + model-bağımsız MDP/Q-öğrenme; TRP alt sınırı; CMAA ve DRL ile kıyas",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Tek kullanıcı 3 kanalda en yüksek TRP'nin >%50'si; tek kullanıcı 4 kanal ~%60; RL-optimum fark %0,07 -> %0,03",
+  "sinirlilik": "Reaktif jammer sabit 'en güçlü kanalı jamla' kuralı; algılama gecikmesi/hatası modellenmemiş; ölçüm yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2022_huynh_defeating-super-reactive-jammers",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Huynh 2022",
+  "baslik": "Defeating Super-Reactive Jammers With Deception Strategy: Modeling, Signal Detection, and Performance Analysis",
+  "yil": 2022,
+  "tur": "savunma",
+  "problem": "Sınırsız güçlü ve kendi girişimini bastıran super-reaktif jammer'a karşı aldatma + ambient backscatter ve LSTM sinyal dedektörü.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif"
+  ],
+  "yontem": "Aldatma stratejisi, çok kaynaklı backscatter, ML ve LSTM dedektör; Rayleigh kanal, Matlab; BER ve backscatter hızı",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "istatistiksel_esik"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Jammer gücü arttıkça BER ve backscatter hızı iyileşir; LSTM dedektör BER'i optimal ML'e yakın (sayı okunaksız)",
+  "sinirlilik": "Konumlar sabit; sınırsız-güç jammer idealizasyonu; kanal frame boyunca sabit; yalnız simülasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2022_jia_game-theoretic-learning-anti-jamming",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Jia 2022",
+  "baslik": "Game-theoretic Learning Anti-jamming Approaches in Wireless Networks",
+  "yil": 2022,
+  "tur": "derleme",
+  "problem": "Akıllı jammer'lara karşı oyun kuramsal öğrenmeli anti-jamming (GTLAJ) paradigmasını tanımlamak; Stackelberg, Markov ve hypergraph vakaları.",
+  "veri_kaynagi": "yok",
+  "sinyal": [],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Çerçeve ve üç vaka (Stackelberg, Markov oyunu, hypergraph); mevcut sonuçların özeti",
+  "model_ailesi": [
+   "oyun_kurami",
+   "pekistirmeli"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Markov oyunu (CMAA) sweep jamming'de bağımsız Q-öğrenme ve rastgele seçimden yüksek ortalama hız; sayılar yalnız şekilde",
+  "sinirlilik": "Yeni deney yok; gelecek yönler: jamming prediction, bilgi aktarımı, jamming konumlandırma; 5G/6G yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2022_liu_attacking-spectrum-sensing-adversarial-dl",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Liu 2022",
+  "baslik": "Attacking Spectrum Sensing With Adversarial Deep Learning in Cognitive Radio-Enabled Internet of Things",
+  "yil": 2022,
+  "tur": "yontem",
+  "problem": "DL tabanlı spektrum algılamaya örtülü ECM bozucu dalga biçimi ve PLHA veri zehirlemesini birleştiren EPM saldırısı.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "ECM bozucu + PLHA zehirleme = EPM; CM-RN (ResNet); RML2016.10b, %80/%20 bölme; FGSM/BIM/MIM ile kıyas",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "10 dB'de temiz doğruluk %92; EPM doğruluğu ~%40 düşürür; -6 dB'de MIM eps=0,0015 ile doğruluğu %50 altına indirir",
+  "sinirlilik": "Yalnız QPSK ikili algılama; gerçek OTA deney yok; sınırlılık bölümü okunmadı",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2022_shi_jamming-attacks-federated-learning",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Shi 2022",
+  "baslik": "Jamming Attacks on Federated Learning in Wireless Networks",
+  "yil": 2022,
+  "tur": "yontem",
+  "problem": "Kablosuz ağda federe öğrenmeyi uplink/downlink jamming ile bozmak; bütçe altında istemci seçimi.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "İstemci seçimi (yerel doğruluk/başarı olasılığı); FedAvg; 10 sensör, 100 tur; sinyal sınıflandırma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Seçilmiş 4 istemciye uplink saldırısı doğruluğu %72,3'e indirir (kıyaslarda %93,4); temiz küresel doğruluk %94,4",
+  "sinirlilik": "Algoritma 2 pratik değil (100 tur sonra geç, istemci verisi yok); savunma önerilmemiş; yalnız simülasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2023_pourranjbar_rnn-anti-jamming-multiple-policies",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Pourranjbar 2023",
+  "baslik": "Recurrent Neural Network-based Anti-jamming Framework for Defense Against Multiple Jamming Policies",
+  "yil": 2023,
+  "tur": "savunma",
+  "problem": "Tek jammer'ın birden çok politika izlediği veya çok jammer'ın farklı politikalı olduğu durumlarda GRU ile politika tanıma ve kanal tahmini.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "reaktif",
+   "diger"
+  ],
+  "yontem": "GRU-RNN: politika sınıflandırma (random/sweeping/reactive/combat) ve gelecek jamlı kanal tahmini; DQL ile kıyas; Nakagami kanal",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Tek jammer: sweep/combat 5 dilimde kusursuz tanınır, STR~%100; çok jammer %70 jamlı: STR>%75, ER>%80; %30'da %90",
+  "sinirlilik": "Kapalı küme 4 politika; kanal-doluluk girdisi (sinyal düzeyi yok); özet ve sonuç/Şekil 5 arasında hafif tutarsızlık",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2023_wasilewska_secure-federated-learning-cognitive-radio-sensing",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Wasilewska 2023",
+  "baslik": "Secure Federated Learning for Cognitive Radio Sensing",
+  "yil": 2023,
+  "tur": "derleme",
+  "problem": "Bilişsel telsizde federe öğrenme tabanlı spektrum algılamaya yönelik saldırıları ve karşı önlemleri taksonomiyle özetlemek; zehirleme tespiti örneği.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Taksonomi; 5G downlink RB desenleri, 8 CR, CNN, FedAvg; sunucuda model-karar uyumu eşiğiyle (%55/%65) zehirleyici elemesi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Karar uyumu eşiği %65'te zehirleyen düğüm elenir, %55'te bazı iterasyonlarda kabul edilir; Pd/Pfa sayıları okunaksız",
+  "sinirlilik": "Hiçbir savunma tek başına yeterli değil; bant genişliği kısıtı; kısa sürüm, ayrıntılar tam makalede",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ },
+ {
+  "dosya": "2024_abdolkhani_drl-eh-cognitive-iot-jamming",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "kisa": "Abdolkhani 2025",
+  "baslik": "Deep Reinforcement Learning for EH-Enabled Cognitive-IoT Under Jamming Attacks",
+  "yil": 2025,
+  "tur": "savunma",
+  "problem": "Alt-taban bilişsel IoT vericisinin enerji hasadı, iletim ve gücünü jamming altında DDQN + UCB-IA ile yönetmesi.",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "darbeli"
+  ],
+  "yontem": "Model-bağımsız MDP; DDQN; UCB-IA keşif stratejisi; aralıklı rastgele jammer; rastgele/sabit/epsilon-greedy ile kıyas",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "UCB-IA tüm Bmax değerlerinde diğerlerini geçer; rastgele stratejide jammer girişim oranı ~%50; sayısal ASR okunaksız",
+  "sinirlilik": "Basit senaryolarda üstün olmayabilir, yüksek maliyet; tek jammer; jammer durumu mükemmel algılanır varsayımı",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta"
+ }
+]

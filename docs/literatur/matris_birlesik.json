@@ -1,0 +1,5215 @@
+[
+ {
+  "kisa": "Breiman 2001",
+  "yil": 2001,
+  "baslik": "Random Forests",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "temel_kuram",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Forest-RI/RC, bagging, out-of-bag hata/strength/korelasyon tahmini, degisken onemi",
+  "model_ailesi": [
+   "klasik_ml"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Hata strength ve korelasyona bagli; %5 etiket gurultusunde RF Adaboost'tan dayanikli; zip-code hatasi %5,8 (F=25).",
+  "sinirlilik": "Bias azaltma mekanizmasi belirsiz; sinir gevsek; kapali kume; jamming/sinyal icermez.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2001_breiman_random-forests"
+ },
+ {
+  "kisa": "Xu 2005",
+  "yil": 2005,
+  "baslik": "The Feasibility of Launching and Detecting Jamming Attacks in Wireless Networks",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "temel_kuram",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "darbeli",
+   "reaktif",
+   "diger"
+  ],
+  "yontem": "RSSI ve PDR istatistikleri (Neyman-Pearson esigi, yuksek dereceli kesisimler HOC, tasiyici algilama suresi esigi) + PDR-sinyal gucu ve PDR-konum tutarlilik denetimi; MICA2 Mote deneyleri ve ns-2",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Tek olcum yetmez; HOC constant/deceptive'i ayirir, reactive/random'u ayiramaz; PDR tikanikligi ayirir (tikanik PDR ~%78); jammed-region: PDR<%65",
+  "sinirlilik": "Tek platform (MICA2), RSSI kalibre degil, nicel dogruluk/yanlis alarm yok, konum altyapisi guvenli varsayimi, tur siniflandirma yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2005_xu_feasibility-jamming-attacks"
+ },
+ {
+  "kisa": "Pedregosa 2011",
+  "yil": 2011,
+  "baslik": "Scikit-learn: Machine Learning in Python",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "temel_kuram",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Kutuphane tasarimi (numpy/scipy, LibSVM/LibLinear), Madelon uzerinde sure karsilastirmasi",
+  "model_ailesi": [
+   "klasik_ml"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "LARS icin R'e gore 2-10 kat hizlanma; test kapsami %81 (v0.8); Tablo 1 sayilari okunaksiz.",
+  "sinirlilik": "Orta olcekli problemler; Elastic Net cok buyuk problemlerde sinirli; Isolation Forest metinde yok.",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2011_pedregosa_scikit-learn"
+ },
+ {
+  "kisa": "Punal 2014",
+  "yil": 2014,
+  "baslik": "Machine Learning-based Jamming Detection for IEEE 802.11: Design and Experimental Evaluation",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "yontem",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "reaktif"
+  ],
+  "yontem": "RF (50 agac, derinlik 10) ile gurultu/CBR/PDR/IT/sinyal olcutleri; hareketli ortalama ve isbirlikci tespit; %60/%40 bolme, 20 tekrar",
+  "model_ailesi": [
+   "klasik_ml"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Trafiksiz: sabit TP 97,97/TN 98,64; reaktif TP 94,13/TN 98,10; 27000 ornek; EM zayif; reaktifle egitim sabiti yakaliyor.",
+  "sinirlilik": "Yalniz iki jammer; yeni tur icin veri gerekir; trafikli teste egitim uyusmazliginda TN 54-73%; akilli jammer PDR'yi manipule edebilir.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2014_punal_ml-jamming-detection-80211"
+ },
+ {
+  "kisa": "Almomani 2016",
+  "yil": 2016,
+  "baslik": "WSN-DS: A Dataset for Intrusion Detection Systems in Wireless Sensor Networks",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "NS-2 ile 23 ag katmani ozniteligi (374661 kayit); WEKA MLP-ANN, holdout %60/%40 ve 10-kat CV",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "10-kat CV 1 gizli katman %98,52; holdout %97,54; Blackhole %92,8, Grayhole %75,6; holdout'ta Blackhole %34,3.",
+  "sinirlilik": "Jamming yok (ag katmani DoS); yalniz simulasyon, tek protokol; sinif dengesiz (~%91 normal).",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2016_almomani_wsn-ds-dataset"
+ },
+ {
+  "kisa": "Ak 2019",
+  "yil": 2019,
+  "baslik": "Avoiding Jammers: A Reinforcement Learning Approach",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "POMDP, double DQN (3x32) ve LSTM (32), Mellowmax; KARAA ve LARA stratejileri; enerji dedektoru gozlemi",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Jam'lenme olasiligi entropi dustukce azalir; LARA > KARAA > rastgele; LSTM-Mellowmax DQN'den dayanikli (sayisal % yok, egitimde SNR 5-10 dB).",
+  "sinirlilik": "Sabit Markov dinamigi, tek jammer, kanal kazanci 1, yalniz simulasyon, sayisal sonuclar sekillerde.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2019_ak_avoiding-jammers-rl"
+ },
+ {
+  "kisa": "Arjoune 2020a",
+  "yil": 2020,
+  "baslik": "A Novel Jamming Attacks Detection Approach Based on Machine Learning for Wireless Communication",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "yontem",
+  "veri_kaynagi": "belirtilmemis",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "BPR, PDR, RSS, CCA ozellikleriyle RF (100 agac), SVM cekirdekleri, NN; 5/10/20-kat CV",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "RF: Pd %97,5, Pfa %5,6, Pmd %2,5, dogruluk %96,6; NN dogruluk %94,4; kubik SVM Pfa %54, dogruluk %70,1.",
+  "sinirlilik": "Veri seti (boyut, kaynak, jammer turu) tanimsiz; sonuc bolumunde Pd/Pfa karisik; yalniz ikili gorev.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "orta",
+  "dosya": "2020_arjoune_ml-jamming-detection-icoin"
+ },
+ {
+  "kisa": "Arjoune 2020b",
+  "yil": 2020,
+  "baslik": "Smart Jamming Attacks in 5G New Radio: A Review",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "reaktif",
+   "akilli_adaptif",
+   "darbeli",
+   "diger"
+  ],
+  "yontem": "Anlatisal derleme: NR mimarisi, jammer modelleri, kanal zafiyetleri, tespit (esik/istatistik/ML) ve azaltma (FH/DSSS, oyun kurami, UAV+DRL, MIMO)",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "mimo_pilot"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "PBCH/PRACH/PUCCH/pilotlar secici dusuk gorev dongulu jamming'e acik; ML icin kamuya acik veri seti yok; nicel sonuc yok.",
+  "sinirlilik": "Nicel degerlendirme yok; 6G, ISAC, RIS yok; ML'nin pratik olmadigi iddiasi kanitsiz.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2020_arjoune_smart-jamming-5g-nr-review"
+ },
+ {
+  "kisa": "Tedeschi 2021",
+  "yil": 2021,
+  "baslik": "Satellite-Based Communications Security: A Survey of Threats, Solutions, and Research Challenges",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "gnss_iq",
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "sweep_chirp",
+   "reaktif",
+   "dar_bant",
+   "genis_bant",
+   "diger"
+  ],
+  "yontem": "Taksonomi: PHY guvenligi (bilgi-kuramsal, anti-spoofing, anti-jamming) ve kriptografi (kimlik dogrulama, anahtar anlasma, QKD); lessons learned ve gelecek yonleri",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uydu",
+   "gnss",
+   "6g",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn",
+   "ris",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Anti-jamming calismalari agirlikla uydu-yer ve GNSS/askeri; uydu-uydu linki hic ele alinmamis; 3GPP NTN guvenligi 5G'nin dogrudan tasinmasi.",
+  "sinirlilik": "Yalniz baglanti katmani; ML jamming tespiti cok kisa; tablo govdeleri okunaksiz.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2021_tedeschi_satcom-security-survey"
+ },
+ {
+  "kisa": "Pirayesh 2022",
+  "yil": 2022,
+  "baslik": "Jamming Attacks and Anti-Jamming Strategies in Wireless Networks: A Comprehensive Survey",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "sweep_chirp",
+   "darbeli",
+   "reaktif",
+   "akilli_adaptif",
+   "dar_bant",
+   "genis_bant",
+   "diger"
+  ],
+  "yontem": "Ag turune gore PHY/MAC saldiri-savunma taksonomisi ve ozet tablolar; acik problemler ve arastirma yonleri",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot",
+   "gnss",
+   "uav",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "mimo_pilot"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "FH/spreading tum bandi kaplayan guclu jammer'a karsi calismaz; MIMO bastirma iki antenli alicida en cok ~30 dB; ML tek paragraf.",
+  "sinirlilik": "Hucresel bolum LTE merkezli (5G NR/6G yok); ML cok az; Punal ve Arjoune sayilari hatali aktarilmis.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2022_pirayesh_jamming-anti-jamming-survey"
+ },
+ {
+  "kisa": "Wang 2022",
+  "yil": 2022,
+  "baslik": "Fast Detection of Burst Jamming for Delay-Sensitive Internet-of-Things Applications",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "sabit_gurultu"
+  ],
+  "yontem": "OPDAD: artimli ana yon cikarimi + centroid kumeleme, egitimsiz anomali tespiti; yakinsama ve sonlu ornek hata siniri",
+  "model_ailesi": [
+   "anomali_denetimsiz",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "wifi_iot",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "mimo_pilot"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "40 iterasyonda yakinsama; ana yon hatasi <1e-3; ED'ye gore daha kisa gecikme ve dusuk kayip tespit (PJ 5-18 dBm, M=64); sayilar sekillerde.",
+  "sinirlilik": "Yalniz simulasyon; one-ring kanal ve cok anten varsayimi; tur siniflandirmasi yok; ham veri paylasilmamis.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_wang_fast-burst-jamming-detection-iot"
+ },
+ {
+  "kisa": "Alhazbi 2023",
+  "yil": 2023,
+  "baslik": "A Dataset of physical-layer measurements in indoor wireless jamming scenarios",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sabit_gurultu"
+  ],
+  "yontem": "7 USRP X310 + GNU Radio 3.8, 900 MHz, 1 Msps, BPSK 256 bayt; 31 .MAT dosyasi; jammer gucu, cihaz ve mesafe degisimi",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "31 dosya x 3 mod x 600 s; goreli guc 0,1-0,8 (-13..9 dBm); mesafe 3-21 m; 5 jammer cihazi; Zenodo 10.5281/zenodo.7119040.",
+  "sinirlilik": "Yalniz ton ve Gauss; sweep/darbeli/reaktif yok; tek ortam, BPSK, 1 Msps; 5G/6G dalga bicimi yok.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2023_alhazbi_jamming-dataset-indoor-measurements"
+ },
+ {
+  "kisa": "Zahra 2023",
+  "yil": 2023,
+  "baslik": "Real-Time Jamming Detection in Wireless IoT Networks",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "dar_bant",
+   "sabit_gurultu",
+   "akilli_adaptif"
+  ],
+  "yontem": "Normal profilden mu +- 3 sigma esikleri (throughput, PDR, gecikme, RSSI) ve zaman asimi; ML yok.",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Ozet: %99 dogruluk, 0 yanlis alarm; jammer >10 dB iken FP=0, FN ~%1; >12 dB'de ~%99 tespit.",
+  "sinirlilik": "Yalniz laboratuvar, tek jammer tipi/guc, esikler ortama bagli, siniflandirma ve tur ayrimi yok, kisa jamming kacabilir.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2023_zahra_realtime-jamming-detection-iot"
+ },
+ {
+  "kisa": "Asemian 2024",
+  "yil": 2024,
+  "baslik": "DT-DDNN: A Physical Layer Security Attack Detector in 5G RF Domain for CAVs",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "genis_bant",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "PSS korelasyonu + EPNRE ozellikleri, DWT, cift esikli cift DNN (deep cascade).",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Sentetik: normal %91,0 / jammed %96,4 dogru (tek esige +%10,4); gercek OTA: %93,6 / %94,1, yanlis alarm %5,9.",
+  "sinirlilik": "Egitimde yalniz AWGN jammer, ikili cikti, yuksek SJNR'de %9-10 hata, TP/TN etiketleri metinde tutarsiz.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_asemian_dt-ddnn-5g-cav"
+ },
+ {
+  "kisa": "Lohan 2024",
+  "yil": 2024,
+  "baslik": "From 5G to 6G Networks: A Survey on AI-Based Jamming and Interference Detection and Mitigation",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "paket_rssi_pdr",
+   "spektrogram",
+   "iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "sweep_chirp",
+   "darbeli",
+   "reaktif",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Alan bazli (UAV, V2X, HetNet, D2D, IoT, mmWave-MIMO, THz, NOMA) literatur taramasi; jamming tespit/azaltma ayri alt bolum.",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme",
+   "anomali_denetimsiz",
+   "pekistirmeli",
+   "oyun_kurami"
+  ],
+  "asama": "derleme",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g",
+   "6g",
+   "uav",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "thz_mmwave",
+   "ris",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Jamming tespitinde ~13 calisma; Random Forest en iyi gozetimli yontem; Hong vd. DT+Isolation Forest hibriti bilinen/bilinmeyen ayirir.",
+  "sinirlilik": "Jamming tespit kismi kisa, cogu calisma paket/RSSI tabanli; THz/mmWave bolumleri girisim odakli, jamming-ozel 6G icerik az.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_lohan_5g-to-6g-ai-jamming-survey"
+ },
+ {
+  "kisa": "Priyadarshani 2024",
+  "yil": 2024,
+  "baslik": "Jamming Intrusions in Extreme Bandwidth Communication: A Comprehensive Overview",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "reaktif",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Teknoloji bazli (mmWave, THz, FSO, VLC) literatur ozeti; tespit (RSS, CST, yon, ML) ve onleme (DSSS/FHSS, MIMO, RIS) listesi.",
+  "model_ailesi": [
+   "klasik_ml",
+   "oyun_kurami",
+   "pekistirmeli",
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "thz_mmwave",
+   "ris",
+   "mimo_pilot"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "THz'de jamming tespiti icin calisma bulunmadigi, FSO/VLC'de cok az arastirma oldugu iddia ediliyor; sayisal sonuc yok.",
+  "sinirlilik": "ML tespiti birkac cumleyle gecilmis, kendi deneyi yok, 6G icerik genis ama yuzeysel.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_priyadarshani_jamming-extreme-bandwidth-overview"
+ },
+ {
+  "kisa": "Rados 2024",
+  "yil": 2024,
+  "baslik": "Recent Advances on Jamming and Spoofing Detection in GNSS",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "gnss_iq",
+   "spektrogram",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "darbeli",
+   "sweep_chirp",
+   "genis_bant",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "Spoofing/jamming/birlesik tespit yontemleri taksonomisi (sinyal isleme, C/N0-AGC, DoA, ML/DL) ve ML dogruluk tablosu.",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme",
+   "istatistiksel_esik",
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Jamming siniflamada SVM %94,90 vs NN %91,36 (6 sinif); CNN ~%100, MLP %98,9; ML en populer yontem.",
+  "sinirlilik": "Acik veri yetersiz (TEXBAT/OAKBAT yalniz spoofing), birlesik girisim verisi yok, sonuclar karsilastirilamaz.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_rados_gnss-jamming-spoofing-detection"
+ },
+ {
+  "kisa": "Viana 2024",
+  "yil": 2024,
+  "baslik": "PCA-Featured Transformer for Jamming Detection in 5G UAV Networks",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "PCA ozellikleri + U-seklinde transformer + cikti-entropisi duzenlilestirmesi; chunking ve batch-size zamanlayici.",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Tespit orani LoS %89,46, NLoS %85,06; XGBoost'a gore ~+%4,5; LoS'ta onceki DNN+M2 %90,80 ile daha iyi.",
+  "sinirlilik": "Jammer dalga sekli belirtilmemis, yalniz RSSI/SINR, yalniz simulasyon, LoS'ta iddia ile tablo uyusmuyor.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "orta",
+  "dosya": "2024_viana_pca-transformer-jamming-5g-uav"
+ },
+ {
+  "kisa": "Marata 2025",
+  "yil": 2025,
+  "baslik": "Trends and Challenges in Next-Generation GNSS Interference Management",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "gnss_iq",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Alici asamalarina gore tespit/siniflama/konumlama/azaltma karsilastirmasi; Jammertest 2024 saha verisi ornekleri.",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "istatistiksel_esik",
+   "pekistirmeli",
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss",
+   "uydu"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Anilan: CNN ile ~%99, DNN ile 9 girisimde ~%95 siniflama; spoofing >20 dBm'de 5 saat zaman, >250 km konum kaymasi.",
+  "sinirlilik": "Perspektif makalesi, ML deneyi yok; goruluemeyen girisime genelleme sorunu yalniz vizyon (few-shot/meta-ogrenme) olarak onerilmis.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2025_marata_gnss-interference-management-trends"
+ },
+ {
+  "kisa": "Yang 2025",
+  "yil": 2025,
+  "baslik": "Agent-Based Anti-Jamming Techniques for UAV Communications in Adversarial Environments: A Comprehensive Survey",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [],
+  "jammer_turleri": [
+   "genis_bant",
+   "dar_bant",
+   "sweep_chirp",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "P-D-A taksonomisi; oyun kurami (Stackelberg, Markov/potansiyel oyunlar), Q-learning, DRL, MARL, MAB; HMM ile spektrum tahmini.",
+  "model_ailesi": [
+   "pekistirmeli",
+   "oyun_kurami",
+   "derin_ogrenme"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Nitel derleme, sayisal karsilastirma yok; acik sorunlar: gercek zamanlilik, bilinmeyen jammer'a genelleme, suru koordinasyonu, hibrit saldirilar.",
+  "sinirlilik": "Savunma/karar agirlikli, tespit-siniflama (algi) kismi kisa; 6G icerigi yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_yang_agent-based-anti-jamming-uav-survey"
+ },
+ {
+  "kisa": "Grekhov 2026",
+  "yil": 2026,
+  "baslik": "Deep Q-Network Based Resilient Drone Communication: Neutralizing First-Order Markov Jammers",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif"
+  ],
+  "yontem": "Vanilla DQN (one-hot kanal, entropi bonusu) + BCH benzeri FEC; Rayleigh + AWGN; jammer gecis sayaclarindan sonraki kanali tahmin eder.",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Basari orani JSR=1,2'de %96,29, JSR=0,5'te %97,27; BCH t=1-2 ile 100 kbit paket kaybi <1e-11 (analitik).",
+  "sinirlilik": "Yalniz birinci derece Markov jammer, tek ajan, yalniz simulasyon; Tablo 4 SNR/BER egilimi metinle celisiyor, asiri iddia tonu.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "orta",
+  "dosya": "2026_grekhov_dqn-drone-markov-jammers"
+ },
+ {
+  "kisa": "Schosser 2026",
+  "yil": 2026,
+  "baslik": "Spectrum Anomaly Detection in OFDMA Systems: Simulation Framework and Benchmark Dataset",
+  "klasor": "01_mevcut_kaynakca_ve_derlemeler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "sweep_chirp",
+   "ton",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Sionna isin izleme, 21 SU spektrogram; taban cizgisi: ResNet-18 + FC (gozetimli, SU basina SJR) ve yalniz normalle egitilmis VAE; leave-one-jammer-out protokolu.",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "isac"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Gozetimli AUC: aldatici 0,940 -> 0,751, pilot 0,935 -> 0,747 (tur egitimden cikarilinca); VAE AUC 0,879-0,973 (barrage 0,926).",
+  "sinirlilik": "Tek ortam (fabrika), tek jammer, sim-to-real dogrulanmadi, I/Q degil spektrogram, birincil olcut AUC.",
+  "biz_yakinlik": 5,
+  "biz_iliski": "rakip",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2026_schosser_spectrum-anomaly-ofdma-dataset"
+ },
+ {
+  "kisa": "Demeslay 2021",
+  "yil": 2021,
+  "baslik": "Band & Tone Jamming Analysis and Detection on LoRa signals",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "dar_bant",
+   "genis_bant",
+   "ton"
+  ],
+  "yontem": "Dechirp+DFT bin genlikleri uzerinde Rayleigh tabanli esik testi (H0/H1), kuramsal ve Monte-Carlo Pmd",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "LoRa BJ/TJ'ye dayanikli (SJR -3..3 dB SER farki ~1,1e-2); STJ tespiti FBJ'den iyi, MTJ daha zayif; Pmd sayilari okunaksiz.",
+  "sinirlilik": "Yalniz AWGN, gercek LoRa testi yok, cok yollu kanal ve senkron hatasi yok, siniflandirma yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2021_demeslay_band-tone-jamming-lora"
+ },
+ {
+  "kisa": "Pourranjbar 2021",
+  "yil": 2021,
+  "baslik": "Jamming Pattern Recognition over Multi-Channel Networks: A Deep Learning Approach",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif",
+   "sweep_chirp",
+   "diger"
+  ],
+  "yontem": "Kanal doluluk matrisi uzerinde GRU+FC+softmax; 5 politika (random, sweeping, fast reactive, reactive with delay, combat)",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Politika degisim suresi 5 dilimde dogruluk >%70, 45 dilimde >%90; en cok karisma: combat-sweeping (5/100), reactive-random (4/100).",
+  "sinirlilik": "Yalniz kanal-seviye soyutlama, fiziksel katman dalga formu/guc yok, gercek veri yok, yeni politika testi yok.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2021_pourranjbar_jamming-pattern-recognition-multichannel"
+ },
+ {
+  "kisa": "Ebrahimi Mehr 2022",
+  "yil": 2022,
+  "baslik": "Detection and Classification of GNSS Jammers Using Convolutional Neural Networks",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "gnss_iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "ton",
+   "dar_bant",
+   "genis_bant"
+  ],
+  "yontem": "STFT/WVT goruntuleri uzerinde AlexNet (11 sinif); %70/10/20 bolme",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss",
+   "uydu"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Yer: %93,46 dogruluk; LEO 20 MHz STFT %95,45, 5 MHz %80,18; en zayif linear_wide_rapid ~%86 (gorselden).",
+  "sinirlilik": "Yalniz chirp alt turleri, tek sweep hizi, 5 epoch, CW/pulse ile ayrim yok; karisiklik sayilari gorselden.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "orta",
+  "dosya": "2022_ebrahimi-mehr_gnss-jammers-cnn"
+ },
+ {
+  "kisa": "Li 2022",
+  "yil": 2022,
+  "baslik": "Jamming Detection and Classification in OFDM-Based UAVs via Feature- and Spectrogram-Tailored Machine Learning",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "ozellik_vektoru",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "genis_bant",
+   "ton",
+   "darbeli",
+   "akilli_adaptif"
+  ],
+  "yontem": "9 radyometrik oznitelik + klasik ML (RF dahil); waterfall goruntuleri + AlexNet/VGG-16/ResNet-50/EfficientNet-B0; %70/30",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uav",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Oznitelik 5 sinif ~%92,2 (FAR %1,35); EfficientNet-B0 spektrogram %99,79 (FAR %0,03); hata barrage-protocol-aware arasinda.",
+  "sinirlilik": "Ekran goruntusu spektrogram, rastgele %70/30 bolme (sizinti olasi), sinif dengesiz (762 vs 204), reaktif jammer yok.",
+  "biz_yakinlik": 5,
+  "biz_iliski": "rakip",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2022_li_ofdm-uav-jamming-feature-spectrogram-ml"
+ },
+ {
+  "kisa": "Viana 2022",
+  "yil": 2022,
+  "baslik": "A Convolutional Attention Based Deep Network Solution for UAV Network Attack Recognition over Fading Channels and Interference",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Cok basli CNN + self-attention (veya LSTM); iki adimli (var/yok, sabit/hareketli); 5-kat CV; PSO/GA/GD hizlandirma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g",
+   "6g",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Ikili dogruluk ~%84 egitim, ~%74 test; test saldiri recall 0,55 (precision 0,90); attention parametreyi 43k->22k dusurdu.",
+  "sinirlilik": "Dusuk test dogrulugu, dalga formu turu ayrimi yok, yalniz RSSI/SINR; dusuk guc ve az saldirgan zor.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_viana_conv-attention-uav-attack-recognition"
+ },
+ {
+  "kisa": "Jere 2023",
+  "yil": 2023,
+  "baslik": "Bayesian Inference-assisted Machine Learning for Near Real-Time Jamming Detection and Classification in 5G New Radio (NR)",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "genis_bant"
+  ],
+  "yontem": "RF/AdaBoost/LR/KNN/GNB/Bagging ve LSTM/GRU/CNN-LSTM/Transformer/ESN (RC) uzerinde KPI; Bayes Ag Modeli ile kok neden",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "oran",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "13 senaryo ort.: GRU dogruluk 0,9945 (FAR 0,0025), ESN 0,9878, RF 0,9537; 4 sinifli: CNN-GRU 0,9405; BNM yanlislarin %72,2'sini duzeltti.",
+  "sinirlilik": "Tek WiFi dalga bicimi; siniflandirma frekans bandi, jammer turu degil; I/Q yok; bilinmeyen dalga bicimi gelecek is.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2023_jere_bayesian-ml-jamming-5g-nr"
+ },
+ {
+  "kisa": "Wu 2023",
+  "yil": 2023,
+  "baslik": "Jammer classification with Federated Learning",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram",
+   "gnss_iq"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "FedAvg 400 tur; 1 evrisimli basit CNN; Ferre veri seti (AM, chirp, FM, pulsed/DME, NB, temiz); Dirichlet beta=0,1; M=20/30/40",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Merkezi ~%93,4; DME ve temiz >%99; AM-FM ve NB-chirp karisiyor; non-IID M=20 tum turler >%80, M=40 NB/AM cok dusuk.",
+  "sinirlilik": "Cok basit CNN, simule veri, genis bant jammer yok, sinif bazli yuzdeler okunaksiz, tek kosu.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2023_wu_jammer-classification-federated-learning"
+ },
+ {
+  "kisa": "Ebrahimi Mehr 2024a",
+  "yil": 2024,
+  "baslik": "A Deep Neural Network Approach for Classification of GNSS Interference and Jamming",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "gnss_iq",
+   "spektrogram",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "STFT/WVT + zaman/frekans oznitelikleri; AlexNet ve ResNet; 17 sinif; %50/15/35 bolme",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss",
+   "uydu"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "ResNet+STFT+oznitelik %99,69 (dusuk guc kumesi %99,46; oznitelik yoksa %91,02); LEO 5/10/20 MHz ResNet 94,70/97,76/99,21.",
+  "sinirlilik": "Tamami simulasyon, kapali kume, on isleme maliyeti, front-end'e ozgu egitim gerekli, cok yol yok.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2024_ebrahimi-mehr_dnn-gnss-interference-jamming-taes"
+ },
+ {
+  "kisa": "Ebrahimi Mehr 2024b",
+  "yil": 2024,
+  "baslik": "Dual-Stage Deep Learning Approach for Efficient Interference Detection and Classification in GNSS",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "gnss_iq",
+   "spektrogram",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "Asama 1 LSTM-AE (PSD dizisi, Pfa=0,001 esigi); Asama 2 STFT+oznitelik CNN, 98 sinif (16 tur x 6 guc + temiz + USRP arizasi)",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Tespit %100 (-130 dBW), 34 ms; siniflandirma %98,26 (F1 98,46); pulsed en zayif: -130 dBW ~%47,6, -125 dBW ~%75,7.",
+  "sinirlilik": "Tespit yalniz en dusuk guc ve bilinen turlerle test edildi; bilinmeyen tur testi yok; tek donanim/kapali ortam; tablo 3 bozuk.",
+  "biz_yakinlik": 5,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_ebrahimi-mehr_dual-stage-gnss-interference"
+ },
+ {
+  "kisa": "Heublein 2024",
+  "yil": 2024,
+  "baslik": "Evaluating ML Robustness in GNSS Interference Classification, Characterization & Localization",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "veri_seti",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "gnss_iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "ton",
+   "darbeli",
+   "sabit_gurultu",
+   "diger"
+  ],
+  "yontem": "ImageNet on-egitimli ResNet18, cok gorevli (CE+RMSE), M=10 topluluk belirsizlik, 129 model kiyasi, bagimli/bagimsiz bolme, 11 senaryo capraz dogrulama",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Tur %99,88 (bagimsiz bolme %96,15); guc siniflamasi %86,42 (bagimsiz %55,96); BW hatasi 0,87 MHz; cok yol siniflamasi %82,14.",
+  "sinirlilik": "Gercek jammer yerine sinyal jeneratoru, tek salon, 576 temiz ornek; yeni tur gizleme deneyi yok; sinif bazli yuzdeler metinde yok.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_heublein_ml-robustness-gnss-interference"
+ },
+ {
+  "kisa": "Jiang 2024",
+  "yil": 2024,
+  "baslik": "Federated Transfer Learning Aided Interference Classification in GNSS Signals",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram",
+   "gnss_iq"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "FedAvg 340 tur, M=5 bolge, Dirichlet beta=0,1; on-egitimli/egitimsiz VGGnet; Ferre veri seti; Solo vs FedAvg",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "VGGnet %96,69 vs CNN %88,86; FedAvg IID ~%96,69, non-IID %94,38; Solo (2 sinif) %32,89; C/N0 ~+5 dB-Hz.",
+  "sinirlilik": "Siniflar arasi karisiklik verilmemis; CNN temel cizgisi Wu 2023 (~%93,4) ile tutarsiz; 5 istemci, C/N0 kazanci varsayima dayali.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_jiang_federated-transfer-learning-gnss-interference"
+ },
+ {
+  "kisa": "Kouchaki 2024",
+  "yil": 2024,
+  "baslik": "Enhanced Real-Time Threat Detection in 5G Networks: A Self-Attention RNN Autoencoder Approach for Spectral Intrusion Analysis",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "LSTM otokodlayici + multi-head self-attention, MSE yeniden yapilandirma hatasi esigi (srsRAN+USRP testbed, GNU Radio jammer)",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Sayisal sonuc yok; ~300 milyon I/Q ornegi, yalnizca niteliksel yeniden yapilandirma-hatasi sekilleri",
+  "sinirlilik": "Nicel metrik, jammer turu/guc tanimi ve baz cizgi yok; saldirilar sentetik enjekte; siniflandirma vaadi sonucsuz",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_kouchaki_rnn-autoencoder-5g-spectral-intrusion"
+ },
+ {
+  "kisa": "Ott 2024",
+  "yil": 2024,
+  "baslik": "Few-Shot Learning with Uncertainty-based Quadruplet Selection for Interference Classification in GNSS Data",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "ton",
+   "sweep_chirp",
+   "sabit_gurultu",
+   "diger"
+  ],
+  "yontem": "ResNet18 prototipik ag + quadruplet kaybi, aleatorik/epistemik belirsizlikle benzer-sinif secimi; 11 sinif, 20 ms I/Q, 62,5 MHz",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Dogruluk %97,66, geri cagirma 0,929 ama kesinlik 0,151, F2 0,431 (PN 0,363, triplet 0,424)",
+  "sinirlilik": "Pozitif siniflar cok az ornekli (9-79); dogruluk yaniltici; tek permutasyon; guc/SNR analizi yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2024_ott_few-shot-gnss-interference-classification"
+ },
+ {
+  "kisa": "Ye 2024",
+  "yil": 2024,
+  "baslik": "GNSS Interference Classification Using Federated Reservoir Computing",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "belirtilmemis",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "Echo State Network tabanli FedRC; 10 istemci, IID ve non-IID (Dirichlet 0,1); FedCNN/FedDNN ile karsilastirma (Ferre 2019 goruntu seti)",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "diger"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "50 tur suresi 2174 s (CNN 3182, DNN 3140); dogruluk >%85; non-IID kayip ~0,5; sinif bazli sonuc yok",
+  "sinirlilik": "Nicel sinif-bazli sonuc ve karisiklik matrisi yok; genis bant disarida; zayif baz cizgiler",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_ye_gnss-interference-federated-reservoir-computing"
+ },
+ {
+  "kisa": "Ebrahimi-Mehr 2025",
+  "yil": 2025,
+  "baslik": "Towards a Faster GNSS Interference Classification: a GRU-Based Approach using Spectrograms",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp"
+  ],
+  "yontem": "STFT dizisi (100 us) uzerinde GRU (298 bin parametre) vs ResNet/EfficientNet/MobileNet; HackRF jammer, BladeRF alici, RK3588 gomulu dagitim",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "GruNet-1L %99,98 dogruluk/F1 (ResNet %99,94); CPU 64,92 ms vs ResNet 262,39 ms; on isleme 14,17 vs 148,5 ms",
+  "sinirlilik": "Yalnizca 5 chirp sinifi, kablolu kanal; gorulmemis jammer'da guven <%40 yalnizca niteliksel; NPU'da GRU verimsiz",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_ebrahimi-mehr_gnss-interference-gru-spectrogram"
+ },
+ {
+  "kisa": "Heublein 2025",
+  "yil": 2025,
+  "baslik": "Attention-Based Fusion of IQ and FFT Spectrograms with AoA Features for GNSS Jammer Localization",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "iq",
+   "spektrogram",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "darbeli",
+   "ton",
+   "sabit_gurultu",
+   "diger"
+  ],
+  "yontem": "128 model kiyasi; IQ + FFT-spektrogram + 22 AoA ozniteligi fuzyonu; 4 elemanli yama dizisi, kapali salon, mobil jammer; McAFF ile karsilastirma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Konum: 2,134 m, azimut 13,725 deg, yukseklik 5,882 deg; McAFF siniflandirma %97,5 (7 sinif) / %63,8 (310 alt sinif); FH-Pulsed karisiyor",
+  "sinirlilik": "Kapali mekan; onerilen yontemin siniflandirma sutunu bos; emici duvarla azimut hatasi 115,8 deg'e cikiyor",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_heublein_iq-fft-spectrogram-fusion-jammer-localization"
+ },
+ {
+  "kisa": "Hussain 2025",
+  "yil": 2025,
+  "baslik": "Dictionary-Based Contrastive Learning for GNSS Jamming Detection",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "belirtilmemis",
+  "sinyal": [
+   "iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "dar_bant",
+   "sweep_chirp",
+   "diger"
+  ],
+  "yontem": "ResNet-18 + sozluk tabanli karsit ogrenme (TCL) + yapisal budama + bilgi damitma; 3 kanalli STFT (log-mag, cos/sin faz)",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "50 ornek/sinifta %91,2 (ResNet-18 %85,8); 300'de %98,2; budama sonrasi 2,3 M param, 9,2 MB, 0,12 ms; kalan hatalar AM<->FM",
+  "sinirlilik": "Veri kaynagi ve sinyal ozellikleri belirsiz; baslik 'detection' ama 6 sinifli siniflandirma; ResNet-18 ile fark kucuk",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_hussain_dictionary-contrastive-gnss-jamming"
+ },
+ {
+  "kisa": "Jiang 2025",
+  "yil": 2025,
+  "baslik": "ACSNet: A Deep Neural Network for Compound GNSS Jamming Signal Classification",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "dar_bant",
+   "diger"
+  ],
+  "yontem": "Choi-Williams T-F goruntusu, 6 asimetrik konvolusyon bloklu CNN; 9 ikili bilesik sinif (STJ/MTJ/PBNJ/LFMJ/PPNJ); JNR -20..10 dB, PR taramasi",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss",
+   "uydu",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn",
+   "isac"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "OA %97,58, Kappa 97,29 (RCNN %90,07, BCNN %87,85, FCNN %50,70); -20 dB'de %86,33; >=-9 dB'de ~%100",
+  "sinirlilik": "Yalnizca simulasyon, AWGN, toplamsal bilesik; tek jammer siniflandirilmiyor; RCNN %91,06/%90,07 tutarsizligi; dogrulama kumesi yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_jiang_acsnet-compound-gnss-jamming"
+ },
+ {
+  "kisa": "Paramata 2025",
+  "yil": 2025,
+  "baslik": "A VAE-Based Framework for GNSS Jammer Classification Using Time-Frequency Image Representations",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "belirtilmemis",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "dar_bant",
+   "sweep_chirp",
+   "diger"
+  ],
+  "yontem": "Evrisimli VAE (gizli boyut 8), esik = mu + 1,8 sigma; SVM ve CNN baz cizgileri; 6 sinif x 150 goruntu (32x32)",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz",
+   "klasik_ml"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "VAE dogruluk %90,0, F1 %91,39, tespit 672/750=%89,6 (DME %100, FM %93,3, AM %92,7, NB %86, chirp %79,3); CNN %91,6",
+  "sinirlilik": "Ozet %97 vs tablo %89,6; CNN'den iyi iddiasi dogruluk icin gecersiz; kucuk veri; yanlis alarm verilmemis; tutulan-tur testi yok",
+  "biz_yakinlik": 4,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_paramata_vae-gnss-jammer-classification"
+ },
+ {
+  "kisa": "Wang 2025",
+  "yil": 2025,
+  "baslik": "Jamming Identification with Differential Transformer for Low-Altitude Wireless Networks",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "diger"
+  ],
+  "yontem": "Differential Transformer + rastgele maskeli paralel dallar + tutarlilik egitimi; 8 jammer turu, OFDM sinyal, Rice/Rayleigh kanal, FGSM saldirisi",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uav",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "-8 dB'de Transformer'a +%5, CNN'e +%21; 8 dB'de ~%100; savunmali egitimde temiz ~%80, 14/255 FGSM'de %52 (maskeleme)",
+  "sinirlilik": "Simulasyon; yalnizca FGSM white-box; savunma temiz dogrulugu dusuruyor; BPSK/NAM karisiyor",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_wang_differential-transformer-jamming-identification"
+ },
+ {
+  "kisa": "Zeng 2026a",
+  "yil": 2026,
+  "baslik": "JSR-GFNet: Jamming-to-Signal Ratio-Aware Dynamic Gating for Interference Classification in future Cognitive Global Navigation Satellite Systems",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq",
+   "spektrogram",
+   "ozellik_vektoru",
+   "gnss_iq"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "sabit_gurultu",
+   "genis_bant",
+   "diger"
+  ],
+  "yontem": "Complex-valued ResNet (I/Q) + EfficientNet-B0 (STFT) + basiklik/PAPR istatistikleriyle JSR güdümlü dinamik geçit; CGI-21 veri seti (fs 40 MHz, 4000 ornek)",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "10 dB JSR'de %47,2, 22 dB %86,5, 30 dB %95,1, >=38 dB ~%100; 6,85 M param, 3,12 ms; 64-QAM F1 0,10 (10 dB) -> 1,00 (40 dB)",
+  "sinirlilik": "Simulasyon, AWGN; acik-kume yok; veri/kod acikligi belirsiz; fuzyon kazanci baz cizgilere +%1-3",
+  "biz_yakinlik": 4,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_zeng_jsr-gfnet-interference-classification"
+ },
+ {
+  "kisa": "Zeng 2026b",
+  "yil": 2026,
+  "baslik": "SKANet: A Cognitive Dual-Stream Framework with Adaptive Modality Fusion for Robust Compound GNSS Interference Classification",
+  "klasor": "02_derin_ogrenme_iq_spektrogram",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "dar_bant",
+   "genis_bant"
+  ],
+  "yontem": "Dual-stream SK-ACB-Net + SE fuzyon; 9 ikili bilesik sinif; fs 20 MHz, 1 ms; JNR -25..15 dB; ViT/ResNet/EfficientNet/TFPENet ile karsilastirma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss",
+   "6g",
+   "uydu"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "OA %96,99 (TFPENet %94,58, ViT-B-16 %86,92), -20 dB'de >%75; LFM+PBNJ<->MTJ+PBNJ karisikligi <%5",
+  "sinirlilik": "Kapali-kume, simulasyon, AWGN; ACSNet ile kiyas yok; 405 bin ornek sayisi hesapla tutarsiz (369 bin); -25 dB ortalamadan haric",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_zeng_skanet-compound-gnss-interference"
+ },
+ {
+  "kisa": "Bendale 2016",
+  "yil": 2016,
+  "baslik": "Towards Open Set Deep Networks",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "temel_kuram",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Penultimate katman aktivasyon vektorunde sinif ortalamasina uzaklik + Weibull EVT ile OpenMax kalibrasyonu; F-measure ile esik",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "istatistiksel_esik"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "ImageNet 80K test: OpenMax SoftMax-esige gore ~%4,3, temel aga gore %12,3 daha iyi (F-measure).",
+  "sinirlilik": "Yalniz goruntu; tek MAV/sinif; esik kalibrasyonu zor; radyo verisi yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2016_bendale_openmax-towards-open-set-deep-networks"
+ },
+ {
+  "kisa": "Ruff 2018",
+  "yil": 2018,
+  "baslik": "Deep One-Class Classification",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Cikti uzayinda merkez c etrafinda minimum hacimli hiperkure; One-Class ve soft-boundary Deep SVDD; nu-ozelligi; DCAE on egitimi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "MNIST 0..9 AUC %88,5-99,7; CIFAR-10 %50,8-75,9; GTSRB adversarial AUC 80,3 (IF 73,8, OC-SVM 67,5).",
+  "sinirlilik": "Yalniz goruntu; mimari secimi kritik; esik/yanlis alarm raporu yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2018_ruff_deep-one-class-classification-deep-svdd"
+ },
+ {
+  "kisa": "Hariri 2019",
+  "yil": 2019,
+  "baslik": "Extended Isolation Forest",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Her dugumde rastgele normal vektor ve kesim noktasi; uzatma duzeyi 0..N-1; AUROC/AUPRC",
+  "model_ailesi": [
+   "anomali_denetimsiz",
+   "klasik_ml"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "AUROC iForest->EIF: cift blok 0,869->0,999; ForestCover 0,809->0,924; Ionosphere 0,85->0,913 (tablo sirasi orta guven).",
+  "sinirlilik": "Radyo yok; kucuk kiyas kumeleri; esik raporu yok; bazi kumelerde kazanc cok kucuk.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2019_hariri_extended-isolation-forest"
+ },
+ {
+  "kisa": "Rajendran 2019",
+  "yil": 2019,
+  "baslik": "Crowdsourced wireless spectrum anomaly detection",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "darbeli",
+   "genis_bant"
+  ],
+  "yontem": "AAE tabanli SAIFE ozellik cikarici + anomali ozellik modulu + COBRAS kumeleme + aktif anomali tespiti; n-sigma esik, sabit FPR %5/%10 kiyasi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Aktif asamada secilen anomalilerde >%95 tespit; Pi=0,05 etiket hatasiyla 500 sorguda ~%80; denetimsiz SAIFE OSVM/IFO/LODA'dan iyi (sayilar okunaksiz).",
+  "sinirlilik": "Sentetik enjekte anomali; denetimsiz esik zayif; yalniz PSD; kullanici geri bildirimi gerekir.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2019_rajendran_crowdsourced-wireless-spectrum-anomaly-detection"
+ },
+ {
+  "kisa": "Geng 2020",
+  "yil": 2020,
+  "baslik": "Recent Advances in Open Set Recognition: A Survey",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "KKC/KUC/UKC/UUC taksonomisi; ayirici ve uretici modeller; F-measure, AUROC, Youden; rastgele sinif bolmeleri",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "derleme",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "F-measure ve AUROC en yaygin olcut; CIFAR10 6 bilinen/4 bilinmeyen, 5 rastgele bolme protokolu; openness arttikca performans dusebilir.",
+  "sinirlilik": "Radyo/IQ yok; openness formulu C_TA⊆C_TR⊆C_TE'de tutarsiz; tablo sayilari okunmadi.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2020_geng_open-set-recognition-survey"
+ },
+ {
+  "kisa": "Guo 2020",
+  "yil": 2020,
+  "baslik": "Open Set Modulation Recognition Based on Dual-Channel LSTM Model",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Cift kanalli LSTM (I/Q ve A/P), center loss, Weibull (M=1000) ile OpenMax tarzi bilinmeyen sinif",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "RadioML 11 sinif kapali-kume %90,2 (SNR>=0); acik-kume CL-WF, SL-O'ya gore +%14,2 (ort. dogruluk).",
+  "sinirlilik": "Yalniz ortalama dogruluk (bilinmeyene atanan hatalar dogru sayiliyor); AUROC/F1 yok; kismi tanima.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2020_guo_open-set-modulation-dual-channel-lstm"
+ },
+ {
+  "kisa": "Hanna 2020",
+  "yil": 2020,
+  "baslik": "Deep Learning Approaches for Open Set Wireless Transmitter Authorization",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Residual ag; Disc, DClass, OvA mimarileri; 71 WiFi vericiden rastgele A/K/O bolmeleri x10; Gauss uydurma esigi gamma=min(0,5;3 sigma)",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "10 yetkili+30 bilinmeyen+25 bilinen outlier ile ort. dogruluk %96,8; K=0'da hicbir yontem %90'i asamadi.",
+  "sinirlilik": "Yalniz residual ag; OvA boyutu |A| ile buyur; tek WiFi yakalamasi/kanal.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2020_hanna_open-set-transmitter-authorization"
+ },
+ {
+  "kisa": "Chhetry 2021",
+  "yil": 2021,
+  "baslik": "Detection Of Primary User Emulation Attack (PUEA) In Cognitive Radio Networks Using One-Class Classification",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Isolation Forest, tek-sinif SVM, MCD, LOF; slot basina 5 enerji istatistigi; test setinde %10/%20 saldiri",
+  "model_ailesi": [
+   "anomali_denetimsiz",
+   "klasik_ml"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "LOF/MCD ~%90 dogruluk (%10 PUEA); recall ve F1 >%90; SVM en kotu, IF orta (tam sayilar sekillerde).",
+  "sinirlilik": "Yalniz yapay veri; AUC/FPR yok; PUEA orani artinca kesinlik dusuyor.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2021_chhetry_puea-detection-one-class-cognitive-radio"
+ },
+ {
+  "kisa": "Fredieu 2021",
+  "yil": 2021,
+  "baslik": "Open-set Classification of Common Waveforms Using A Deep Feed-forward Network and Binary Isolation Forest Models",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Derin MLP 32 boyutlu ozellik + 7 ikili IF (contamination 0,02) + SVM kiyasi; BLE ve beyaz gurultu bilinmeyen",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "5g",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Bilinmeyende IF %98, SVM en fazla %63; tum sistem 0 dB ustunde ~%98 (IF contamination %2 ile sinirli).",
+  "sinirlilik": "Bilinmeyen yalniz 2 tur; simulasyon; karar kurali metinde tutarsiz; TPR/FPR ayri yok.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2021_fredieu_open-set-waveforms-isolation-forest"
+ },
+ {
+  "kisa": "Shebert 2021",
+  "yil": 2021,
+  "baslik": "Open Set Wireless Standard Classification Using Convolutional Neural Networks",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram",
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "1B CNN, sigmoid cikis esigi (0,9999) ile bilinmeyen; esik bilinmeyen verisiyle ayarlandi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "5g",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "SNR>0 dB: kapali-kume %94,5; acik-kume bilinende %86, bilinmeyende %95,5 (esik 0,9999).",
+  "sinirlilik": "Esik bilinmeyen verisiyle ayarli (sizinti riski); tek sabit bilinmeyen kume; simulasyon.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2021_shebert_open-set-wireless-standard-cnn"
+ },
+ {
+  "kisa": "Wang 2021",
+  "yil": 2021,
+  "baslik": "Deep Open Set Identification for RF Devices",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [],
+  "yontem": "STFT on isleme + CNN + Weibull (EVT) + OpenMax; Oklid+kosinus mesafe; rastgele alfa bilinen sinif bolmesi; sert esikle kiyas",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "V-Set A-acc 1/2/3 bilinmeyen: sert esik %81,3/80,0/64,2; DOS RF-I %94,2/94,9/93,4; D-Set A-acc %99,92.",
+  "sinirlilik": "Yalniz 6 cihaz; donanim/ornekleme/SNR belirtilmemis; bolme tekrar sayisi belirsiz.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2021_wang_deep-open-set-identification-rf-devices"
+ },
+ {
+  "kisa": "Vaze 2022",
+  "yil": 2022,
+  "baslik": "Open-Set Recognition: A Good Closed-Set Classifier Is All You Need?",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "MSP+ ve maksimum logit skoru (MLS) baseline; ARPL/OpenHybrid/OSRCI kiyasi; Semantic Shift Benchmark; AUROC, OSCR",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Dogruluk-AUROC rho=0,95; MLS ort. +%15,6 AUROC (CIFAR10 67,7->93,6; TinyImageNet 57,7->83,0).",
+  "sinirlilik": "Yalniz goruntu; bulgu mevcut benchmark/mimarilere bagli; ekler okunmadi.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2022_vaze_open-set-good-closed-set-classifier"
+ },
+ {
+  "kisa": "Wang 2022",
+  "yil": 2022,
+  "baslik": "Anonymous Jamming Detection in 5G with Bayesian Network Model Based Inference Analysis",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "genis_bant"
+  ],
+  "yontem": "Denetimli RF/LSTM + yalniz jamming'siz veriyle egitilen otoenkoder toplulugu (Kitsune tipi) + BNM",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Denetimli AUC 0,964-1; LSTM AUC 0,923-1; denetimsiz AE AUC 0,987; LTE DL bandinda basarisiz (normalle ortusuyor).",
+  "sinirlilik": "Jammer WiFi tipi girisim; 596 egitim ornegi; LTE DL tespit edilemiyor; esik proseduru belirsiz.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2022_wang_anonymous-jamming-detection-5g-bayesian"
+ },
+ {
+  "kisa": "Sciancalepore 2023",
+  "yil": 2023,
+  "baslik": "Jamming Detection in Low-BER Mobile Indoor Scenarios via Deep Learning",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sabit_gurultu",
+   "akilli_adaptif"
+  ],
+  "yontem": "I/Q ornekleri gri tonlu goruntuye; seyrek otoenkoder, esik mean+3,5 std (egitim MSE); ResNet-18 CNN kiyasi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "uav",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "10 m, RJP 0,1-1: min. dogruluk 0,997; n>=50.000 ornekte >0,99; n=10.000'de 0,498; aldatici jamming TNR 0,987.",
+  "sinirlilik": "Statik surekli jammer; tek modulasyon (BPSK); reaktif/darbeli/sweep yok; az ornekte zayif.",
+  "biz_yakinlik": 5,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2023_sciancalepore_jamming-detection-low-ber-deep-learning"
+ },
+ {
+  "kisa": "Shebert 2023",
+  "yil": 2023,
+  "baslik": "Open Set Wireless Signal Classification: Augmenting Deep Learning with Expert Feature Classifiers",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [],
+  "yontem": "1B CNN + sigmoid esikli bilinmeyen dedektoru + standarda ozel uzman siniflandiricilar (senkron+CRC) + hibrit; OTA dogrulama",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "5g",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Hibrit 2-7x daha az hesap; 20 dB'de bilinen %97, bilinmeyen ~%100 (CNN'e gore +%5/+%40); CNN OFDM/SC-FDMA'yi <%1 yakaliyor.",
+  "sinirlilik": "CNN OFDM/SC-FDMA'yi bilinmeyen ayiramiyor; esik hedefi keyfi (%85); BLE yalniz reklam paketi.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2023_shebert_open-set-wireless-expert-feature-classifiers"
+ },
+ {
+  "kisa": "Zhang 2023",
+  "yil": 2023,
+  "baslik": "Class Information Guided Reconstruction for Automatic Modulation Open-Set Recognition",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [],
+  "yontem": "CCV + MI kaybi + Restormer denoiser'li otokodlayici; min. kosullu yeniden-yapilandirma kaybi > tau (egitim kaybi %99 yuzdeligi) ise bilinmeyen",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "SNR>-4 dB AKS>%99; -8..2 dB'de UCI en iyi tabana gore ort. >5 pp; olcum verisinde Baker7 bilinmeyende +6,8 pp",
+  "sinirlilik": "TFI hesap maliyeti gercek zamani sinirlar; benzer modulasyon ciftleri karisir; AWGN, tek bolme",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2023_zhang_class-information-guided-reconstruction-amc-osr"
+ },
+ {
+  "kisa": "Arcangeloni 2024",
+  "yil": 2024,
+  "baslik": "Jamming Detection in MIMO-OFDM ISAC Systems Using Variational Autoencoders",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "VAE yeniden-yapilandirma olasiligi testi; esik H0 altinda histogramdan Pfa=0,05'e gore; klasik AE ile kiyas",
+  "model_ailesi": [
+   "anomali_denetimsiz",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "isac",
+   "thz_mmwave",
+   "mimo_pilot"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Pfa=0,05'te SJR=27 dB icin Pd=0,93; VAE her SJR'de klasik AE'den ustun; L=10 en iyi",
+  "sinirlilik": "Yalniz simulasyon, tek jammer tipi, dusuk jammer gucunde zayif; AUROC verilmemis",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_arcangeloni_jamming-detection-vae-mimo-ofdm-isac"
+ },
+ {
+  "kisa": "Varotto 2024a",
+  "yil": 2024,
+  "baslik": "Detecting 5G Narrowband Jammers with CNN, k-nearest Neighbors, and Support Vector Machines",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "spektrogram",
+   "iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "dar_bant"
+  ],
+  "yontem": "Spektrogram + CNN; PCA(8 bilesen)+kNN/SVM; ikili denetimli siniflandirma",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "CNN jammed vakalarin %100'u; kNN test ~%99,98; SVM <=%98,98; %95 sureler CNN 38 ms, kNN+PCA 8 ms, SVM+PCA 0,11 ms",
+  "sinirlilik": "Tek jammer tipi, 1 m laboratuvar, uzak mesafede asiri uyum izi; bilinmeyen jammer yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_varotto_5g-narrowband-jammers-cnn-knn-svm"
+ },
+ {
+  "kisa": "Varotto 2024b",
+  "yil": 2024,
+  "baslik": "One-Class Classification as GLRT for Jamming Detection in Private 5G Networks",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "genis_bant"
+  ],
+  "yontem": "128x128 I/Q bitmap uzerinde CNN: meşru veri D0 vs yapay duzgun D1*; FA/MD-esik egrileri; CAE baz",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "n=256: FA/MD ayrisma mesafesi cerceve gurultude 0,5 vs CAE 0,35 (%43), Gauss gurultude ~0,75 vs 0,35 (%114)",
+  "sinirlilik": "Yalniz gurultu tipi jammer; mutlak FA/MD yok, bagil kazanc; sinif saklama protokolu yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_varotto_one-class-glrt-jamming-private-5g"
+ },
+ {
+  "kisa": "Zhang 2024",
+  "yil": 2024,
+  "baslik": "FSOS-AMC: Few-Shot Open-Set Learning for Automatic Modulation Classification Over Multipath Fading Channels",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "MS-MSANet + meta-prototip egitimi + NCM tabanli moduler acik-kume siniflayici (gamma esigi)",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "AUROC %95,39 (RadioML) ve %96,46 (HisarMod); acik-kume dogruluk %88,58 / %76,72; acikliklar %15,98 / %18,35",
+  "sinirlilik": "Hesap/dogruluk dengesi; bilinmeyen prototipi hedef alan ornegi kullanir; tek bolme",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_zhang_fsos-amc-few-shot-open-set"
+ },
+ {
+  "kisa": "Hanegraaf 2025",
+  "yil": 2025,
+  "baslik": "Weak-Jamming Detection in IEEE 802.11 Networks: Techniques, Scenarios and Mobility",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "akilli_adaptif"
+  ],
+  "yontem": "I/Q bulutu goruntusu; CNN ikili ve seyrek AE tek-sinif (esik = mu+3,5 sigma); 5-kat CV",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "wifi_iot",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "10^5 ornek/goruntude CNN dogrulugu 0,98, AE 0,995; AE 9 goruntuyle guvenilir; 23 m'de tum yontemler yetersiz",
+  "sinirlilik": "5 MHz bant, en cok 23 m, az egitim verisi, reaktif jammer denenmedi, bilinmeyen jammer turu yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_hanegraaf_weak-jamming-detection-80211"
+ },
+ {
+  "kisa": "Kuili 2025a",
+  "yil": 2025,
+  "baslik": "CWGAN-GP Augmented CAE for Jamming Detection in 5G-NR in Non-IID Datasets",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu"
+  ],
+  "yontem": "Conv1D CWGAN-GP ile 5000'e dengeleme; once denetimsiz CAE sonra FC siniflandirici (gamma=0,5); baz CDAE/CSAE",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "12 veri seti ort. CAE: P %97,33, R %91,33, F1 %94,08, Acc %94,35; CDAE/CSAE ~%90 dogruluk",
+  "sinirlilik": "Jammer AWGN ekleme ile yapay; GAN ornek kalitesine bagimli; tek jammer tipi; bolme/sizinti belirsiz",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_kuili_cwgan-gp-cae-jamming-5g-nr"
+ },
+ {
+  "kisa": "Kuili 2025b",
+  "yil": 2025,
+  "baslik": "A Two-Stage CAE-Based Federated Learning Framework for Efficient Jamming Detection in 5G Networks",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "FedAvg ile denetimsiz CAE, FedProx ile FC siniflandirici; 12 istemciden 6'si, 30 tur",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "6 istemcide P 0,94, R 0,90, F1 0,92, Acc 0,92 (30 tur); 12 istemcide Acc 0,89",
+  "sinirlilik": "Yalniz 12 istemci, ikili tespit, jammed veri kaynagi belirsiz, dengelenmis test",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_kuili_two-stage-cae-federated-jamming-5g"
+ },
+ {
+  "kisa": "Ntemkas 2025",
+  "yil": 2025,
+  "baslik": "RFI and Jamming Detection in Antenna Arrays with an LSTM Autoencoder",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Korelasyon matrisinin 2B-DFT goruntusu dizisi + seyreklik kayipli LSTM AE; esik = egitim hatasi %95 yuzdeligi",
+  "model_ailesi": [
+   "anomali_denetimsiz",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g",
+   "6g",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "mimo_pilot"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "INR 0-30 dB, SOI SNR 0 dB'de tespit; sayisal dogruluk metinde yok; gecici kaynak en zor",
+  "sinirlilik": "Yalniz simulasyon, sayisal tablo yok, dizi gerektirir, tek yuzdelik esik",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_ntemkas_rfi-jamming-lstm-autoencoder-arrays"
+ },
+ {
+  "kisa": "Zhong 2025",
+  "yil": 2025,
+  "baslik": "Energy-based jamming pattern open set recognition via spiking wavelet transformer",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "ton",
+   "sweep_chirp",
+   "darbeli",
+   "reaktif",
+   "akilli_adaptif",
+   "dar_bant"
+  ],
+  "yontem": "Spiking Wavelet Transformer + hiperkuresel MCS + enerji modeli; theta_c = mu_c + 2 sigma_c, EMA 0,9; yardimci gurultu OOD",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "6 bilinen/3 bilinmeyen tur, 5 tekrar: TNR %95,36, TPR %99,48, F1 %99,35; OpenMax TNR %79,56",
+  "sinirlilik": "JSR<-4 dB'de zayif; yardimci OOD ve dogrulama icin bilinmeyen kullanimi; adaptif dusmana kirilgan; agir model",
+  "biz_yakinlik": 5,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_zhong_energy-based-jamming-pattern-osr-spiking-wavelet-transformer"
+ },
+ {
+  "kisa": "Bouferroum 2026",
+  "yil": 2026,
+  "baslik": "CITADEL: CSI-Based Jamming Detection and Open-Set Classification for IIoT Networks",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "sweep_chirp",
+   "darbeli",
+   "diger"
+  ],
+  "yontem": "ESP32 ikili tetikleyici + CNN siniflandirici + VAE/DDPM yeniden-yapilandirma sapmasi, enerji, Mahalanobis OOD toplulugu; esik P90/P95/P99,5 out-of-fold",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "6 bilinen/15 sifir-gun: bilinen %100, sifir-gun OOD %97,1, E2E FPR %0,4; HussainEdge sifir-gun %55,9, JamShield %44,8",
+  "sinirlilik": "Laboratuvar, tek jammer (HackRF), tek 20 MHz kanal ~4 Hz; esikler ortama ozgu; OTA adversarial test yok",
+  "biz_yakinlik": 4,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_bouferroum_citadel-csi-jamming-open-set-iiot"
+ },
+ {
+  "kisa": "Gopal 2026a",
+  "yil": 2026,
+  "baslik": "Benchmarking Unsupervised Jamming Detection in 5G Open RAN",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "diger"
+  ],
+  "yontem": "SEM (MAD+sayim+ani degisim, hibrit) vs Vanilla/LSTM/VAE otokodlayici; AE esigi mean+k*std (k bilesik skorla); LOO",
+  "model_ailesi": [
+   "istatistiksel_esik",
+   "anomali_denetimsiz",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "LOO: SEM bilesik 0,906 vs en iyi AE 0,688; F1 SEM 0,918 vs LSTM-AE 0,521, Vanilla 0,503, VAE 0,185",
+  "sinirlilik": "SEM her izde kalibre, AE aktarilir; guven skorlari karsilastirilamaz; tek test yatagi; retrospektif",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_gopal_benchmarking-unsupervised-jamming-5g-oran"
+ },
+ {
+  "kisa": "Gopal 2026b",
+  "yil": 2026,
+  "baslik": "O-RAN-Native Jamming Detection Under Network Heterogeneity",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "diger"
+  ],
+  "yontem": "SEM (MAD z-skor tau=3, sayim, ani degisim, agirlikli oylama; soguk baslangic ve izgara aramali denetimli mod) vs RF/XGB/LGBM/SVM/LR ve DL dizi modelleri; tek-ortam ve LOO",
+  "model_ailesi": [
+   "istatistiksel_esik",
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "SEM soguk baslangic F1 0,888 (recall 0,971), denetimli 0,962; tek-ortam ML recall Log 7'de 0,29, DL 0,47",
+  "sinirlilik": "Tek test yatagi; tur siniflamasi yok; korpus kapsami; SEM yanlis alarm artirir",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_gopal_oran-native-jamming-detection-heterogeneity"
+ },
+ {
+  "kisa": "Mondal 2026",
+  "yil": 2026,
+  "baslik": "Out-of-Distribution (OOD) Detectors for Open-Set RF Fingerprinting",
+  "klasor": "03_acik_kume_anomali",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "1D ResNet-18 uzerine ReAct/VRA/PLF ozellik sekillendirme; SHOT: simule tutulan ID siniflari ile Bayes optimizasyonu",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Senaryo B: PLF AUROC 0,932 vs 0,450, VRA 0,950 vs 0,866; OOD verisiz: AE 0,467, ReAct 0,858, VRA 0,907, PLF 0,902",
+  "sinirlilik": "Tek veri seti ve tek OOD verici; Senaryo A'da dusuk ayrisabilirlik; jamming yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2026_mondal_ood-detectors-open-set-rf-fingerprinting"
+ },
+ {
+  "kisa": "O'Shea 2018",
+  "yil": 2018,
+  "baslik": "Over the Air Deep Learning Based Radio Signal Classification",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "ResNet/VGG CNN ham I/Q (1024 örnek) vs HOS+boosted ağaç; sentetik bozulma (CFO, SRO, Rayleigh, LO) ve OTA transfer öğrenme",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "ResNet %99.8 (1M örnek, yüksek SNR) vs baseline %94.6; OTA doğrudan %95.6; sentetik->OTA ~%94->%87",
+  "sinirlilik": "OTA kanalı iyi huylu (yan yana radyolar, neredeyse dürtü kanal); transfer doğrudan eğitime ulaşmıyor; jammer yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2018_oshea_over-the-air-dl-radio-signal-classification"
+ },
+ {
+  "kisa": "Shi 2019",
+  "yil": 2019,
+  "baslik": "Deep Learning for RF Signal Classification in Unknown and Dynamic Spectrum Environments",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "CNN (128 I/Q); EWC sürekli öğrenme; MCD ve k-means ile bilinmeyen jammer aykırı değer tespiti; faz kaymalı replay tespiti; ICA kaynak ayırma; TDMA zamanlama",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Baseline ort. doğruluk 0.934; bilinmeyen jammer aykırı değer 0.88; replay 0.972; ICA ile üst üste binen ~0.837",
+  "sinirlilik": "Jammer = rastgele modülasyon (RadioML 2016, 128 örnek), gerçek jamming dalga biçimi ve OTA yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2019_shi_dl-rf-classification-unknown-dynamic-spectrum"
+ },
+ {
+  "kisa": "Tekbiyik 2020",
+  "yil": 2020,
+  "baslik": "Robust and Fast Automatic Modulation Classification with CNN under Multipath Fading Channels",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "4 evrişim + 2 yoğun katmanlı CNN, hiyerarşik aile/tür sınıflaması; HisarMod2019.1 ve RadioML2016.10a'da test",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "HisarMod: CNN maks %94 vs CLDNN %85; RadioML2016.10a: CNN %90.7, CLDNN %88.5, LSTM %92.3",
+  "sinirlilik": "Yalnızca modülasyon ailesi; SNR<2 dB'de rastgele; OTA yok; donanım kusurları yok",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2020_tekbiyik_amc-cnn-multipath-fading"
+ },
+ {
+  "kisa": "Clark 2021",
+  "yil": 2021,
+  "baslik": "Training Data Augmentation for Deep Learning Radio Frequency Systems",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Sabit CLDNN; 5 veri kümesi (yakalama, 2 artırma, 2 sentetik); KDE ile parametreleştirilmiş artırma; %90/%10 bölme",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Sentetik eğitim gerçek testte rastgelenin ~2 katını geçmiyor; artırma yakalamadan ucuz ama daha düşük kaliteli; sınıf başına 2.39M gözlem",
+  "sinirlilik": "Detektör kusurları (SNR/CFO/SRM) farkı kapatmıyor; DAC-ADC yolu modellenmeli; %100 tahminleri ekstrapolasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2021_clark_training-data-augmentation-dl-rf"
+ },
+ {
+  "kisa": "Boegner 2022",
+  "yil": 2022,
+  "baslik": "Large Scale Radio Frequency Signal Classification",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "EfficientNet ve XCiT (1D), 4096 I/Q; olasılıklı bozulmalar (Rayleigh 2-20 tap, IQ dengesizliği, frekans/faz/zaman kayması, yeniden örnekleme); çevrimiçi veri üretimi ve artırma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Impaired val: EffNet-B4 %67.46, XCiT-Tiny12 %70.22; online+augment %69.73 / %71.16",
+  "sinirlilik": "Yalnızca sentetik dar bant; OTA doğrulaması yok; bozulma parametreleri uzman seçimi; jamming sınıfı yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2022_boegner_large-scale-rf-signal-classification"
+ },
+ {
+  "kisa": "Hoydis 2022",
+  "yil": 2022,
+  "baslik": "Sionna: An Open-Source Library for Next-Generation Physical Layer Research",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "simulator",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "TensorFlow/Keras katmanları; 5G LDPC/Polar, OFDM, MIMO, 3GPP 38.901 TDL/CDL/UMa/UMi/RMa kanalları; ray tracing (Sionna RT) gelecek uzantı",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "isac",
+   "ris",
+   "thz_mmwave",
+   "ntn",
+   "mimo_pilot",
+   "semantik",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Nicel sonuç yok (beyaz kitap); Apache 2.0, github.com/NVlabs/sionna; 3GPP 38.901 kanallar ve türevlenebilir zincir",
+  "sinirlilik": "5G-uyumlu simülatör hedeflemiyor; GPU belleği darboğaz; RT ve özel CUDA 'yakında'; jamming yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2022_hoydis_sionna-open-source-library"
+ },
+ {
+  "kisa": "Scholl 2022",
+  "yil": 2022,
+  "baslik": "RF Signal Classification with Synthetic Training Data and its Real-World Performance",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "9 katmanlı CNN (~550k param), 11 farklı sentetik eğitim seti (ofsetler, AWGN, darbeli gürültü, RX filtresi, Watterson sönümleme), gerçek WebSDR HF kayıtlarıyla doğrulama",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "En iyi sentetik set gerçek HF verisinde yüksek SNR'de %95; frekans kayması, RX filtresi, geniş SNR ve sönümleme kritik",
+  "sinirlilik": "Yalnızca 20 HF sinyal tipi, tek WebSDR alıcısı, 6 kHz dar bant; jamming/girişim yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2022_scholl_rf-signal-classification-synthetic-training-real-world"
+ },
+ {
+  "kisa": "Viana 2022",
+  "yil": 2022,
+  "baslik": "Two Methods for Jamming Identification in UAVs Networks using New Synthetic Dataset",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "dar_bant"
+  ],
+  "yontem": "STL ayrıştırma + RMSE + SVM/LR/RF; küçük CNN-LSTM (~53k param), 4 sınıf (iyi/kötü kanal x normal/jamming), %70/%30 + 5 katlı CV",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uav",
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "CNN-LSTM ~%99.9-99.99 (4 sınıf, 483.540 blok, <%1 yanlış); STL ortalama ~%70, en iyi %84.38",
+  "sinirlilik": "Tek skaler güç dizisi (I/Q yok); jammer çoğunlukla sinyalden güçlü; düşük güçlü jammer zor; veri yayımı belirsiz",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_viana_jamming-identification-uav-synthetic-dataset"
+ },
+ {
+  "kisa": "Bleszynski 2023",
+  "yil": 2023,
+  "baslik": "Detection of Mobile LoRa Jammers",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "yontem",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "paket_rssi_pdr",
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "ESP32+SX1276 LoRa testbed, RTL-SDR (GNU Radio) yakalama; Doppler FFT (yalnızca simülasyonda doğrulandı); RSSI hareketlilik + bayt entropisi iki adımlı IDS",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Doppler yalnızca simülasyonda; RSSI+entropi rastgele yüklü hareketli jammer'ı nitel olarak ayırdı; nicel metrik yok",
+  "sinirlilik": "Yalnızca aldatıcı rastgele yüklü jammer; replay/reaktif gelecek iş; tek senaryo; düşük kaliteli SDR",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2023_bleszynski_detection-mobile-lora-jammers"
+ },
+ {
+  "kisa": "McManus 2024",
+  "yil": 2024,
+  "baslik": "On the Effects of Modeling on the Sim-to-Real Transfer Gap in Twinning the POWDER Platform",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "simulator",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "UBSim 3D kampüs modeli; Friis/ECC-33/Ericsson yol kaybı; Echo State Network ile SINR regresyonu ve Gold kod uzunluğu sınıflaması; OTA (Shout, CBRS, DSSS) ile kıyas",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "SINR MAE: OTA-eğitimli 2.011; Friis 4.957; Ericsson 5.047; ECC 5.643; kod uzunluğu tahmini ECC'de ~rastgele",
+  "sinirlilik": "Yalnızca çatı düğümleri; ölçüm sayısı belirtilmemiş; CBRS girişimi; ray tracing ve mobil düğümler gelecek iş",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_mcmanus_sim-to-real-transfer-gap-powder-twin"
+ },
+ {
+  "kisa": "Rosen 2024",
+  "yil": 2024,
+  "baslik": "RFRL Gym: A Reinforcement Learning Testbed for Cognitive Radio Applications",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "simulator",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger",
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "reaktif",
+   "diger"
+  ],
+  "yontem": "10 kanal x 100 adım; Constant/Fixed/Stochastic/Agile Hopper ve Simple Jammer varlıkları; Q-learning (MushroomRL); detect/classify gözlem modları",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Sabit hedefte optimum (ödül 100, 5 bölümde); Markov olmayan hopper ~33/100; Agile varlığa karşı optimum değil",
+  "sinirlilik": "Tek ajan; fiziksel katman/fading 'gelecek'; mükemmel bilgi varsayımı; gerçek jamming dalga biçimi ve JNR yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_rosen_rfrl-gym-cognitive-radio-testbed"
+ },
+ {
+  "kisa": "Ulbricht 2024",
+  "yil": 2024,
+  "baslik": "PyJama: Differentiable Jamming and Anti-Jamming with NVIDIA Sionna",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "simulator",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq",
+   "diger"
+  ],
+  "jammer_turleri": [
+   "genis_bant",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Sionna'ya jammer ve POS/IAN-LMMSE alicilari eklendi; SGD ile jammer guc ayirimi ogrenildi (L1/MSE kayip).",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Ogrenilen jammer barrage'a gore BER 1,00-7,19 kat; 0 dB ogrenilmis jammer BLER ~%90 (barrage ~%7); POS'u sessiz sembolde susarak asiyor.",
+  "sinirlilik": "Zaman-domeni jammer yalniz barrage; tespit/siniflandirma ve gercek donanim dogrulamasi yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_ulbricht_pyjama-differentiable-jamming-sionna"
+ },
+ {
+  "kisa": "Zubow 2024",
+  "yil": 2024,
+  "baslik": "Ns3 meets Sionna: Using Realistic Channels in Network Simulation",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "simulator",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "Sionna RT P2MP kanal hesabi, tutarlilik suresine dayali on-onbellekleme, ZMQ ile ns-3 entegrasyonu.",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "ris"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "GPU onbellekleme ile 14,25x (V100) / 7,6x (RTX 3060) hizlanma; ns-3'e gore 3,6-6200x yavaslama; ic mekanda ayni mesafede ~50 dB Prx farki.",
+  "sinirlilik": "Yalniz SISO WiFi; yuksek calisma suresi; yalniz serbest uzay dogrulamasi; jamming yok.",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_zubow_ns3-meets-sionna-realistic-channels"
+ },
+ {
+  "kisa": "Chang 2025",
+  "yil": 2025,
+  "baslik": "CSRD2025: A Large-Scale Synthetic Radio Dataset for Spectrum Sensing in Wireless Communications",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [],
+  "yontem": "MATLAB modul boru hatti: Tx/Rx bozuculari, Rayleigh/Rician ve OSM isin izleme kanali, COCO spektrogram etiketleri; model sonucu yok.",
+  "model_ailesi": [],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "otfs",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "~200 TB, >25M cerceve, 100 modulasyon (OTFS dahil); RML2018'den ~10.000x buyuk; SNR -15..+70 dB; veri indirilemez, kod acik.",
+  "sinirlilik": "Tamamen sentetik, jammer sinifi yok, hicbir baseline sonucu yok, kanalin ~%90'i istatistiksel; veri indirilemez.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2025_chang_csrd2025-synthetic-radio-dataset"
+ },
+ {
+  "kisa": "Dossa 2025",
+  "yil": 2025,
+  "baslik": "Impact of Reactive Jamming Attacks on LoRaWAN: a Theoretical and Experimental Study",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif",
+   "dar_bant"
+  ],
+  "yontem": "LoRa CSS icin cerceve basari olasiligi turetimi; GNU Radio FrameDetect-Trigger-Jammer reaktif jammer; USRP-2920 ile 1000 cerceve/kosul.",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Tekrarli-sembol jamming en yikici; 1-5 sembol FSR'yi dusuruyor; Tx 10 dBm, jammer 13 dBm, VA=3 dB; kuram ile deney uyumlu.",
+  "sinirlilik": "Tek jammer-tek link, 3 cihaz; tespit/savunma yok; ofset dagilimi varsayimi; orneklem hizi belirtilmemis.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_dossa_reactive-jamming-lorawan-theory-experiment"
+ },
+ {
+  "kisa": "Panitsas 2025",
+  "yil": 2025,
+  "baslik": "JamShield: A Machine Learning Detection System for Over-the-Air Jamming Attacks",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "paket_rssi_pdr",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "ton",
+   "darbeli",
+   "reaktif",
+   "sweep_chirp",
+   "genis_bant"
+  ],
+  "yontem": "PCA+MI ile 40'tan 20 ozniteliga indirme; AutoCM ile KNN/DT/LSTM/SVM/MLP/RF arasindan esik kontrollu secim; %70/30 bolme, 10-kat CV.",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "39.861 kayit; Precision %88,5, Recall %90,3, Detection Rate %97,9, F1 %89,4, yanlis alarm %3,9, kacirma %9,7.",
+  "sinirlilik": "Tek AP/oda/2,4 GHz; zamansal sizinti riski tartisilmamis; jammer turu bazli sonuc yok; ikili tespit.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2025_panitsas_jamshield-ml-ota-jamming-detection"
+ },
+ {
+  "kisa": "Herzalla 2026",
+  "yil": 2026,
+  "baslik": "WiFiSpectralJam: A Large-Scale Open Wi-Fi Spectral Scan Dataset with Controlled RF Jamming",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "ozellik_vektoru",
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "ton",
+   "genis_bant"
+  ],
+  "yontem": "63 dosya-duzeyi spektral ozet oznitelik; LogReg/RF/HistGB/XGBoost/LightGBM/MLP; held-out guc/dalga bicimi/konum ve capraz tarama modu testleri.",
+  "model_ailesi": [
+   "klasik_ml",
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "14,52 GB, 96.090 CSV, 522,8M gozlem; eslesmis F1 ~0,97-1,00; capraz tarama modu F1 <=0,44/0,56; held-out ton F1~0 ama AUC~1.",
+  "sinirlilik": "Tek donanim, kalkanli oda 20 cm, trafik yok, zaman damgasi yok; reaktif/mobil/coklu jammer yok; I/Q yok.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_herzalla_wifispectraljam-dataset"
+ },
+ {
+  "kisa": "Heublein 2026",
+  "yil": 2026,
+  "baslik": "Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "gnss_iq",
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "sweep_chirp",
+   "genis_bant",
+   "dar_bant",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "17 zaman serisi modeli (tsai) ile cok gorevli siniflandirma; SSC tabanli (C/N0)eff kaybi; YOLOv8s/RF-DETR ile coklu girisim tespiti; MUSIC DF.",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Alan-ici ~%97-99,6, alanlar-arasi %21,9 (Innosense)/%4,6 (CRPA); Sionna on-egitimi gercekte %37,8, gercek acik-alan %79,1.",
+  "sinirlilik": "Alan/cihaz dagilim kaymasi; CRPA anlik goruntu darligi; etiket-uzayi uyumsuzlugu; toplam ornek sayisi dogrulanamadi.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2026_heublein_jammertest-norway-2025-interference-effects"
+ },
+ {
+  "kisa": "Ruah 2026",
+  "yil": 2026,
+  "baslik": "How to Bridge the Sim-to-Real Gap in Digital Twin-Aided Telecommunication Networks",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "derleme",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "DT kalibrasyonu, Bayesci DT, Cross-PPI ve baglam-farkinda PPI; mmWave massive MIMO isin secimi ornekleri.",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "thz_mmwave",
+   "oran",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Cross-PPI, ERM/P-ERM/PPI'dan belirgin ustun (CKM isin hizalama); CPPI NLoS'ta PPI'nin ERM'den kotulesmesini gideriyor; sayilar okunaksiz.",
+  "sinirlilik": "Gercek zamanli DT'de dogruluk-hiz gerilimi; siteye ozgu; jamming gorevinde dogrulama yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2026_ruah_sim-to-real-gap-digital-twin-telecom"
+ },
+ {
+  "kisa": "Tao 2026",
+  "yil": 2026,
+  "baslik": "Should I Use This Synthetic Dataset for Training? How to Test with Minimal Real Data",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [],
+  "yontem": "aeSFT: uyarlamali e-process sign-flip testi; aMT, eSFT, t-testi ile karsilastirma; siniflandirma, paket zamanlama, radyo haritasi deneyleri.",
+  "model_ailesi": [
+   "istatistiksel_esik",
+   "pekistirmeli"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "6g",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Paket zamanlamada TPR 0,657 (16 gercek bolum), ort. durma 88,0 vs aMT 143,6; radyo haritasinda 40 haritada TPR 0,925; FPR hedef altinda.",
+  "sinirlilik": "Gercek test verisi miktari darbogaz; simetri varsayimi; yalniz simulasyon-ici deneyler; jamming yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2026_tao_synthetic-dataset-minimal-real-data-test"
+ },
+ {
+  "kisa": "Wielenberg 2026",
+  "yil": 2026,
+  "baslik": "The S-ICDF Dataset: Sionna-Simulated Dynamic Interference Characterization and Direction Finding",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq",
+   "gnss_iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "sweep_chirp",
+   "darbeli",
+   "ton",
+   "genis_bant",
+   "diger"
+  ],
+  "yontem": "Bir-parametre-bir-seferde (OAT) varyasyon; XceptionTime ham IQ cok gorevli; MUSIC/ESPRIT/CAPON DF baseline.",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "klasik_ml"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "gnss"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Sinif %99,89, 102-tip karakterizasyon %71,99; DF azimut ~0,78-0,84 derece (ESPRIT en iyi); SNR esigi -8 dB.",
+  "sinirlilik": "Yalniz simulasyon, gercek dogrulama yok (gercekte %37,8, Heublein); tek kaynak/sahne; 102/110 yapilandirma tutarsizligi.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2026_wielenberg_s-icdf-sionna-dataset"
+ },
+ {
+  "kisa": "Zhang 2026",
+  "yil": 2026,
+  "baslik": "Cognitive Radio for Satellite TT&C System: A General Dataset Using Software-defined Radio (RML24)",
+  "klasor": "04_veri_setleri_simulatorler",
+  "tur": "veri_seti",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [],
+  "yontem": "22 modulasyon, Rician+Doppler kanal, RF bozucular; CNN-4/AlexNet/VGG-16/ResNet-18/CGDNN/CLDNN ile AMR benchmark.",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "uydu",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "1.386.000 ornek, 1 MHz ornekleme, SNR -20..20 dB; ResNet-18 ort. %68, 18 dB'de tepe %97; yuksek dereceli modulasyonlar <%60.",
+  "sinirlilik": "Tek verici, SNR yazilimla AWGN, uzay-yer baglantisi fiziksel degil; jamming yok; metinde kimlik/bolme tutarsizliklari.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_zhang_rml24-satellite-ttc-sdr-dataset"
+ },
+ {
+  "kisa": "Flowers 2019",
+  "yil": 2019,
+  "baslik": "Evaluating Adversarial Evasion Attacks in the Context of Wireless Communications",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "FGSM beyaz-kutu bozucu; AWGN, zaman ve frekans kayması altında AMC doğruluğu ve BER ödünleşimi",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "FGSM bozucu Gauss gürültüsünden çok etkili; BPSK Es/Ej=4 dB'de doğruluk ~%0, BER etkisiz (yalnız SNR>15 dB); 4 örnek kayma doğruluğu ~%20 artırır",
+  "sinirlilik": "Yalnız FGSM ve beyaz-kutu; basit kanal (AWGN+frekans kayması); savunma önerilmiş ama uygulanmamış",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2019_flowers_adversarial-evasion-wireless"
+ },
+ {
+  "kisa": "Hoang 2019",
+  "yil": 2019,
+  "baslik": "\"Borrowing Arrows with Thatched Boats\": The Art of Defeating Reactive Jammers in IoT Networks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "reaktif"
+  ],
+  "yontem": "MDP + düşük maliyetli iki modüllü DRL; sahte iletim, enerji hasadı, backscatter; DH/DB/WD ile karşılaştırma",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Doygunlukta verim DH'den %6, DB'den %94, WD'den %170 yüksek; saldırı olasılığı 0,9'da verim 0,67",
+  "sinirlilik": "Jammer sabit olasılıklı Bernoulli saldırgan (hafızasız); kanal modeli ve donanım denemesi yok; magazine yazısı",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2019_hoang_borrowing-arrows-defeating-reactive-jammers"
+ },
+ {
+  "kisa": "Sagduyu 2019",
+  "yil": 2019,
+  "baslik": "Adversarial Deep Learning for Over-the-Air Spectrum Poisoning Attacks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "Saldırgan ACK'ten vekil DNN öğrenir; sensing dönemini jamlar; savunma: karar sınırından uzak dilimlerde kasıtlı yanlış eylem",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Verim %98,96 -> %3,13 (evasion); aynı enerjiyle veri-dönemi jamming %41,67; causative+evasion %2,72",
+  "sinirlilik": "Tek verici/alıcı topolojisi; saldırgan ACK gözlemler varsayımı; yalnız simülasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2019_sagduyu_adversarial-dl-spectrum-poisoning"
+ },
+ {
+  "kisa": "Yao 2019",
+  "yil": 2019,
+  "baslik": "A Collaborative Multi-agent Reinforcement Learning Anti-jamming Algorithm in Wireless Networks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp"
+  ],
+  "yontem": "Markov oyunu + koordineli Q-öğrenme (CMAA); 2 kullanıcı, 5 kanal, 200 koşu ortalaması",
+  "model_ailesi": [
+   "pekistirmeli",
+   "oyun_kurami"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "CMAA, algılama tabanlı ve bağımsız Q-öğrenmeden yüksek normalize hız sağlar; sayısal değer metinde yok (yalnız şekil)",
+  "sinirlilik": "Kısa mektup; yalnız sweep jammer; sayısal sonuç yok; kullanıcılar arası bilgi paylaşımı varsayımı",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2019_yao_collaborative-marl-anti-jamming"
+ },
+ {
+  "kisa": "Kim 2021",
+  "yil": 2021,
+  "baslik": "Channel-Aware Adversarial Attacks Against Deep Learning-Based Wireless Signal Classifiers",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "MMSE/MRPP kanal telafili FGSM benzeri bozucu, UAP, broadcast; savunma: gürültü ile veri artırma; RML2016.10a, VT-CNN2",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Kanalı yok sayan saldırı düşük PNR'de başarısız; kanal-bilgili MRPP etkili; küçük sigma (0,001/0,005) smoothing doğruluğu artırır; sayılar yalnız şeki",
+  "sinirlilik": "Yalnız modülasyon sınıflandırma; yüzdeler düz metinde okunaksız; sınırlılık bölümü belirgin değil",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2021_kim_channel-aware-adversarial-attacks-signal-classifiers"
+ },
+ {
+  "kisa": "Pourranjbar 2021",
+  "yil": 2021,
+  "baslik": "Reinforcement Learning for Deceiving Reactive Jammers in Wireless Networks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "reaktif"
+  ],
+  "yontem": "Konveks optimizasyon (kanal kazancı biliniyorsa) + model-bağımsız MDP/Q-öğrenme; TRP alt sınırı; CMAA ve DRL ile kıyas",
+  "model_ailesi": [
+   "pekistirmeli"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Tek kullanıcı 3 kanalda en yüksek TRP'nin >%50'si; tek kullanıcı 4 kanal ~%60; RL-optimum fark %0,07 -> %0,03",
+  "sinirlilik": "Reaktif jammer sabit 'en güçlü kanalı jamla' kuralı; algılama gecikmesi/hatası modellenmemiş; ölçüm yok",
+  "biz_yakinlik": 3,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2021_pourranjbar_rl-deceiving-reactive-jammers"
+ },
+ {
+  "kisa": "Huynh 2022",
+  "yil": 2022,
+  "baslik": "Defeating Super-Reactive Jammers With Deception Strategy: Modeling, Signal Detection, and Performance Analysis",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif"
+  ],
+  "yontem": "Aldatma stratejisi, çok kaynaklı backscatter, ML ve LSTM dedektör; Rayleigh kanal, Matlab; BER ve backscatter hızı",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "istatistiksel_esik"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Jammer gücü arttıkça BER ve backscatter hızı iyileşir; LSTM dedektör BER'i optimal ML'e yakın (sayı okunaksız)",
+  "sinirlilik": "Konumlar sabit; sınırsız-güç jammer idealizasyonu; kanal frame boyunca sabit; yalnız simülasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_huynh_defeating-super-reactive-jammers"
+ },
+ {
+  "kisa": "Jia 2022",
+  "yil": 2022,
+  "baslik": "Game-theoretic Learning Anti-jamming Approaches in Wireless Networks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Çerçeve ve üç vaka (Stackelberg, Markov oyunu, hypergraph); mevcut sonuçların özeti",
+  "model_ailesi": [
+   "oyun_kurami",
+   "pekistirmeli"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "Markov oyunu (CMAA) sweep jamming'de bağımsız Q-öğrenme ve rastgele seçimden yüksek ortalama hız; sayılar yalnız şekilde",
+  "sinirlilik": "Yeni deney yok; gelecek yönler: jamming prediction, bilgi aktarımı, jamming konumlandırma; 5G/6G yok",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_jia_game-theoretic-learning-anti-jamming"
+ },
+ {
+  "kisa": "Liu 2022",
+  "yil": 2022,
+  "baslik": "Attacking Spectrum Sensing With Adversarial Deep Learning in Cognitive Radio-Enabled Internet of Things",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "ECM bozucu + PLHA zehirleme = EPM; CM-RN (ResNet); RML2016.10b, %80/%20 bölme; FGSM/BIM/MIM ile kıyas",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "10 dB'de temiz doğruluk %92; EPM doğruluğu ~%40 düşürür; -6 dB'de MIM eps=0,0015 ile doğruluğu %50 altına indirir",
+  "sinirlilik": "Yalnız QPSK ikili algılama; gerçek OTA deney yok; sınırlılık bölümü okunmadı",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_liu_attacking-spectrum-sensing-adversarial-dl"
+ },
+ {
+  "kisa": "Shi 2022",
+  "yil": 2022,
+  "baslik": "Jamming Attacks on Federated Learning in Wireless Networks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "İstemci seçimi (yerel doğruluk/başarı olasılığı); FedAvg; 10 sensör, 100 tur; sinyal sınıflandırma",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Seçilmiş 4 istemciye uplink saldırısı doğruluğu %72,3'e indirir (kıyaslarda %93,4); temiz küresel doğruluk %94,4",
+  "sinirlilik": "Algoritma 2 pratik değil (100 tur sonra geç, istemci verisi yok); savunma önerilmemiş; yalnız simülasyon",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2022_shi_jamming-attacks-federated-learning"
+ },
+ {
+  "kisa": "Pourranjbar 2023",
+  "yil": 2023,
+  "baslik": "Recurrent Neural Network-based Anti-jamming Framework for Defense Against Multiple Jamming Policies",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "reaktif",
+   "diger"
+  ],
+  "yontem": "GRU-RNN: politika sınıflandırma (random/sweeping/reactive/combat) ve gelecek jamlı kanal tahmini; DQL ile kıyas; Nakagami kanal",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Tek jammer: sweep/combat 5 dilimde kusursuz tanınır, STR~%100; çok jammer %70 jamlı: STR>%75, ER>%80; %30'da %90",
+  "sinirlilik": "Kapalı küme 4 politika; kanal-doluluk girdisi (sinyal düzeyi yok); özet ve sonuç/Şekil 5 arasında hafif tutarsızlık",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2023_pourranjbar_rnn-anti-jamming-multiple-policies"
+ },
+ {
+  "kisa": "Wasilewska 2023",
+  "yil": 2023,
+  "baslik": "Secure Federated Learning for Cognitive Radio Sensing",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "derleme",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Taksonomi; 5G downlink RB desenleri, 8 CR, CNN, FedAvg; sunucuda model-karar uyumu eşiğiyle (%55/%65) zehirleyici elemesi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Karar uyumu eşiği %65'te zehirleyen düğüm elenir, %55'te bazı iterasyonlarda kabul edilir; Pd/Pfa sayıları okunaksız",
+  "sinirlilik": "Hiçbir savunma tek başına yeterli değil; bant genişliği kısıtı; kısa sürüm, ayrıntılar tam makalede",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2023_wasilewska_secure-federated-learning-cognitive-radio-sensing"
+ },
+ {
+  "kisa": "Davaslioglu 2024",
+  "yil": 2024,
+  "baslik": "Continual Deep Reinforcement Learning to Prevent Catastrophic Forgetting in Jamming Mitigation",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "DQN ve SAC ajani, PackNet parametre izolasyonu; ns-3 gym; odul=normalize spektral verimlilik",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Senaryo 3A: unutma 0,080 (sifirdan/onceden egitilmis) vs PackNet 0,829 ortalama odul; Env1'de DQN >%95, SAC %100 basari.",
+  "sinirlilik": "Yalniz ns-3 simulasyonu, basit deterministik jammer desenleri; senaryo 2/3B farklari standart sapma icinde.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2024_davaslioglu_continual-drl-jamming-mitigation"
+ },
+ {
+  "kisa": "Imran 2024",
+  "yil": 2024,
+  "baslik": "Anti-jamming for cognitive radio networks with Stackelberg game-assisted DSSS approach",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif"
+  ],
+  "yontem": "Stackelberg oyunu (lider savunmaci, takipci saldirgan) + DSSS; 20 kullanici, 50 kanal, 20 adim",
+  "model_ailesi": [
+   "oyun_kurami"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Yalniz soyut 'guvenlik durumu' (DSSS sonrasi 0,9794 ile 0,1822 arasi oynak); throughput/BER/SINR yok.",
+  "sinirlilik": "20 adimlik oyuncak simulasyon, standart metrik yok, fiziksel kanal/jammer modeli yok, abartili dil.",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_imran_stackelberg-dsss-anti-jamming-crn"
+ },
+ {
+  "kisa": "Janiar 2024",
+  "yil": 2024,
+  "baslik": "Intelligent Anti-jamming based on Deep Reinforcement Learning and Transfer Learning",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "sweep_chirp",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "LSTM-DRL + IFE tabanli transfer (son X katman ogrenilebilir); RF ozellik onemi ve bagil entropi (XAI)",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme",
+   "klasik_ml"
+  ],
+  "asama": "savunma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "RNN, CNN'den az parametreyle daha iyi; onerilen TL, sifirdan DRL ve TL-C/TL-WI'den hizli yakinsar (4 vaka, 9 kanal).",
+  "sinirlilik": "Optimal katman sayisi garantisiz, tek XAI teknigi; yalniz simulasyon, basit sweep/rastgele jammer.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_janiar_drl-transfer-learning-anti-jamming"
+ },
+ {
+  "kisa": "Jeon 2024",
+  "yil": 2024,
+  "baslik": "Machine Learning-Based Cooperative Clustering for Detecting and Mitigating Jamming Attacks in beyond 5G Networks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr",
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Yerel karar agaci + gNB'de global model (MLCC), CoC esigi, jammer'dan kacan cok atlamali yol secimi; WSN-DS yeniden etiketli",
+  "model_ailesi": [
+   "klasik_ml"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Tespit orani en cok +%5,21, throughput +%26,35, enerji -%76,68, gecikme -%7,14 (PM/RM/FM'e gore).",
+  "sinirlilik": "WSN-DS jamming veri seti degil (black hole vb. 'jamming' olarak birlestirilmis); gercek test yatagi yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_jeon_ml-cooperative-clustering-jamming-b5g"
+ },
+ {
+  "kisa": "Jia 2024",
+  "yil": 2024,
+  "baslik": "Game Theory and Reinforcement Learning for Anti-jamming Defense in Wireless Communications: Current research, Challenges and Solutions",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "reaktif",
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "Bayes/Stackelberg/stokastik(Markov)/sifir toplamli oyunlar; Q-ogrenme, MAB, DRL, transfer RL taksonomisi",
+  "model_ailesi": [
+   "pekistirmeli",
+   "oyun_kurami"
+  ],
+  "asama": "derleme",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "genel",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "ris"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Oyun kurami on bilgi ister; RL binlerce iterasyon ister; MDP ile gelismis jamming modellenir; tanima ([86-89]) cok kisa islenir.",
+  "sinirlilik": "Agirlik karar katmaninda; fiziksel sinyalden tespit/tanima yalniz kisa paragraf; 6G ifadesi yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_jia_game-theory-rl-anti-jamming-survey"
+ },
+ {
+  "kisa": "Abdolkhani 2025",
+  "yil": 2025,
+  "baslik": "Deep Reinforcement Learning for EH-Enabled Cognitive-IoT Under Jamming Attacks",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "darbeli"
+  ],
+  "yontem": "Model-bağımsız MDP; DDQN; UCB-IA keşif stratejisi; aralıklı rastgele jammer; rastgele/sabit/epsilon-greedy ile kıyas",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "hayir",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "UCB-IA tüm Bmax değerlerinde diğerlerini geçer; rastgele stratejide jammer girişim oranı ~%50; sayısal ASR okunaksız",
+  "sinirlilik": "Basit senaryolarda üstün olmayabilir, yüksek maliyet; tek jammer; jammer durumu mükemmel algılanır varsayımı",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2024_abdolkhani_drl-eh-cognitive-iot-jamming"
+ },
+ {
+  "kisa": "Alves 2025",
+  "yil": 2025,
+  "baslik": "6G Resilience White Paper",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [
+   "gnss_iq"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Kavramsal cerceve: 3R, edge-native mimari, AI-yerel kontrol, sifir guven, MTD, PQC, is modeli kaliplari",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "6g",
+   "uydu",
+   "uav"
+  ],
+  "alti_g_ozellikleri": [
+   "ntn",
+   "oran",
+   "ai_yerel",
+   "isac"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Nicel sonuc yok; jamming yalniz GNSS/zamanlama baglaminda (cok antenli alici, PTP); MTD ile saldiri tespiti entegrasyonu bosluk.",
+  "sinirlilik": "Taslak (DRAFT); PHY jamming tespit/siniflandirma ayrintisi yok.",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_alves_6g-resilience-white-paper"
+ },
+ {
+  "kisa": "Basit 2025",
+  "yil": 2025,
+  "baslik": "DRL-Based Maximization of the Sum Cross-Layer Achievable Rate for Networks Under Jamming",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "diger"
+  ],
+  "yontem": "ResNet tabanli DQN (iUE); GRU ve FC-DQN ile karsilastirma; referans: agi onceden bilen nAUE",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "ResNet-DQN near-optimal odule yakinsar; GRU yakinsamaz, FC-DQN alt-optimal (7 hucre, 2-5 jammer, 10-35 pUE); sayisal tablo yok.",
+  "sinirlilik": "Yalniz periyodik, algilamayan jammer; fiziksel katman dalga bicimi yok; kod belirtilmemis.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_basit_drl-cross-layer-rate-under-jamming"
+ },
+ {
+  "kisa": "Li 2025",
+  "yil": 2025,
+  "baslik": "Achieving Hiding and Smart Anti-Jamming Communication: A Parallel DRL Approach against Moving Reactive Jammer",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "spektrogram"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "sweep_chirp",
+   "akilli_adaptif",
+   "genis_bant"
+  ],
+  "yontem": "CNN + iki paralel FC (frekans, yayilma faktoru), epsilon-greedy'siz kesif; esik tabanli reaktif jammer (60 dBm, -70 dBm esik)",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "uav",
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Normalize throughput'ta ozet 'yaklasik %90', sonucta 'asti' artis; iterasyon basi 0,00028 s (DQN 0,00027 s).",
+  "sinirlilik": "Tek jammer/alici, yalniz simulasyon, deterministik algilama esigi, spektrum selalesi dogrudan gozlenir.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2025_li_parallel-drl-moving-reactive-jammer"
+ },
+ {
+  "kisa": "Saeed 2025",
+  "yil": 2025,
+  "baslik": "A comprehensive survey on 6G-security: physical connection and service layers",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "derleme",
+  "veri_kaynagi": "yok",
+  "sinyal": [],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Katmanli derleme: mmWave/mMIMO, LIS/IRS, THz, VLC, NOMA, holografik radyo, AI guvenligi icin tehdit-cozum-acik sorun tablolari",
+  "model_ailesi": [
+   "diger"
+  ],
+  "asama": "derleme",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "ris",
+   "thz_mmwave",
+   "mimo_pilot",
+   "oran",
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "hayir",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Nicel sonuc yok; 'AI anti-jamming' mmWave MIMO ve THz icin acik sorun; pilot kirletme (PCA) buyuk MIMO riski olarak anilir.",
+  "sinirlilik": "Jamming icin nicel degerlendirme yok; THz jamming direnci iddiasi ile 'jamming cozulmemis' ifadesi celisir.",
+  "biz_yakinlik": 1,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_saeed_6g-security-physical-connection-service-layers"
+ },
+ {
+  "kisa": "Sagduyu 2025",
+  "yil": 2025,
+  "baslik": "How to Combat Reactive and Dynamic Jamming Attacks with Reinforcement Learning",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif"
+  ],
+  "yontem": "Q-learning (durum=onceki iletim jam edildi mi) ve DQN (durum=alinan guc); jammer esigi tau_low/tau_high gecisi, p=0,8 q=0,2 kanal tutma",
+  "model_ailesi": [
+   "pekistirmeli",
+   "derin_ogrenme"
+  ],
+  "asama": "savunma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "evet",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Toplam odul: RL 36.552 vs sabit 428,5 (PC, sigma_J2=0); PCAM tek kanal 37.054; cok kanal 43.737; surekli durum 39.440 (cok kanal).",
+  "sinirlilik": "Tek verici-alici cifti, N=2 kanal, sabit politika baseline'i cok zayif, gercek RF dalga bicimi yok.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "yontem_odunc",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2025_sagduyu_combat-reactive-dynamic-jamming-rl"
+ },
+ {
+  "kisa": "Michaelides 2026",
+  "yil": 2026,
+  "baslik": "On the Resilience of 5G NR Against Jamming",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "simulator",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "genis_bant",
+   "sabit_gurultu"
+  ],
+  "yontem": "ns-3 + 5G-LENA, NrJammingGenerator; FR1 2,3 GHz / FR2 26 GHz; SCS 15-120 kHz; 20/50/400 MHz; 1-12 jammer, 15-45 dBm",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "thz_mmwave"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "15 dBm/12 jammer: FR1 20 MHz ~%45 kayip, FR2 400 MHz etkilenmez; 30 dBm'de 400 MHz disi %100 kayip, 45 dBm'de cokus.",
+  "sinirlilik": "Yalniz barrage jamming, gercek dogrulama yok, tespit/siniflandirma yok, yalniz downlink UDP.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_michaelides_resilience-5g-nr-against-jamming"
+ },
+ {
+  "kisa": "Panitsas 2026",
+  "yil": 2026,
+  "baslik": "FedJam: Multimodal Federated Learning Framework for Jamming Detection",
+  "klasor": "05_savunma_markov_reaktif_jammer",
+  "tur": "yontem",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "spektrogram",
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "ton",
+   "darbeli",
+   "genis_bant"
+  ],
+  "yontem": "Cift kodlayicili (EfficientNet tabanli spektrum + KPI kodlayici) multimodal FL; Flower, FedAvg/FedOpt/FedProx; %80/%20 bolme",
+  "model_ailesi": [
+   "derin_ogrenme"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g",
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "ai_yerel"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "IID dogruluk FedJam %99,2/96,7/92,6 (10/25/50 istemci) vs SpectroNet %96,0/93,8/89,0; %60 daha az iletisim turu.",
+  "sinirlilik": "Sabit konum, 3 jammer turu, rastgele bolmede pencere sizintisi riski, bilinmeyen jammer testi yok, gain dB kalibre degil.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "yuksek",
+  "dosya": "2026_panitsas_fedjam-federated-jamming-detection"
+ },
+ {
+  "kisa": "Hong 2023",
+  "yil": 2023,
+  "baslik": "A Hybrid Jamming Detection Algorithm for Wireless Communications: Simultaneous Classification of Known Attacks and Detection of Unknown Attacks",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "yontem",
+  "veri_kaynagi": "gercek_olcum",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "Karar ağacı (normal/bilinen saldırı) + Isolation Forest (DT kararını doğrular) + topluluk; ayrıntı yalnızca özet ve ikincil kaynaklardan.",
+  "model_ailesi": [
+   "klasik_ml",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Özete göre baz algoritmadan üstün (mesafe, bilinen saldırı sayısı, hareketlilik); sayısal sonuç tam metin olmadığından bulunamadı.",
+  "sinirlilik": "Tam metin yok; sinyal/öznitelik türü yalnızca ikincil kaynaktan (düşük güven); C bandı modem, 4 tür.",
+  "biz_yakinlik": 5,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "dusuk",
+  "dosya": "web_hong_2023"
+ },
+ {
+  "kisa": "Yildirim 2025",
+  "yil": 2025,
+  "baslik": "OFDM-based JCAS under Attack: The Dual Threat of Spoofing and Jamming in WLAN Sensing",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "temel_kuram",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "iq",
+   "diger"
+  ],
+  "jammer_turleri": [
+   "akilli_adaptif",
+   "diger"
+  ],
+  "yontem": "OFDM RDM sinyal modelleri, OS-CFAR ile saldiri etkisi analizi; 3 USRP X310 deneyi; savunma onerilmiyor",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "wifi_iot"
+  ],
+  "alti_g_ozellikleri": [
+   "isac"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Saldiri JSR>8-12 dB ve CFO farki>=3 ppm iken cok etkili; dusuk JSR'de yapay hedef tespiti ~%20 (metinden).",
+  "sinirlilik": "Tespit/savunma yok; tek tip basitlestirilmis kare yapisi; WLAN sensing, 5G/6G degil.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "arka_plan",
+  "okuma": "kismi",
+  "guven": "orta",
+  "dosya": "2025_yildirim_ofdm-jcas-spoofing-jamming"
+ },
+ {
+  "kisa": "Aissou 2026",
+  "yil": 2026,
+  "baslik": "Co-Evolving Zero-Day Jamming: Adaptive Attack Synthesis and Graph Attention-Based Online Detection",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "diger"
+  ],
+  "jammer_turleri": [
+   "reaktif",
+   "akilli_adaptif",
+   "genis_bant",
+   "dar_bant",
+   "ton"
+  ],
+  "yontem": "GAT kodlayici + DP-means kumeleme (zaman-frekans enerji cercevesi uzerinde); RL (Q-ogrenme) jammer, GLRT ile dedektor durumu cikarimi",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "pekistirmeli",
+   "diger"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "evet",
+  "ag_nesli": [
+   "genel"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "RL jammer baz cizgiye gore %33 etkinlik, %67 gizlilik; tespit olasiligi 0,86-0,92 (acik-kume baz cizgisi 0,68-0,76).",
+  "sinirlilik": "Yalniz simulasyon; girdi ham I/Q degil enerji cercevesi; zero-day kume saflik/yanlis alarm raporlanmiyor; sweep/pulse yok.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2026_aissou_co-evolving-zero-day-jamming"
+ },
+ {
+  "kisa": "Chong 2026",
+  "yil": 2026,
+  "baslik": "A Synthetic Dataset for Anomaly Detection of RIS-Enabled Jamming Attacks",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "veri_seti",
+  "veri_kaynagi": "belirtilmemis",
+  "sinyal": [],
+  "jammer_turleri": [],
+  "yontem": "Bulunamadi (yalniz kunye: ICC Workshops 2026, DOI 10.1109/ICCWorkshops63917.2026.11586537; Imperial College London)",
+  "model_ailesi": [],
+  "asama": "veri_uretimi",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "ris"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Bulunamadi: ozet, veri seti baglantisi ve sonuclar erisilemedi (IEEE Xplore bos dondu).",
+  "sinirlilik": "Tam metin okunamadi; tum alanlar basliktan/kunyeden cikarim; acik_kume, model ve jammer alanlari bilinmiyor (bos/varsayilan).",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "kismi",
+  "guven": "dusuk",
+  "dosya": "web_chong"
+ },
+ {
+  "kisa": "Chou 2026",
+  "yil": 2026,
+  "baslik": "Green Learning-Based Signal-Level Detection of RIS Spoofing Attacks in Vehicular ISAC Systems",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "yontem",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "diger"
+  ],
+  "yontem": "SAAB + DFT + XGBoost (Green Learning); LSTM/BiLSTM ve STL yorunge-duzeyi taban cizgileri; 28 GHz, 20.000 yorunge",
+  "model_ailesi": [
+   "klasik_ml"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "6g"
+  ],
+  "alti_g_ozellikleri": [
+   "isac",
+   "ris",
+   "thz_mmwave"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "M=32, -80 dBm: dogruluk %99,335, PD %99,09, PFA %0,42; 0,1119 MFLOP; M=16'da egitip M=32'de test %97,07.",
+  "sinirlilik": "Tek VU, tek kotu niyetli RIS; kanal/saldiri [11]'den miras; M=8'de dogruluk %71,69; yalniz simulasyon, denetimli ikili.",
+  "biz_yakinlik": 3,
+  "biz_iliski": "benzer",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2026_chou_green-learning-ris-spoofing-isac"
+ },
+ {
+  "kisa": "Hoffmann 2026",
+  "yil": 2026,
+  "baslik": "Jamming Detection in 5G/6G Networks: From O-RAN Concept to OCUDU Deployment",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "savunma",
+  "veri_kaynagi": "hibrit",
+  "sinyal": [
+   "paket_rssi_pdr"
+  ],
+  "jammer_turleri": [
+   "darbeli",
+   "sabit_gurultu"
+  ],
+  "yontem": "E2SM-LLC uzerinden ACK/NACK kayan pencere BLER esigi (beta); tespitte MCS <= MCS_safe; Keysight UXM/PROPSIM gunlukleri + POWDER OTA",
+  "model_ailesi": [
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Ilk denemede basari %62,16 -> %94,01; beklenen deneme 1,610 -> 1,084 (ozetteki %67,3 ifadesi Tablo II ile tutarsiz).",
+  "sinirlilik": "OTA'da yalniz tespit, hafifletme yok; TPR/FPR raporlanmiyor; beta kalibrasyonu belirtilmemis; 6G-ozgu unsur yok.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2026_hoffmann_jamming-detection-oran-ocudu"
+ },
+ {
+  "kisa": "Huso 2026",
+  "yil": 2026,
+  "baslik": "Cloudy Skies: Early Detection of Jamming Against Iridium LEO Satellite-IoT Links",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "veri_seti",
+  "veri_kaynagi": "sdr_donanim",
+  "sinyal": [
+   "iq"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "genis_bant",
+   "diger"
+  ],
+  "yontem": "Yalniz jamming-siz veriyle egitilen Raw AE (1.072 parametre), LSTM-AE ve goruntu-tabanli AE; P95 esik; AUC; GNU Radio + gr-Iridium + LimeSDR",
+  "model_ailesi": [
+   "derin_ogrenme",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit",
+  "acik_kume": "kismi",
+  "ag_nesli": [
+   "uydu"
+  ],
+  "alti_g_ozellikleri": [
+   "yok"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "evet",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "hayir",
+  "ana_sonuc": "47 gercek kosul; ΔN>=9 dB'de AUC>=0,84 (1000 ornek, 40 ms); ortamlar arasi aktarimda FPR 0,04 -> 0,38/0,61.",
+  "sinirlilik": "Yalniz AWGN ve replay jammer; 10-180 cm mesafe; tur siniflandirmasi yok; Iridium'a ozgu; 6G/NTN terimi gecmiyor.",
+  "biz_yakinlik": 5,
+  "biz_iliski": "rakip",
+  "okuma": "tam",
+  "guven": "yuksek",
+  "dosya": "2026_huso_cloudy-skies-iridium-jamming"
+ },
+ {
+  "kisa": "Kurma 2026",
+  "yil": 2026,
+  "baslik": "An Ensemble Machine Learning-Enabled xApp for Multi-Class Jamming Detection in O-RAN",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "savunma",
+  "veri_kaynagi": "belirtilmemis",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [],
+  "yontem": "MAC katmani E2 metriklerinden 15 oznitelik; RF + SVM + Isolation Forest, F1'e gore ayarlanan agirliklarla topluluk; srsRAN gNB + FlexRIC",
+  "model_ailesi": [
+   "klasik_ml",
+   "anomali_denetimsiz"
+  ],
+  "asama": "tespit_ve_siniflandirma",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran"
+  ],
+  "acik_veri_veya_kod": "belirtilmemis",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "belirtilmemis",
+  "kanal_modeli": "belirtilmemis",
+  "ana_sonuc": "Ozet: tek-model baz cizgilerine gore %19,2-27,9 dogruluk artisi; ~14 ms gecikme; CNN'e gore ~1/3 CPU, ~1/10 bellek (dogrulanmadi).",
+  "sinirlilik": "Tam metin 6 Eylul 2027'ye kadar embargolu; jammer turleri, veri kaynagi ve acik-kume durumu bulunamadi.",
+  "biz_yakinlik": 4,
+  "biz_iliski": "rakip",
+  "okuma": "kismi",
+  "guven": "dusuk",
+  "dosya": "web_kurma"
+ },
+ {
+  "kisa": "Ratti 2026",
+  "yil": 2026,
+  "baslik": "An O-RAN-Native xApp Framework for Jammer Detection and Geolocation",
+  "klasor": "07_ikinci_tur_komsu_calismalar",
+  "tur": "savunma",
+  "veri_kaynagi": "simulasyon",
+  "sinyal": [
+   "ozellik_vektoru"
+  ],
+  "jammer_turleri": [
+   "sabit_gurultu",
+   "genis_bant"
+  ],
+  "yontem": "SINR/RSRP KPM uzerinde S-DBSCAN ve HT-HDBSCAN kumeleme; girisim gucu trilaterasyonu; SI-MAP + EKF ile UE konumlama (ns-O-RAN)",
+  "model_ailesi": [
+   "anomali_denetimsiz",
+   "istatistiksel_esik"
+  ],
+  "asama": "tespit",
+  "acik_kume": "hayir",
+  "ag_nesli": [
+   "5g"
+  ],
+  "alti_g_ozellikleri": [
+   "oran"
+  ],
+  "acik_veri_veya_kod": "evet",
+  "gnu_radio_sdr": "hayir",
+  "markov_jammer": "hayir",
+  "snr_jnr_degisimi": "evet",
+  "kanal_modeli": "evet",
+  "ana_sonuc": "Jammer'siz 25 kosuda yanlis alarm yok; konum medyan hatasi 9-24 m (40-60 dBm); 2000 UE icin 0,89 s isleme.",
+  "sinirlilik": "Yalniz simulasyon; L3 SINR duzeyi jamming, tek jammer turu, E2 gecikmesi olculmedi; UE konumu P80 24 m.",
+  "biz_yakinlik": 2,
+  "biz_iliski": "destekleyici",
+  "okuma": "kismi",
+  "guven": "dusuk",
+  "dosya": "web_ratti"
+ }
+]
